@@ -26,13 +26,22 @@
                 <h2 class="register__tittle">Elige una foto de perfil</h2>
                 <p class="register__psmall">¡Elige una foto que te represente!</p>
             </div>
-            <div class="register__profilephoto">
-                <input type="file" acept=".png">
+            <div class="register__profile">
+                <input type="file" accept="image/png, image/jpeg" name="image" class="register__profilephoto">
                 <p class="register__psmall">O elige uno de los avatares de Toki</p>
+                <div class="register__profileavatar flex">
+                    <img src="./img/logo.png">
+                    <img src="./img/logo.png">
+                    <img src="./img/logo.png">
+                    <img src="./img/logo.png">
+                    <img src="./img/logo.png">
+                    <img src="./img/logo.png">
+                </div>
             </div>
             <input type="submit" value="Listo" class="register__submit">
             <br>
-            <a href="./main.html" class="register__link">Omitir</a>
+            <!--<a href="./main.html" class="register__link">Omitir</a>-->
+           
         </div>
     </section>
 </body>
