@@ -1,0 +1,44 @@
+$heeboFont: "Heebo", open sans-serif;
+$primary500: #1A15EF;
+$primary800: #0A087A;
+$tokiWhite: #F3F3F3;
+$bodySize: 1em;
+$h2Size: 1.425em;
+$captionSize: 0.888em;
+$subtitleSize: 1.125em;
+
+html, body {
+    background-color: $tokiWhite;
+    font-family: $heeboFont;
+}
+
+.flex {
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+}
+
+h2{
+    color:$primary500;
+    font-weight: 500;
+    font-size: $h2Size;
+    line-height: 1.806em;
+}
+
+p{
+    color:$primary800;
+    font-weight: 400;
+    font-size: $bodySize;
+    line-height: 1.269em;
+}
+
+.login {
+    &__input{
+        background-color: $tokiWhite;
+        color: $primary500;
+        border-color: $primary500;
+        border-width: 0.063em;
+    }
+}

@@ -1,0 +1,36 @@
+html, body {
+  background-color: #F3F3F3;
+  font-family: "Heebo", open sans-serif;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  color: #1A15EF;
+  font-weight: 500;
+  font-size: 1.425em;
+  line-height: 1.806em;
+}
+
+p {
+  color: #0A087A;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.269em;
+}
+
+.login__input {
+  background-color: #F3F3F3;
+  color: #1A15EF;
+  border-color: #1A15EF;
+  border-width: 0.063em;
+}
+/*# sourceMappingURL=login.css.map */

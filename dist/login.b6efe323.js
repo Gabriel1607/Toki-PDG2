@@ -592,7 +592,7 @@ if (loginUserForm != null) loginUserForm.addEventListener("submit", (e)=>{
             let userLogged = [];
             const firebaseUser = await (0, _getUser.getUser)(uid);
             userLogged = firebaseUser;
-            location.href = "./index.html";
+            location.href = "./home.html";
         }
     });
 });
@@ -38185,4 +38185,4 @@ async function getUser(id) {
 
 },{"./app":"bAabt","firebase/firestore":"8A4BC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["fcnVC","cvZoU"], "cvZoU", "parcelRequire3705")
 
-//# sourceMappingURL=register.b6efe323.js.map
+//# sourceMappingURL=login.b6efe323.js.map
