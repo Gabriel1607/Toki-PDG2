@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!--Styles-->
+    <link rel="stylesheet" href="./css/register.css">
+</head>
+
+<body>    
+    <section class="register">
+        <img src="img/logo.png" class="main__img">
+        <div class="register__container">
+            <div class="register__head flex">
+                <a href="./index.html">
+                    <img src="./img/backicon.png" alt="back" class="back__icon">
+                </a>
+                <h2 class="register__tittle">Registrarme</h2>
+            </div>
+            <h3 class="register__tittle">Paso 1</h3>
+            <p>Empecemos por los daticos básicos:</p>
+            <form class="register__form" id="registerUserForm">
+                <input type="text" placeholder="Ingresa tu correo" name="name" class="register__input">
+                <br>
+                <input type="text" placeholder="Nombre de usuario" name="lastname" class="register__input">
+                <br>
+                <input type="email" placeholder="Ingresa tu contraseña" accept="email" name="email" class="register__input">
+                <br>
+                <input type="email" placeholder="Confirma tu contraseña" accept="email" name="email" class="register__input">
+                <br>
+                <input type="submit" value="Siguiente" class="register__submit">
+            </form>
+            <div class="register__p flex">
+                <p class="register__psmall">¿Ya eres parte de Toki?</p>
+                <a href="./login.html" class="register__linkAccount">Inicia sesión</a>
+            </div>
+        </div>
+    </section>
+</body>
