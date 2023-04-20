@@ -1,0 +1,63 @@
+$heeboFont: "Heebo", open sans-serif;
+$primary500: #1A15EF;
+$primary800: #0A087A;
+$tokiWhite: #F3F3F3;
+$bodySize: 1em;
+$h1Size: 1.602em;
+
+html, body {
+    background-color: $tokiWhite;
+    font-family: $heeboFont;
+}
+
+.flex {
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1{
+    color:$primary500;
+    font-weight: 600;
+    font-size: $h1Size;
+    line-height: 2.031em;
+}
+
+p{
+    color:$primary800;
+    font-weight: 400;
+    font-size: $bodySize;
+    line-height: 1.269em;
+}
+
+img {
+    width: 100%;
+}
+
+.main{
+    padding: 0% 5% 0% 5%;
+}
+
+.option{
+    justify-content: space-between;
+
+    &__linklogin, &__linkregister{
+       font-weight: 500;
+       font-size: 1.125em;
+       border-radius: 0.625em;
+       padding: 16px 33px;
+    }
+    &__linklogin{
+        background-color: $tokiWhite;
+        color: $primary500;
+        border-style: solid;
+        border-width: 0.063em;
+    }
+
+    &__linkregister{
+        background-color: $primary500;
+        color: $tokiWhite;
+    }
+}

@@ -1,1 +1,62 @@
-/* No CSS *//*# sourceMappingURL=index.css.map */
+html, body {
+  background-color: #F3F3F3;
+  font-family: "Heebo", open sans-serif;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  color: #1A15EF;
+  font-weight: 600;
+  font-size: 1.602em;
+  line-height: 2.031em;
+}
+
+p {
+  color: #0A087A;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.269em;
+}
+
+img {
+  width: 100%;
+}
+
+.main {
+  padding: 0% 5% 0% 5%;
+}
+
+.option {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.option__linklogin, .option__linkregister {
+  font-weight: 500;
+  font-size: 1.125em;
+  border-radius: 0.625em;
+  padding: 16px 33px;
+}
+
+.option__linklogin {
+  background-color: #F3F3F3;
+  color: #1A15EF;
+  border-style: solid;
+  border-width: 0.063em;
+}
+
+.option__linkregister {
+  background-color: #1A15EF;
+  color: #F3F3F3;
+}
+/*# sourceMappingURL=index.css.map */
