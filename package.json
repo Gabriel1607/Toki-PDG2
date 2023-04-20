@@ -1,0 +1,28 @@
+{
+  "name": "toki-pdg2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "firebase": "^9.20.0",
+    "parcel": "^2.8.3"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3"
+  },
+  "scripts": {
+    "dev": "parcel ./*.html",
+    "build": "parcel build --public-url ./ ./*.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gabriel1607/Toki-PDG2.git"
+  },
+  "author": "Gabriel Mora",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gabriel1607/Toki-PDG2/issues"
+  },
+  "homepage": "https://github.com/Gabriel1607/Toki-PDG2#readme"
+}
