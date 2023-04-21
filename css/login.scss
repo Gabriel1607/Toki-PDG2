@@ -46,6 +46,10 @@ p{
 }
 
 .login {
+    &__image{
+        justify-content: center;
+    }
+
     &__input{
         background-color: $tokiWhite;
         color: $primary500;

@@ -36,6 +36,10 @@ p {
   line-height: 1.269em;
 }
 
+.login__image {
+  justify-content: center;
+}
+
 .login__input {
   color: #1a15ef;
   width: 100%;
