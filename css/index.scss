@@ -5,6 +5,12 @@ $tokiWhite: #F3F3F3;
 $bodySize: 1em;
 $h1Size: 1.602em;
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html, body {
     background-color: $tokiWhite;
     font-family: $heeboFont;

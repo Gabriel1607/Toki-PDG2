@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #f3f3f3;
+  font-family: Heebo, open sans-serif;
+}
+
+body {
+  padding: 0% 5%;
+}
+
+.flex {
+  align-items: center;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  color: #1a15ef;
+  font-size: 1.425em;
+  font-weight: 500;
+  line-height: 1.806em;
+}
+
+p {
+  color: #0a087a;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.269em;
+}
+
+.login__input {
+  color: #1a15ef;
+  width: 100%;
+  background-color: #f3f3f3;
+  border-width: .063em;
+  border-color: #1a15ef;
+  border-radius: .625em;
+  padding: 16px 24px;
+  font-size: .888em;
+}
+
+.login__submit {
+  color: #f3f3f3;
+  width: 100%;
+  background-color: #1a15ef;
+  border-radius: .625em;
+  padding: 16px 24px;
+  font-size: 1.125em;
+  font-weight: 500;
+}
+
+.login__psmall {
+  font-size: .888em;
+}
+
+.login__linkAccount {
+  font-size: 1em;
+}
+
+.login__p {
+  justify-content: center;
+}
+
+/*# sourceMappingURL=login.83498378.css.map */

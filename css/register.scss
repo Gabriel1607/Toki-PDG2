@@ -1,0 +1,89 @@
+$heeboFont: "Heebo", open sans-serif;
+$primary500: #1A15EF;
+$primary800: #0A087A;
+$tokiWhite: #F3F3F3;
+$bodySize: 1em;
+$h2Size: 1.425em;
+$captionSize: 0.888em;
+$subtitleSize: 1.125em;
+$h3Size:1.269em;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: $tokiWhite;
+    font-family: $heeboFont;
+}
+
+body{
+    padding: 0% 5% 0% 5%;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+h2{
+    color:$primary500;
+    font-weight: 500;
+    font-size: $h2Size;
+    line-height: 1.806em;
+}
+
+h3{
+    color: $primary800;
+    font-weight: 500;
+    font-size: $h3Size;
+}
+
+p{
+    color:$primary800;
+    font-weight: 400;
+    font-size: $bodySize;
+    line-height: 1.269em;
+}
+
+
+.register {
+    &__input{
+        background-color: $tokiWhite;
+        color: $primary500;
+        font-size: $captionSize;
+        border-color: $primary500;
+        border-width: 0.063em;
+        border-radius: 0.625em;
+        padding: 16px 24px;
+        width: 100%;
+    }
+
+    &__submit{
+        background-color: $primary500;
+        color: $tokiWhite;
+        font-size: $subtitleSize;
+        font-weight: 500;
+        border-radius: 0.625em;
+        padding: 16px 24px;
+        width: 100%;
+    }
+
+    &__psmall{
+        font-size: $captionSize;
+    }
+
+    &__linkAccount{
+        font-size: $bodySize;
+    }
+
+    &__p {
+        justify-content: center;
+    }
+}

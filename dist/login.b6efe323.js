@@ -1892,7 +1892,7 @@ parcelHelpers.export(exports, "validateCallback", ()=>validateCallback);
 parcelHelpers.export(exports, "validateContextObject", ()=>validateContextObject);
 parcelHelpers.export(exports, "validateIndexedDBOpenable", ()=>validateIndexedDBOpenable);
 parcelHelpers.export(exports, "validateNamespace", ()=>validateNamespace);
-var process = require("c64b4bfd082886ab");
+var process = require("3aef7a8b1b72cea6");
 var global = arguments[3];
 const CONSTANTS = {
     /**
@@ -3590,7 +3590,7 @@ function indicator(i) {
     else return service;
 }
 
-},{"c64b4bfd082886ab":"d5jf4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"d5jf4":[function(require,module,exports) {
+},{"3aef7a8b1b72cea6":"d5jf4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"d5jf4":[function(require,module,exports) {
 // shim for using process in browser
 var process = module.exports = {};
 // cached from whatever global is present so that test runners that stub it
@@ -13807,7 +13807,7 @@ var _component = require("@firebase/component");
 var _logger = require("@firebase/logger");
 var _util = require("@firebase/util");
 var _webchannelWrapper = require("@firebase/webchannel-wrapper");
-var process = require("79d8b77422266c04");
+var process = require("aa13e2a2a9b9f1a7");
 const v = "@firebase/firestore";
 /**
  * @license
@@ -32762,7 +32762,7 @@ function kf(t, e) {
     (0, _app.registerVersion)(v, "3.10.1", "esm2017");
 }();
 
-},{"79d8b77422266c04":"d5jf4","@firebase/app":"3AcPV","@firebase/component":"bi1VB","@firebase/logger":"fZmft","@firebase/util":"ePiK6","@firebase/webchannel-wrapper":"yQiQ1","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"yQiQ1":[function(require,module,exports) {
+},{"aa13e2a2a9b9f1a7":"d5jf4","@firebase/app":"3AcPV","@firebase/component":"bi1VB","@firebase/logger":"fZmft","@firebase/util":"ePiK6","@firebase/webchannel-wrapper":"yQiQ1","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"yQiQ1":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ErrorCode", ()=>ErrorCode);
