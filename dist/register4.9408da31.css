@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #f3f3f3;
+  font-family: Heebo, open sans-serif;
+}
+
+body {
+  padding: 0% 5%;
+}
+
+.flex, h2, p {
+  justify-content: center;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  color: #1a15ef;
+  font-size: 1.425em;
+  font-weight: 500;
+  line-height: 1.806em;
+}
+
+p {
+  color: #0a087a;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.269em;
+}
+
+.register {
+  flex-direction: column;
+  display: flex;
+}
+
+.register__image {
+  margin: 0 auto;
+}
+
+.register__submit {
+  color: #f3f3f3;
+  width: 100%;
+  background-color: #1a15ef;
+  border-radius: .625em;
+  padding: 16px 24px;
+  font-size: 1.125em;
+  font-weight: 500;
+}
+
+.register__profilephoto {
+  background-color: #0ff;
+}
+
+.register__profileavatar {
+  flex-wrap: wrap;
+}
+
+.register__link {
+  justify-content: center;
+  text-decoration: underline;
+  display: flex;
+}
+
+/*# sourceMappingURL=register4.9408da31.css.map */
