@@ -21,22 +21,32 @@
                 <img src="./img/backicon.png" alt="back" class="register__backicon">
             </a>
             <img src="img/logo.png" class="register__image">
+            
             <h2 class="register__tittle">Elige una foto de perfil</h2>
             <p>¡Elige una foto que te represente!</p>
-            <div class="register__profile">
-                <input type="file" accept="image/png, image/jpeg" name="image" class="register__profilephoto">
-                <p>O elige uno de los avatares de Toki</p>
-                <div class="register__profileavatar flex">
-                    <img src="./img/logo.png">
-                    <img src="./img/logo.png">
-                    <img src="./img/logo.png">
-                    <img src="./img/logo.png">
-                    <img src="./img/logo.png">
-                    <img src="./img/logo.png">
-                </div>
+            
+            <input type="file" id="input_photo"accept="image/png, image/jpeg" name="image" class="register__inputphoto">
+            <label for="input_photo"  class="register__label">
+                <img src="./img/uploadimage.png" class="register__imagelabel">
+            </label>
+
+            <p class="register__psmall">O elige uno de los avatares de Toki</p>
+            <div class="register__chooseavatar flex">
+                <img src="./img/avatar1.png">
+                <img src="./img/avatar2.png">
+                <img src="./img/avatar3.png">
             </div>
+            <div class="register__chooseavatar flex">
+                <img src="./img/avatar4.png">
+                <img src="./img/avatar5.png">
+                <img src="./img/avatar6.png">
+            </div>
+            
             <input type="submit" value="Listo" class="register__submit">
             <br>
             <a href="./home.html" class="register__link">Omitir</a>
     </section>
+    </div>
+
+
 </body>

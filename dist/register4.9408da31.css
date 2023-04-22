@@ -5,12 +5,18 @@
 }
 
 html, body {
+  height: 100%;
   background-color: #f3f3f3;
   font-family: Heebo, open sans-serif;
 }
 
 body {
-  padding: 0% 5%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5%;
+  display: flex;
 }
 
 .flex, h2, p {
@@ -24,6 +30,7 @@ a {
 
 h2 {
   color: #1a15ef;
+  margin-bottom: .438em;
   font-size: 1.425em;
   font-weight: 500;
   line-height: 1.806em;
@@ -37,12 +44,32 @@ p {
 }
 
 .register {
+  width: 100%;
   flex-direction: column;
+  align-items: center;
   display: flex;
 }
 
+.register__backicon {
+  position: absolute;
+  left: 5%;
+}
+
+.register__image, .register__label {
+  margin: auto auto 2em;
+}
+
 .register__image {
-  margin: 0 auto;
+  margin-bottom: 2.063em;
+}
+
+.register__inputphoto {
+  opacity: 0;
+  background-color: #0ff;
+}
+
+.register__psmall {
+  margin-bottom: 1.25em;
 }
 
 .register__submit {
@@ -55,18 +82,13 @@ p {
   font-weight: 500;
 }
 
-.register__profilephoto {
-  background-color: #0ff;
-}
-
-.register__profileavatar {
+.register__chooseavatar {
   flex-wrap: wrap;
+  margin-bottom: .688em;
 }
 
 .register__link {
-  justify-content: center;
   text-decoration: underline;
-  display: flex;
 }
 
 /*# sourceMappingURL=register4.9408da31.css.map */
