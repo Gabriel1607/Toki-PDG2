@@ -6,6 +6,7 @@ import { signOut } from "firebase/auth";
 const registerUserForm = document.getElementById("registerUserForm");
 const loginUserForm = document.getElementById("loginUserForm");
 
+//REGISTER
 if(registerUserForm != null){
     registerUserForm.addEventListener("submit", async (e) =>{
       e.preventDefault();
@@ -24,14 +25,16 @@ if(registerUserForm != null){
           
           const userRegistered = await registerUser(auth, newUser);
           await addUserToDatabase(db, userRegistered.uid, newUser);
+          location.href = "./register2.html";
       }else{
-            console.log("Las contraseñas no coinciden");
+            alert("Las contraseñas no coinciden");
       }
       
   
   
     });
     }
+    //LOGIN
     if(loginUserForm != null){
         loginUserForm.addEventListener("submit", e =>{
           e.preventDefault();
@@ -41,7 +44,7 @@ if(registerUserForm != null){
           loginUser(auth, email, password);
           console.log("Entraste");
     
-           //Change according to admin status
+           //GO HOME
           onAuthStateChanged(auth, async (user) =>{
           if(user){
             const uid = user.uid;

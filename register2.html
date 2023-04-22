@@ -37,9 +37,36 @@
             <div class="register__asignature">
                 <p>Ahora vas a seleccionar las materias que has visto y registrar su nota</p>
                 <div class="register__important">
-                    <p class="register__psmall">Tranqui, para que el proceso sea más fácil, hemos preparado una guía que te indicará como descargar tus notas desde Banner. Puedes verla aquí</p>
+                    <p class="register__psmall">Tranqui, para que el proceso sea más fácil, hemos preparado una guía que te indicará como descargar tus notas desde Banner. Puedes verla 
+                        <a href="https://i.kym-cdn.com/entries/icons/original/000/027/651/maxresdefault_(33).jpg" download="">aquí</a></p>
                 </div>
-
+                <button type="button" class="collapsible">Primer semestre</button>
+                <div class="content">
+                  <div class="row flex">
+                    <div class="column flex">
+                        <p>Materia</p>
+                        <input type="checkbox" id="coe_boolean">
+                        <label for="coe_boolean"> Comunicación escrita I </label><br>
+                        <input type="checkbox" id="logica_boolean">
+                        <label for="logica_boolean"> Lógica y argumentación </label><br>
+                        <input type="checkbox" id="algebra_boolean">
+                        <label for="algebra_boolean"> Álgebra y funciones </label><br>
+                        <input type="checkbox" id="intro_boolean">
+                        <label for="intro_boolean"> Introducción al diseño </label><br>
+                        <input type="checkbox" id="bi_boolean">
+                        <label for="bi_boolean"> Diseño bidimensional </label><br>
+                    </div>
+                    <div class="column flex">
+                        <p>Nota</p>
+                        <input id="coe_nota" type="number" step="0.1" /><br>
+                        <input id="logica_nota" type="number" step="0.1" /><br>
+                        <input id="algebra_nota" type="number" step="0.1" /><br>
+                        <input id="intro_nota" type="number" step="0.1" /><br>
+                        <input id="bi_nota" type="number" step="0.1" /><br>
+                    </div>
+                </div>  
+                  
+                </div>
             </div>
             <input type="submit" value="Siguiente" class="register__submit">
         </div>

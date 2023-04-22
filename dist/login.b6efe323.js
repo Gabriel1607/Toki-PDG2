@@ -563,6 +563,7 @@ var _getUser = require("./getUser");
 var _auth1 = require("firebase/auth");
 const registerUserForm = document.getElementById("registerUserForm");
 const loginUserForm = document.getElementById("loginUserForm");
+//REGISTER
 if (registerUserForm != null) registerUserForm.addEventListener("submit", async (e)=>{
     e.preventDefault();
     const name = registerUserForm.username.value;
@@ -577,15 +578,17 @@ if (registerUserForm != null) registerUserForm.addEventListener("submit", async 
         };
         const userRegistered = await (0, _auth.registerUser)((0, _app.auth), newUser);
         await (0, _auth.addUserToDatabase)((0, _app.db), userRegistered.uid, newUser);
-    } else console.log("Las contrase\xf1as no coinciden");
+        location.href = "./register2.html";
+    } else alert("Las contrase\xf1as no coinciden");
 });
+//LOGIN
 if (loginUserForm != null) loginUserForm.addEventListener("submit", (e)=>{
     e.preventDefault();
     const email = loginUserForm.email.value;
     const password = loginUserForm.password.value;
     (0, _auth.loginUser)((0, _app.auth), email, password);
     console.log("Entraste");
-    //Change according to admin status
+    //GO HOME
     (0, _auth.onAuthStateChanged)((0, _app.auth), async (user)=>{
         if (user) {
             const uid = user.uid;
