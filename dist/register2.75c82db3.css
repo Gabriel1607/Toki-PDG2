@@ -29,6 +29,12 @@ h2 {
   line-height: 1.806em;
 }
 
+h3 {
+  color: #0a087a;
+  font-size: 1.269em;
+  font-weight: 500;
+}
+
 p {
   color: #0a087a;
   font-size: 1em;
@@ -36,11 +42,17 @@ p {
   line-height: 1.269em;
 }
 
-.login__image {
-  justify-content: center;
+.register__submit {
+  color: #f3f3f3;
+  width: 100%;
+  background-color: #1a15ef;
+  border-radius: .625em;
+  padding: 16px 24px;
+  font-size: 1.125em;
+  font-weight: 500;
 }
 
-.login__input {
+.register__select {
   color: #1a15ef;
   width: 100%;
   background-color: #f3f3f3;
@@ -51,26 +63,22 @@ p {
   font-size: .888em;
 }
 
-.login__submit {
-  color: #f3f3f3;
-  width: 100%;
-  background-color: #1a15ef;
-  border-radius: .625em;
-  padding: 16px 24px;
-  font-size: 1.125em;
-  font-weight: 500;
+.register__important {
+  background-color: #d1d0fc;
+  border-radius: .5em;
+  padding: 10px;
 }
 
-.login__psmall {
+.register__psmall {
   font-size: .888em;
 }
 
-.login__linkAccount {
+.register__linkAccount {
   font-size: 1em;
 }
 
-.login__p {
+.register__p {
   justify-content: center;
 }
 
-/*# sourceMappingURL=login.83498378.css.map */
+/*# sourceMappingURL=register2.75c82db3.css.map */
