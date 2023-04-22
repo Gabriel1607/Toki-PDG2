@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-  padding: 0 5%;
+  padding: 0% 5%;
 }
 
 .flex {
@@ -29,6 +29,12 @@ h2 {
   line-height: 1.806em;
 }
 
+h3 {
+  color: #0a087a;
+  font-size: 1.269em;
+  font-weight: 500;
+}
+
 p {
   color: #0a087a;
   font-size: 1em;
@@ -36,36 +42,17 @@ p {
   line-height: 1.269em;
 }
 
-.login__image {
+.register__image {
   margin: auto;
   display: block;
 }
 
-.login__head * {
+.register__head * {
   align-items: center;
   display: flex;
 }
 
-.login__head {
-  margin-bottom: 1.25em;
-}
-
-.login__form * {
-  margin-bottom: 1.375em;
-}
-
-.login__input {
-  color: #1a15ef;
-  width: 100%;
-  background-color: #f3f3f3;
-  border-width: .063em;
-  border-color: #1a15ef;
-  border-radius: .625em;
-  padding: 16px 24px;
-  font-size: .888em;
-}
-
-.login__submit {
+.register__submit {
   color: #f3f3f3;
   width: 100%;
   background-color: #1a15ef;
@@ -75,17 +62,14 @@ p {
   font-weight: 500;
 }
 
-.login__psmall {
+.register__important {
+  background-color: #d1d0fc;
+  border-radius: .5em;
+  padding: 10px;
+}
+
+.register__psmall {
   font-size: .888em;
 }
 
-.login__linkAccount {
-  font-size: 1em;
-}
-
-.login__p {
-  justify-content: center;
-  margin-top: 1.375em;
-}
-
-/*# sourceMappingURL=login.83498378.css.map */
+/*# sourceMappingURL=register3.69a86fdd.css.map */

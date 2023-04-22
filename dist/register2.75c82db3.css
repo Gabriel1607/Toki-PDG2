@@ -38,6 +38,11 @@ p {
   line-height: 1.269em;
 }
 
+.register__image {
+  margin: auto;
+  display: block;
+}
+
 .register__submit {
   color: #f3f3f3;
   width: 100%;

@@ -42,6 +42,20 @@ p {
   line-height: 1.269em;
 }
 
+.register__image {
+  margin: auto;
+  display: block;
+}
+
+.register__head * {
+  align-items: center;
+  display: flex;
+}
+
+.register__form * {
+  margin-bottom: 1.375em;
+}
+
 .register__input {
   color: #1a15ef;
   width: 100%;
@@ -73,6 +87,7 @@ p {
 
 .register__p {
   justify-content: center;
+  margin-bottom: 1.375em;
 }
 
 /*# sourceMappingURL=register.b04a814d.css.map */
