@@ -69,6 +69,30 @@ p,th{
     flex-direction: column;
     gap: 1px;
 }
+.collapsible{
+        width: 100%;
+        padding: 8px 8px 8px 32px;
+        text-align: left;
+        color:$primary500;
+        font-weight: 400;
+        font-size: $bodySize;
+        line-height: 1.269em;
+        background: $tokiWhite url("../img/chevronRight.png");
+        background-position: 8px 6px;
+        background-repeat: no-repeat;
+        border-style: none;
+}
+  
+  .collapsible.active {
+    background: $tokiWhite url("../img/chevronDown.png");
+    background-position: 8px 6px;
+    background-repeat: no-repeat;
+  }
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
 .register {
     &__image{
         display: block;

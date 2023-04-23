@@ -58,6 +58,28 @@ p, th {
   gap: 1px;
 }
 
+.collapsible {
+  width: 100%;
+  text-align: left;
+  color: #1a15ef;
+  background: #f3f3f3 url("chevronRight.688f166e.png") 8px 6px no-repeat;
+  border-style: none;
+  padding: 8px 8px 8px 32px;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.269em;
+}
+
+.collapsible.active {
+  background: #f3f3f3 url("chevronDown.81da656a.png") 8px 6px no-repeat;
+}
+
+.content {
+  max-height: 0;
+  transition: max-height .2s ease-out;
+  overflow: hidden;
+}
+
 .register__image {
   margin: auto;
   display: block;
