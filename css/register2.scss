@@ -2,6 +2,7 @@ $heeboFont: "Heebo", open sans-serif;
 $primary100: #D1D0FC;
 $primary500: #1A15EF;
 $primary800: #0A087A;
+$gray2: #7B7B7B;
 $tokiWhite: #F3F3F3;
 $bodySize: 1em;
 $h2Size: 1.425em;
@@ -29,7 +30,19 @@ body{
     align-items: center;
 }
 
+table{
+    table-layout: auto;
+  width: 100%;
+}
 
+th {
+    text-align: left;
+  }
+
+td{
+font-size: $captionSize;
+color: $gray2;
+}
 
 h2{
     color:$primary500;
@@ -44,14 +57,42 @@ h3{
     font-size: $h3Size;
 }
 
-p{
+p,th{
     color:$primary800;
     font-weight: 400;
     font-size: $bodySize;
     line-height: 1.269em;
 }
 
-
+.column{
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 1px;
+}
+.collapsible{
+        width: 100%;
+        padding: 8px 8px 8px 32px;
+        text-align: left;
+        color:$primary500;
+        font-weight: 400;
+        font-size: $bodySize;
+        line-height: 1.269em;
+        background: $tokiWhite url("../img/chevronRight.png");
+        background-position: 8px 6px;
+        background-repeat: no-repeat;
+        border-style: none;
+}
+  
+  .collapsible.active {
+    background: $tokiWhite url("../img/chevronDown.png");
+    background-position: 8px 6px;
+    background-repeat: no-repeat;
+  }
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
 .register {
     &__image{
         display: block;

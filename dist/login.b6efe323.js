@@ -563,6 +563,33 @@ var _getUser = require("./getUser");
 var _auth1 = require("firebase/auth");
 const registerUserForm = document.getElementById("registerUserForm");
 const loginUserForm = document.getElementById("loginUserForm");
+const semestres = document.querySelectorAll("table");
+var coll = document.getElementsByClassName("collapsible");
+var i;
+//Desplegable
+for(i = 0; i < coll.length; i++)coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight) content.style.maxHeight = null;
+    else content.style.maxHeight = content.scrollHeight + "px";
+});
+//Quitar Nota si hace check a Aprobado
+semestres.forEach(function(table) {
+    table.addEventListener("click", function(event) {
+        const target = event.target;
+        if (target.matches('input[type="checkbox"]')) {
+            const notesInput = target.parentNode.nextElementSibling.querySelector(".nota");
+            const approvedCheckbox = target.parentNode.querySelector(".check");
+            if (target.checked) {
+                notesInput.disabled = true;
+                approvedCheckbox.checked = true;
+            } else {
+                notesInput.disabled = false;
+                approvedCheckbox.checked = false;
+            }
+        }
+    });
+});
 //REGISTER
 if (registerUserForm != null) registerUserForm.addEventListener("submit", async (e)=>{
     e.preventDefault();
@@ -1895,6 +1922,7 @@ parcelHelpers.export(exports, "validateCallback", ()=>validateCallback);
 parcelHelpers.export(exports, "validateContextObject", ()=>validateContextObject);
 parcelHelpers.export(exports, "validateIndexedDBOpenable", ()=>validateIndexedDBOpenable);
 parcelHelpers.export(exports, "validateNamespace", ()=>validateNamespace);
+var process = require("7c980b15fdb56214");
 var global = arguments[3];
 var process = require("3aef7a8b1b72cea6");
 const CONSTANTS = {
@@ -3593,7 +3621,7 @@ function indicator(i) {
     else return service;
 }
 
-},{"3aef7a8b1b72cea6":"d5jf4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"d5jf4":[function(require,module,exports) {
+},{"7c980b15fdb56214":"d5jf4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"d5jf4":[function(require,module,exports) {
 // shim for using process in browser
 var process = module.exports = {};
 // cached from whatever global is present so that test runners that stub it
@@ -13810,7 +13838,7 @@ var _component = require("@firebase/component");
 var _logger = require("@firebase/logger");
 var _util = require("@firebase/util");
 var _webchannelWrapper = require("@firebase/webchannel-wrapper");
-var process = require("aa13e2a2a9b9f1a7");
+var process = require("e91855bca6eb5e18");
 const v = "@firebase/firestore";
 /**
  * @license
@@ -32765,7 +32793,7 @@ function kf(t, e) {
     (0, _app.registerVersion)(v, "3.10.1", "esm2017");
 }();
 
-},{"aa13e2a2a9b9f1a7":"d5jf4","@firebase/app":"3AcPV","@firebase/component":"bi1VB","@firebase/logger":"fZmft","@firebase/util":"ePiK6","@firebase/webchannel-wrapper":"yQiQ1","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"yQiQ1":[function(require,module,exports) {
+},{"e91855bca6eb5e18":"d5jf4","@firebase/app":"3AcPV","@firebase/component":"bi1VB","@firebase/logger":"fZmft","@firebase/util":"ePiK6","@firebase/webchannel-wrapper":"yQiQ1","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"yQiQ1":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ErrorCode", ()=>ErrorCode);
