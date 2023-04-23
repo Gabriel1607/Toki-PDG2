@@ -6,6 +6,29 @@ import { signOut } from "firebase/auth";
 const registerUserForm = document.getElementById("registerUserForm");
 const loginUserForm = document.getElementById("loginUserForm");
 
+
+const semestres = document.querySelectorAll('table');
+
+
+//Quitar Nota si hace check a Aprobado
+semestres.forEach(function(table) {
+  table.addEventListener('click', function(event) {
+    const target = event.target;
+
+    if (target.matches('input[type="checkbox"]')) {
+      const notesInput = target.parentNode.nextElementSibling.querySelector('.nota');
+      const approvedCheckbox = target.parentNode.querySelector('.check');
+
+      if (target.checked) {
+        notesInput.disabled = true;
+        approvedCheckbox.checked = true;
+      } else {
+        notesInput.disabled = false;
+        approvedCheckbox.checked = false;
+      }
+    }
+  });
+});
 //REGISTER
 if(registerUserForm != null){
     registerUserForm.addEventListener("submit", async (e) =>{
