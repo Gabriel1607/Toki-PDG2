@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-  padding: 0% 5%;
+  padding: 0 5%;
 }
 
 .flex {
@@ -37,7 +37,21 @@ p {
 }
 
 .login__image {
-  justify-content: center;
+  margin: auto;
+  display: block;
+}
+
+.login__head * {
+  align-items: center;
+  display: flex;
+}
+
+.login__head {
+  margin-bottom: 1.25em;
+}
+
+.login__form * {
+  margin-bottom: 1.375em;
 }
 
 .login__input {
@@ -71,6 +85,7 @@ p {
 
 .login__p {
   justify-content: center;
+  margin-top: 1.375em;
 }
 
 /*# sourceMappingURL=login.83498378.css.map */

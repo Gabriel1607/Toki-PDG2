@@ -55,6 +55,11 @@ p{
 
 
 .register {
+    &__image{
+        display: block;
+        margin: auto;
+    }
+
     &__submit{
         background-color: $primary500;
         color: $tokiWhite;

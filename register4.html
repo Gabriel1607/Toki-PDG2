@@ -12,36 +12,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!--Styles-->
-    <link rel="stylesheet" href="./css/register.scss">
+    <link rel="stylesheet" href="./css/register4.scss">
 </head>
 
 <body>    
     <section class="register">
-        <a href="./register3.html">
-            <img src="./img/backicon.png" alt="back" class="back__icon">
-        </a>
-        <img src="img/logo.png" class="main__img">
-        <div class="register__container">
-            <div class="register__head">
-                <h2 class="register__tittle">Elige una foto de perfil</h2>
-                <p class="register__psmall">¡Elige una foto que te represente!</p>
+            <a href="./register3.html">
+                <img src="./img/backicon.png" alt="back" class="register__backicon">
+            </a>
+            <img src="img/logo.png" class="register__image">
+            
+            <h2 class="register__tittle">Elige una foto de perfil</h2>
+            <p>¡Elige una foto que te represente!</p>
+            
+            <input type="file" id="input_photo"accept="image/png, image/jpeg" name="image" class="register__inputphoto">
+            <label for="input_photo"  class="register__label">
+                <img src="./img/uploadimage.png" class="register__imagelabel">
+            </label>
+
+            <p class="register__psmall">O elige uno de los avatares de Toki</p>
+            <div class="register__chooseavatar flex">
+                <img src="./img/avatar1.png">
+                <img src="./img/avatar2.png">
+                <img src="./img/avatar3.png">
             </div>
-            <div class="register__profile">
-                <input type="file" accept="image/png, image/jpeg" name="image" class="register__profilephoto">
-                <p class="register__psmall">O elige uno de los avatares de Toki</p>
-                <div class="register__profileavatar flex">
-                    <img src="./img/logo.png">
-                    <img src="./img/logo.png">
-                    <img src="./img/logo.png">
-                    <img src="./img/logo.png">
-                    <img src="./img/logo.png">
-                    <img src="./img/logo.png">
-                </div>
+            <div class="register__chooseavatar flex">
+                <img src="./img/avatar4.png">
+                <img src="./img/avatar5.png">
+                <img src="./img/avatar6.png">
             </div>
+            
             <input type="submit" value="Listo" class="register__submit">
             <br>
-            <!--<a href="./main.html" class="register__link">Omitir</a>-->
-           
-        </div>
+            <a href="./home.html" class="register__link">Omitir</a>
     </section>
+    </div>
+
+
 </body>

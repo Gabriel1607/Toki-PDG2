@@ -1,0 +1,72 @@
+$heeboFont: "Heebo", open sans-serif;
+$primary500: #1A15EF;
+$primary800: #0A087A;
+$tokiWhite: #F3F3F3;
+$h2Size: 1.425em;
+$h3Size:1.269em;
+$subtitleSize: 1.125em;
+$bodySize: 1em;
+$captionSize: 0.888em;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: $tokiWhite;
+    font-family: $heeboFont;
+}
+
+body{
+    padding: 0% 5% 0% 5%;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.hello{
+    &__user{
+        color: $primary500;
+        font-size: $subtitleSize;
+        font-weight: 500;
+    }
+
+    &__psmall{
+        color: $primary800;
+        font-size: $captionSize;
+        font-weight: 300;
+    }
+}
+
+.recommended{
+    &__title{
+        color: $primary500;
+        font-size: $subtitleSize;
+        font-weight: 500;
+    }
+
+    &__body{
+        color: $primary800;
+        font-size: $captionSize;
+        font-weight: 300;
+    }
+}
+
+.nav{
+    background-color: $tokiWhite;
+    &__list{
+        justify-content: center;
+    }
+}
