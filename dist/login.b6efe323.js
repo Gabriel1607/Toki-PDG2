@@ -1924,6 +1924,7 @@ parcelHelpers.export(exports, "validateIndexedDBOpenable", ()=>validateIndexedDB
 parcelHelpers.export(exports, "validateNamespace", ()=>validateNamespace);
 var process = require("7c980b15fdb56214");
 var global = arguments[3];
+var process = require("3aef7a8b1b72cea6");
 const CONSTANTS = {
     /**
      * @define {boolean} Whether this is the client Node.js SDK.
