@@ -1,0 +1,46 @@
+$heeboFont: "Heebo", open sans-serif;
+$tokiWhite: #F3F3F3;
+$h2Size: 1.425em;
+$subtitleSize: 1.125em;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: $heeboFont;
+}
+
+body{
+    background-image: url('../img/abouttoki1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 15% 5%;
+}
+
+h2{
+    color:$tokiWhite;
+    font-weight: 500;
+    font-size: $h2Size;
+    line-height: 1.806em;
+    margin-bottom: -0.625em;
+}
+
+.main{
+    margin-bottom: 100%;
+    
+    &__logo{
+        margin-bottom: -0.625em;
+        margin-top: 0.625em;
+    }
+}
+
+.info{
+    &__subtitle{
+        color:$tokiWhite;
+        font-weight: 500;
+        font-size: $subtitleSize;
+    }
+}

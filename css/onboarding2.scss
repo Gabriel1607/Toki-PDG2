@@ -1,0 +1,84 @@
+$heeboFont: "Heebo", open sans-serif;
+$tokiWhite: #F3F3F3;
+$secondary500: #FFBB29;
+$primary800: #0A087A;
+$h3Size:1.269em;
+$subtitleSize: 1.125em;
+$bodySize: 1em;
+$captionSize: 0.888em;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: $heeboFont;
+}
+
+body{
+    background: $primary800;
+    padding: 10% 5%;
+}
+
+img{
+    margin-bottom: 0.625em;
+}
+
+h3{
+    color:$tokiWhite;
+    font-weight: 500;
+    font-size: $h3Size;
+    margin-bottom: -0.313em;
+}
+
+.main{
+    margin-bottom: 110%;
+    
+    &__psmall{
+        color:$tokiWhite;
+        font-weight: 300;
+        font-size: $captionSize;
+    }
+
+    &__highlight{
+        color:$secondary500;
+    }
+}
+
+ul {
+    margin-bottom: 0.313em;
+    margin-top: 0.313em;
+    list-style: none;
+
+    li {
+      position: relative;
+      padding-left: 20px;
+      
+      &:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: $secondary500;
+      }
+    }
+}
+
+.info{
+    &__psmall{
+        color:$tokiWhite;
+        font-weight: 300;
+        font-size: $captionSize;
+    }
+
+    &__highlight{
+        color:$secondary500;
+    }
+
+    &__item{
+        color:$tokiWhite;
+        font-weight: 400;
+        font-size: $bodySize;
+    }
+}
