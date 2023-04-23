@@ -18,6 +18,10 @@ body {
   display: flex;
 }
 
+input[type="number"] {
+  width: 20%;
+}
+
 h2 {
   color: #1a15ef;
   font-size: 1.425em;

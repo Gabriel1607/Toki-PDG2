@@ -29,7 +29,9 @@ body{
     align-items: center;
 }
 
-
+input[type='number']{
+    width: 20%;
+} 
 
 h2{
     color:$primary500;
