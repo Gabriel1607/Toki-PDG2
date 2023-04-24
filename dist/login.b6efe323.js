@@ -560,10 +560,12 @@ function hmrAccept(bundle, id) {
 var _app = require("./app");
 var _auth = require("../functions/auth");
 var _getUser = require("./getUser");
-var _auth1 = require("firebase/auth");
-const registerUserForm = document.getElementById("registerUserForm");
+const registerUserForm1 = document.getElementById("registerUserForm");
+const registerUserForm2 = document.getElementById("registerUserForm2");
 const loginUserForm = document.getElementById("loginUserForm");
-const semestres = document.querySelectorAll("table");
+const semestre = document.getElementById("semester");
+const notas_semestres = document.querySelectorAll("table");
+let isLogged = false;
 var coll = document.getElementsByClassName("collapsible");
 var i;
 //Desplegable
@@ -574,14 +576,16 @@ for(i = 0; i < coll.length; i++)coll[i].addEventListener("click", function() {
     else content.style.maxHeight = content.scrollHeight + "px";
 });
 //Quitar Nota si hace check a Aprobado
-semestres.forEach(function(table) {
+notas_semestres.forEach(function(table) {
     table.addEventListener("click", function(event) {
         const target = event.target;
         if (target.matches('input[type="checkbox"]')) {
+            console.log(location.href == "./register2.html");
             const notesInput = target.parentNode.nextElementSibling.querySelector(".nota");
             const approvedCheckbox = target.parentNode.querySelector(".check");
             if (target.checked) {
                 notesInput.disabled = true;
+                notesInput.value = "";
                 approvedCheckbox.checked = true;
             } else {
                 notesInput.disabled = false;
@@ -590,13 +594,50 @@ semestres.forEach(function(table) {
         }
     });
 });
-//REGISTER
-if (registerUserForm != null) registerUserForm.addEventListener("submit", async (e)=>{
+//Subir cada nota y aprobado a Firebase
+// Initialize an empty object to store the student data
+if (registerUserForm2) registerUserForm2.addEventListener("submit", function(e) {
     e.preventDefault();
-    const name = registerUserForm.username.value;
-    const repassword = registerUserForm.repassword.value;
-    const email = registerUserForm.email.value;
-    const password = registerUserForm.password.value;
+    const studentData = {
+        semestre: "",
+        notas: {},
+        aprobado: {}
+    };
+    notas_semestres.forEach((table)=>{
+        // Get all the rows in this table
+        const rows = table.querySelectorAll("tbody tr");
+        // Loop through each row and extract the data
+        rows.forEach((row)=>{
+            // Get the subject name from the row's first cell
+            const subject = row.querySelector(".materia").textContent;
+            // Get the grade from the row's notes input field
+            const grade = parseFloat(row.querySelector(".nota").value);
+            // Get the approved status from the row's approved checkbox
+            const approved = row.querySelector(".check").checked;
+            // Add the subject, grade, and approved status to the studentData object
+            if (!isNaN(grade)) studentData.notas[subject] = grade;
+            if (approved) studentData.aprobado[subject] = approved;
+        });
+        studentData.semestre = semestre.value;
+        (0, _auth.onAuthStateChanged)((0, _app.auth), async (user)=>{
+            if (user) {
+                if (!isLogged) {
+                    const uid = user.uid;
+                    await (0, _getUser.updateUserData)((0, _app.db), uid, studentData);
+                    isLogged = true;
+                }
+                location.href = "./register3.html";
+            }
+        });
+    });
+});
+//REGISTER
+if (registerUserForm1 != null) registerUserForm1.addEventListener("submit", async (e)=>{
+    e.preventDefault();
+    const name = registerUserForm1.username.value;
+    const repassword = registerUserForm1.repassword.value;
+    const email = registerUserForm1.email.value;
+    const password = registerUserForm1.password.value;
     if (password === repassword) {
         const newUser = {
             name,
@@ -617,17 +658,11 @@ if (loginUserForm != null) loginUserForm.addEventListener("submit", (e)=>{
     console.log("Entraste");
     //GO HOME
     (0, _auth.onAuthStateChanged)((0, _app.auth), async (user)=>{
-        if (user) {
-            const uid = user.uid;
-            let userLogged = [];
-            const firebaseUser = await (0, _getUser.getUser)(uid);
-            userLogged = firebaseUser;
-            location.href = "./home.html";
-        }
+        if (user) location.href = "./home.html";
     });
 });
 
-},{"./app":"bAabt","../functions/auth":"cEvP7","./getUser":"f6zaq","firebase/auth":"79vzg"}],"bAabt":[function(require,module,exports) {
+},{"./app":"bAabt","../functions/auth":"cEvP7","./getUser":"f6zaq"}],"bAabt":[function(require,module,exports) {
 // Import the functions you need from the SDKs you need
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -1922,8 +1957,8 @@ parcelHelpers.export(exports, "validateCallback", ()=>validateCallback);
 parcelHelpers.export(exports, "validateContextObject", ()=>validateContextObject);
 parcelHelpers.export(exports, "validateIndexedDBOpenable", ()=>validateIndexedDBOpenable);
 parcelHelpers.export(exports, "validateNamespace", ()=>validateNamespace);
-var process = require("7c980b15fdb56214");
 var global = arguments[3];
+var process = require("7c980b15fdb56214");
 const CONSTANTS = {
     /**
      * @define {boolean} Whether this is the client Node.js SDK.
@@ -38167,6 +38202,7 @@ parcelHelpers.export(exports, "registerUser", ()=>registerUser);
 parcelHelpers.export(exports, "loginUser", ()=>loginUser);
 parcelHelpers.export(exports, "addUserToDatabase", ()=>addUserToDatabase);
 parcelHelpers.export(exports, "onAuthStateChanged", ()=>(0, _auth.onAuthStateChanged));
+parcelHelpers.export(exports, "getAuth", ()=>(0, _auth.getAuth));
 var _auth = require("firebase/auth");
 var _firestore = require("firebase/firestore");
 async function registerUser(auth, { email , password  }) {
@@ -38182,7 +38218,7 @@ async function registerUser(auth, { email , password  }) {
 }
 async function loginUser(auth, email, password) {
     try {
-        const { user  } = await (0, _auth.signInWithEmailAndPassword)(auth, email, password);
+        const { user  } = await signInWithEmailAndPassword(auth, email, password);
         console.log(user);
     } catch (e) {
         alert("Usuario o contrase\xf1a inv\xe1lido");
@@ -38200,6 +38236,7 @@ async function addUserToDatabase(db, userId, userInfo) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getUser", ()=>getUser);
+parcelHelpers.export(exports, "updateUserData", ()=>updateUserData);
 var _app = require("./app");
 var _firestore = require("firebase/firestore");
 async function getUser(id) {
@@ -38208,6 +38245,17 @@ async function getUser(id) {
         const docSnap = await (0, _firestore.getDoc)(docRef);
         const data = docSnap.data();
         return data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+async function updateUserData(db, uid, userData) {
+    try {
+        const userRef = (0, _firestore.doc)(db, "users", uid);
+        await (0, _firestore.setDoc)(userRef, userData, {
+            merge: true
+        });
+        console.log("User data updated successfully!");
     } catch (error) {
         console.log(error);
     }
