@@ -1,13 +1,17 @@
 import { db, auth } from "./app";
 import { loginUser, registerUser, addUserToDatabase, onAuthStateChanged } from "../functions/auth";
-import { getUser } from "./getUser";
-import { signOut } from "firebase/auth";
+import { updateUserData } from "./getUser";
 
-const registerUserForm = document.getElementById("registerUserForm");
+
+const registerUserForm1 = document.getElementById("registerUserForm");
+const registerUserForm2 = document.getElementById("registerUserForm2")
 const loginUserForm = document.getElementById("loginUserForm");
 
+const semestre =document.getElementById('semester')
+const notas_semestres = document.querySelectorAll('table');
 
-const semestres = document.querySelectorAll('table');
+let isLogged = false;
+
 var coll = document.getElementsByClassName("collapsible");
 var i;
 //Desplegable
@@ -24,16 +28,18 @@ for (i = 0; i < coll.length; i++) {
 }
 
 //Quitar Nota si hace check a Aprobado
-semestres.forEach(function(table) {
+notas_semestres.forEach(function(table) {
   table.addEventListener('click', function(event) {
     const target = event.target;
 
     if (target.matches('input[type="checkbox"]')) {
+      console.log(location.href=='./register2.html');
       const notesInput = target.parentNode.nextElementSibling.querySelector('.nota');
       const approvedCheckbox = target.parentNode.querySelector('.check');
 
       if (target.checked) {
         notesInput.disabled = true;
+        notesInput.value ="";
         approvedCheckbox.checked = true;
       } else {
         notesInput.disabled = false;
@@ -42,14 +48,63 @@ semestres.forEach(function(table) {
     }
   });
 });
+
+//Subir cada nota y aprobado a Firebase
+// Initialize an empty object to store the student data
+if (registerUserForm2) {
+  registerUserForm2.addEventListener("submit",  function(e){
+    e.preventDefault();
+  const studentData = { semestre:'', notas: {}, aprobado: {} };
+  
+  notas_semestres.forEach(table => {
+    
+    // Get all the rows in this table
+    const rows = table.querySelectorAll('tbody tr');
+  
+    // Loop through each row and extract the data
+    rows.forEach(row => {
+      // Get the subject name from the row's first cell
+      const subject = row.querySelector('.materia').textContent;
+  
+      // Get the grade from the row's notes input field
+      const grade = parseFloat(row.querySelector('.nota').value);
+  
+      // Get the approved status from the row's approved checkbox
+      const approved = row.querySelector('.check').checked;
+  
+      // Add the subject, grade, and approved status to the studentData object
+      if(!isNaN(grade)){
+        studentData.notas[subject] = grade;
+      }
+      if (approved) {
+        studentData.aprobado[subject] = approved;
+      }
+      
+    });
+    studentData.semestre = semestre.value;
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        if (!isLogged) {
+          const uid = user.uid;
+       await updateUserData(db, uid, studentData);
+        isLogged=true;
+        }
+        location.href = "./register3.html";
+      }
+    });
+  
+  });
+  });
+}
+
 //REGISTER
-if(registerUserForm != null){
-    registerUserForm.addEventListener("submit", async (e) =>{
+if(registerUserForm1 != null){
+    registerUserForm1.addEventListener("submit", async(e) =>{
       e.preventDefault();
-      const name = registerUserForm.username.value;
-      const repassword = registerUserForm.repassword.value;
-      const email = registerUserForm.email.value;
-      const password = registerUserForm.password.value;
+      const name = registerUserForm1.username.value;
+      const repassword = registerUserForm1.repassword.value;
+      const email = registerUserForm1.email.value;
+      const password = registerUserForm1.password.value;
       if (password===repassword) {
         const newUser = {
             name,
@@ -83,12 +138,7 @@ if(registerUserForm != null){
            //GO HOME
           onAuthStateChanged(auth, async (user) =>{
           if(user){
-            const uid = user.uid;
-            let userLogged = [];
-            const firebaseUser = await getUser(uid);
-            userLogged = firebaseUser;
               location.href = "./home.html";
-            
           }
         });
     

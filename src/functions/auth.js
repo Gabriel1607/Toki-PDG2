@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth} from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
 
@@ -43,5 +43,6 @@ async function registerUser(auth, {email, password}){
       registerUser,
       loginUser,
       addUserToDatabase,
-      onAuthStateChanged
+      onAuthStateChanged,
+      getAuth
   }

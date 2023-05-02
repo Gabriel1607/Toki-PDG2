@@ -27,15 +27,17 @@
             </div>
             <h3 class="register__tittle">Paso 2</h3>
             <p>Ahora unos daticos académicos:</p>
+            <form id="registerUserForm2">
             <div class="register__semester">
-                    <select class="register__select" id="semester"> 
+                    <select form="registerUserForm2" class="register__select" id="semester"> 
                         <option value="">Elige tu semestre</option>
-                        <option value="4semester">4to semestre</option>
-                        <option value="5semester">5to semestre</option>
+                        <option value="4">4to semestre</option>
+                        <option value="5">5to semestre</option>
                     </select>
             </div>
             <div class="register__asignature">
-                <p>Ahora vas a seleccionar las materias que has visto y registrar su nota</p>
+                <p>Ahora vas a seleccionar las materias que has visto y registrar su nota.</p>
+                <p>Si has visto la materia varias veces, coloca la nota más reciente.</p>
                 <div class="register__important">
                     <p class="register__psmall">Tranqui, para que el proceso sea más fácil, hemos preparado una guía que te indicará como descargar tus notas desde Banner. Puedes verla 
                         <a href="https://drive.google.com/file/d/1NrucG7e8fNmfuNzoCcCwa2qATIpsmEQ4/view?usp=sharing" target="_blank">aquí</a></p>
@@ -52,35 +54,35 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Comunicación escrita I</td> 
+                                <td class="materia">Comunicación escrita I</td> 
                                 <td><input type="checkbox" name="coe1_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Lógica y argumentación</td>
+                                <td class="materia">Lógica y argumentación</td>
                                 <td><input type="checkbox" name="logica_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Álgebra y funciones</td>
+                                <td class="materia">Álgebra y funciones</td>
                                 <td><input type="checkbox" name="algebra_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Introducción al diseño</td>
+                                <td class="materia">Introducción al diseño</td>
                                 <td><input type="checkbox" name="intro_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Diseño bidimensional</td>
+                                <td class="materia">Diseño bidimensional</td>
                                 <td><input type="checkbox" name="bi_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
@@ -102,35 +104,35 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Comunicación escrita II</td> 
+                                <td class="materia">Comunicación escrita II</td> 
                                 <td><input type="checkbox" name="coe2_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Matemáticas para el Diseño</td>
+                                <td class="materia">Matemáticas para el Diseño</td>
                                 <td><input type="checkbox" name="mate_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Diseño tridimensional</td>
+                                <td class="materia">Diseño tridimensional</td>
                                 <td><input type="checkbox" name="tri_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Teoría del color</td>
+                                <td class="materia">Teoría del color</td>
                                 <td><input type="checkbox" name="color_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Organizaciones</td>
+                                <td class="materia">Organizaciones</td>
                                 <td><input type="checkbox" name="orga_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
@@ -152,42 +154,42 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Fundamentos de Program...</td> 
+                                <td class="materia">Fundamentos de Program...</td> 
                                 <td><input type="checkbox" name="fundaprogra_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Diseño de Sonido</td>
+                                <td class="materia">Diseño de Sonido</td>
                                 <td><input type="checkbox" name="sonido_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Diagramación y Tipografía</td>
+                                <td class="materia">Diagramación y Tipografía</td>
                                 <td><input type="checkbox" name="dyt_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Fotografía</td>
+                                <td class="materia">Fotografía</td>
                                 <td><input type="checkbox" name="fotografia_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Diseño y Sociedad</td>
+                                <td class="materia">Diseño y Sociedad</td>
                                 <td><input type="checkbox" name="dys_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Electiva en Ciencias Naturales I</td>
+                                <td class="materia">Electiva en Ciencias Naturales I</td>
                                 <td><input type="checkbox" name="ecn1_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
@@ -209,42 +211,42 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Diseñando con Algoritmos</td> 
+                                <td class="materia">Diseñando con Algoritmos</td> 
                                 <td><input type="checkbox" name="algo_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Diseño 4D</td>
+                                <td class="materia">Diseño 4D</td>
                                 <td><input type="checkbox" name="4d_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Historia del Diseño y la com...</td>
+                                <td class="materia">Historia del Diseño y la com...</td>
                                 <td><input type="checkbox" name="historia_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Narración hipermedia</td>
+                                <td class="materia">Narración hipermedia</td>
                                 <td><input type="checkbox" name="narracion_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Proyecto integrador I</td>
+                                <td class="materia">Proyecto integrador I</td>
                                 <td><input type="checkbox" name="pi1_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Principios de Economía</td>
+                                <td class="materia">Principios de Economía</td>
                                 <td><input type="checkbox" name="econo_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
@@ -267,41 +269,41 @@
                         <tbody>
                             <tr>
                                 <td>Estadística y Probabilidad...</td> 
-                                <td><input type="checkbox" name="estadi_check" value="1" class="check"></td>
+                                <td class="materia"><input type="checkbox" name="estadi_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Arquitectura de la información</td>
+                                <td class="materia">Arquitectura de la información</td>
                                 <td><input type="checkbox" name="arqui_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Percepción y Cognición</td>
+                                <td class="materia">Percepción y Cognición</td>
                                 <td><input type="checkbox" name="percep_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Ecosistemas de aplicaciones</td>
+                                <td class="materia">Ecosistemas de aplicaciones</td>
                                 <td><input type="checkbox" name="eco_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Competencias Administra...</td>
+                                <td class="materia">Competencias Administra...</td>
                                 <td><input type="checkbox" name="cab_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Electiva en Ciencias Naturales II</td>
+                                <td class="materia">Electiva en Ciencias Naturales II</td>
                                 <td><input type="checkbox" name="ecn2_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
@@ -323,42 +325,42 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Programación Web</td> 
+                                <td class="materia">Programación Web</td> 
                                 <td><input type="checkbox" name="web_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Arte y tecnología</td>
+                                <td class="materia">Arte y tecnología</td>
                                 <td><input type="checkbox" name="ayt_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Interacción Hombre-Com...</td>
+                                <td class="materia">Interacción Hombre-Com...</td>
                                 <td><input type="checkbox" name="hci_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Investigación en Diseño</td>
+                                <td class="materia">Investigación en Diseño</td>
                                 <td><input type="checkbox" name="inves_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Electiva en Ciencia, tecno...</td>
+                                <td class="materia">Electiva en Ciencia, tecno...</td>
                                 <td><input type="checkbox" name="cts_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Electiva en Humanidades ... I</td>
+                                <td class="materia">Electiva en Humanidades ... I</td>
                                 <td><input type="checkbox" name="hum1_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
@@ -380,42 +382,42 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Interacción Sociotecnológica</td> 
+                                <td class="materia">Interacción Sociotecnológica</td> 
                                 <td><input type="checkbox" name="socio_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Proyecto Integrador II</td>
+                                <td class="materia">Proyecto Integrador II</td>
                                 <td><input type="checkbox" name="pi2_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Profesional electiva I</td>
+                                <td class="materia">Profesional electiva I</td>
                                 <td><input type="checkbox" name="profe1_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Espíritu empresarial de base...</td>
+                                <td class="materia">Espíritu empresarial de base...</td>
                                 <td><input type="checkbox" name="espiritu_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Liderazgo</td>
+                                <td class="materia">Liderazgo</td>
                                 <td><input type="checkbox" name="lider_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Electiva en Humanidades ... II</td>
+                                <td class="materia">Electiva en Humanidades ... II</td>
                                 <td><input type="checkbox" name="hum2_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
@@ -437,35 +439,35 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Proyecto de Grado I</td> 
+                                <td class="materia">Proyecto de Grado I</td> 
                                 <td><input type="checkbox" name="pdg1_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Profesional electiva II</td>
+                                <td class="materia">Profesional electiva II</td>
                                 <td><input type="checkbox" name="profe2_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Gestión de Proyectos</td>
+                                <td class="materia">Gestión de Proyectos</td>
                                 <td><input type="checkbox" name="gestion_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Plan de Negocio de base...</td>
+                                <td class="materia">Plan de Negocio de base...</td>
                                 <td><input type="checkbox" name="hum3_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Electiva en Humanidades ... III</td>
+                                <td class="materia">Electiva en Humanidades ... III</td>
                                 <td><input type="checkbox" name="bi_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
@@ -487,35 +489,35 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Proyecto de Grado II</td> 
+                                <td class="materia">Proyecto de Grado II</td> 
                                 <td><input type="checkbox" name="pdg2_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Profesional electiva III</td>
+                                <td class="materia">Profesional electiva III</td>
                                 <td><input type="checkbox" name="profe3_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Fundamentos de Derecho...</td>
+                                <td class="materia">Fundamentos de Derecho...</td>
                                 <td><input type="checkbox" name="derecho_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Electiva en Ética</td>
+                                <td class="materia">Electiva en Ética</td>
                                 <td><input type="checkbox" name="etica_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Electiva en Humanidades ... IV</td>
+                                <td class="materia">Electiva en Humanidades ... IV</td>
                                 <td><input type="checkbox" name="hum4_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
@@ -537,14 +539,14 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Práctica Empresarial</td> 
+                                <td class="materia">Práctica Empresarial</td> 
                                 <td><input type="checkbox" name="practica_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Fundamentos jurídicos de...</td> 
+                                <td class="materia">Fundamentos jurídicos de...</td> 
                                 <td><input type="checkbox" name="propiedad_check" value="1" class="check"></td>
                                 <td>
                                     <input type="number" min="1" max="5" step="0.1" placeholder="Nota" class="nota">
@@ -552,10 +554,12 @@
                             </tr>
                         </tbody>
                     </table>
-                  
                 </div>
-            </div>
-            <input type="submit" value="Siguiente" class="register__submit">
+            
+                <input type="submit" value="Siguiente" class="register__submit">
+        </div>
+    </form> 
+        
         </div>
     </section>
     <script src="/login.b6efe323.js" defer=""></script>
