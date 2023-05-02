@@ -1,0 +1,52 @@
+$heeboFont: "Heebo", open sans-serif;
+$primary100: #D1D0FC;
+$primary300: #7573F5;
+$primary500: #1A15EF;
+$primary600: #110ECB;
+$primary800: #0A087A;
+$secondary300: #FFD67E;
+$secondary600: #F7A800;
+$terciary300: #FF7393;
+$terciary600: #E60036;
+$gray1: #D9D9D9;
+$tokiWhite: #F3F3F3;
+$h2Size: 1.425em;
+$subtitleSize: 1.125em;
+$bodySize: 1em;
+$captionSize: 0.888em;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: $tokiWhite;
+    font-family: $heeboFont;
+}
+
+body{
+    padding: 5%;
+}
+
+.flex {
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+}
+
+.profile{
+    &__title{
+        color:$primary500;
+        font-weight: 500;
+        font-size: $subtitleSize;
+    }
+
+    &__container{
+        background-color: $primary100;
+        border-radius: 1em;
+    }
+}
