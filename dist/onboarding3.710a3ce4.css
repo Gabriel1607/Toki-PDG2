@@ -9,7 +9,9 @@ html, body {
 }
 
 body {
-  background: #0a087a;
+  background-image: url("abouttoki3.195fa4e6.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 10% 5%;
 }
 

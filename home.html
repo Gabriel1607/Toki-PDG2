@@ -18,41 +18,65 @@
 <body>
     <!--header-->
     <header class="header flex">
-        <img src="./img/logo.png" class="header__image">
-        CAMPANA NOTIFICACION
+        <img src="./img/logo.png" class="header__logo">
+        <img src="./img/bellIcon.png" class="header__image">
     </header>
 
-    <section class="hello">
+
+    <div class="hello">
         <p class="hello__user">¡Hola, User</p>
         <p class="hello__psmall">¡Hola, User</p>
-    </section>
-
-    <div class="recommended">
-        <p class="recommended__title">Ideal para ti</p>
-        <p class="recommended__body">Según tus gustos y proceso académico te recomendamos estos recursos para que potencies tu camino profesional.</p>
     </div>
 
+
+    <section class="recommended">
+        <p class="recommended__title">Ideal para ti</p>
+        <p class="recommended__body">Según tus gustos y proceso académico te recomendamos estos recursos para que potencies tu camino profesional.</p>
+        
+        <div class="recommended__cardlist">
+            <div class="recommended__card">
+                <img src="https://www.labiznagadigital.es/wp-content/uploads/2021/07/figma-que-es-1024x576.png" class="recommended__image">
+                <p class="recommended__subtitle">Titulo</p>
+                <p class="recommended__psmall">Decripción del contenido recomendado</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="profile">
+        <p class="profile__title">Explora estos perfiles</p>
+        <p class="profile__body">Perfiles que se ajustan a tus competencias, perfiles en tendencia y mucho más.</p>
+        
+        <div class="profile__cardlist">
+            <div class="profile__card">
+                <img src="https://cdn-employer-wp.arc.dev/wp-content/uploads/2022/04/good-software-developer-1128x635.jpg" class="profile__image">
+                <p class="profile__subtitle">Titulo del perfil</p>
+            </div>
+        </div>
+    </section>
+
+
     <!--menu abajo-->
-    <nav class="nav flex">    
+    <nav class="nav">    
         <ul class="nav__list flex">
             <li class="nav__item">
                 <a href="#">
-                    <img src="./img/logo.png" alt="bag" class="nav__icon">
+                    <img src="./img/homeSelect.png" alt="bag" class="nav__icon">
                 </a>
             </li>
             <li class="nav__item">
                 <a href="#">
-                    <img src="./img/logo.png" alt="profile" class="nav__icon">
+                    <img src="./img/competencies.png" alt="profile" class="nav__icon">
                 </a>
             </li>
             <li class="nav__item">
                 <a href="#">
-                    <img src="./img/logo.png" alt="profile" class="nav__icon">
+                    <img src="./img/asignature.png" alt="profile" class="nav__icon">
                 </a>
             </li>
             <li class="nav__item">
                 <a href="#">
-                    <img src="./img/logo.png" alt="profile" class="nav__icon">
+                    <img src="./img/profile.png" alt="profile" class="nav__icon">
                 </a>
             </li>
         </ul>

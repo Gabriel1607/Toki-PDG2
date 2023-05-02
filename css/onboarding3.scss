@@ -18,7 +18,9 @@ html, body {
 }
 
 body{
-    background: $primary800;
+    background-image: url('../img/abouttoki3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 10% 5%;
 }
 

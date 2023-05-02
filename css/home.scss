@@ -36,7 +36,19 @@ ul{
     list-style: none;
 }
 
+.header{
+    padding-top: 5%;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 10%;
+
+    &__logo{
+        width: 30%;
+    }    
+}
+
 .hello{
+    padding-bottom: 5%;
     &__user{
         color: $primary500;
         font-size: $subtitleSize;
@@ -51,6 +63,33 @@ ul{
 }
 
 .recommended{
+    padding-bottom: 5%;
+    &__title{
+        color: $primary500;
+        font-size: $subtitleSize;
+        font-weight: 500;
+    }
+
+    &__body, &__psmall{
+        color: $primary800;
+        font-size: $captionSize;
+        font-weight: 300;
+    }
+
+    &__image{
+        width: 100%;
+        border-radius: 1em;
+    }
+
+    &__subtitle{
+        color: $primary800;
+        font-size: $subtitleSize;
+        font-weight: 500;
+    }
+}
+
+.profile{
+    padding-bottom: 5%;
     &__title{
         color: $primary500;
         font-size: $subtitleSize;
@@ -62,11 +101,30 @@ ul{
         font-size: $captionSize;
         font-weight: 300;
     }
+
+    &__image{
+        width: 100%;
+        border-radius: 1em;
+    }
+
+    &__subtitle{
+        color: $primary800;
+        font-size: $subtitleSize;
+        font-weight: 500;
+    }
 }
 
 .nav{
     background-color: $tokiWhite;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
     &__list{
         justify-content: center;
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 0.75em;
     }
 }
