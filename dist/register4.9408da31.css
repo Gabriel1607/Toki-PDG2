@@ -83,7 +83,8 @@ p {
 }
 
 .register__chooseavatar {
-  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
   margin-bottom: .688em;
 }
 

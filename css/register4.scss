@@ -92,7 +92,8 @@ p{
     }
     
     &__chooseavatar{
-        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-evenly;
         margin-bottom: 0.688em;
     }
 
