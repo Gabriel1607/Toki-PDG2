@@ -1,5 +1,6 @@
 $heeboFont: "Heebo", open sans-serif;
 $primary100: #D1D0FC;
+$primary200: #A3A1F9;
 $primary500: #1A15EF;
 $primary800: #0A087A;
 $tokiWhite: #F3F3F3;
@@ -52,7 +53,43 @@ p{
     font-size: $bodySize;
     line-height: 1.269em;
 }
+.tabcontent{
+    flex-direction: row;
+    flex-wrap: wrap;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+   &__image{
+    padding: 3%;
+   } 
+}
+.tab {
+    overflow: hidden;
+    background-color: $primary100;
+    justify-content: space-evenly;
+    margin-top: 2%;
+    &__links{
+        font-size: $captionSize;
+        color:$primary800;
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 10.5px;
+        transition: 0.3s;
+        
+    }
+  
+  }
 
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  .active{
+        background-color: $primary200;
+  }
+  
+  
 .register{
     &__image{
         display: block;

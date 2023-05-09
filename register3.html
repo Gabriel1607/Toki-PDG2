@@ -31,11 +31,76 @@
             <div class="register__important">
                 <p class="register__psmall">Usa las pestañas de abajo para navegar entre semestres y selecciona entre 2 y 5 materias para poder continuar.</p>
             </div>
-            <div class="register__asginaturefav">
-                <h4> IMAGENES BONITAS DE LAS MATERIAS</h4>
-            </div>
+            <div class="tab flex">
+                <button class="tab__links" onclick="openSemester(event, '1semester')">1°</button>
+                <button class="tab__links" onclick="openSemester(event, '2semester')">2°</button>
+                <button class="tab__links" onclick="openSemester(event, '3semester')">3°</button>
+                <button class="tab__links" onclick="openSemester(event, '4semester')">4°</button>
+                <button class="tab__links">5°</button>
+                <button class="tab__links">6°</button>
+                <button class="tab__links">7°</button>
+                <button class="tab__links">8°</button>
+                <button class="tab__links">9°</button>
+                <button class="tab__links">10°</button>
+              </div>
+              <div id="1semester" class="tabcontent flex">
+                 <img src="img/subjects/coe1_false.png" class="tabcontent__image">
+                 <img src="img/subjects/logica_false.png" class="tabcontent__image">
+                 <img src="img/subjects/algebra_false.png" class="tabcontent__image">
+                 <img src="img/subjects/intro_false.png" class="tabcontent__image">
+                 <img src="img/subjects/bi_false.png" class="tabcontent__image">
+              </div>
+              <div id="2semester" class="tabcontent flex">
+                <img src="img/subjects/coe2_false.png" class="tabcontent__image">
+                <img src="img/subjects/matem_false.png" class="tabcontent__image">
+                <img src="img/subjects/tri_false.png" class="tabcontent__image">
+                <img src="img/subjects/expre_false.png" class="tabcontent__image">
+                <img src="img/subjects/color_false.png" class="tabcontent__image">
+                <img src="img/subjects/orga_false.png" class="tabcontent__image">
+             </div>
+             <div id="3semester" class="tabcontent flex">
+                <img src="img/subjects/fundaprogra_false.png" class="tabcontent__image">
+                <img src="img/subjects/sonido_false.png" class="tabcontent__image">
+                <img src="img/subjects/dyt_false.png" class="tabcontent__image">
+                <img src="img/subjects/fotografia_false.png" class="tabcontent__image">
+                <img src="img/subjects/dys_false.png" class="tabcontent__image">
+                <img src="img/subjects/ecn1_false.png" class="tabcontent__image">
+             </div>
+             <div id="4semester" class="tabcontent flex">
+                <img src="img/subjects/dca_false.png" class="tabcontent__image">
+                <img src="img/subjects/4d_false.png" class="tabcontent__image">
+                <img src="img/subjects/historia_false.png" class="tabcontent__image">
+                <img src="img/subjects/narra_false.png" class="tabcontent__image">
+                <img src="img/subjects/pi1_false.png" class="tabcontent__image">
+                <img src="img/subjects/econo_false.png" class="tabcontent__image">
+             </div>
+             </div>
+              
             <input type="submit" value="Siguiente" class="register__submit">
         </div>
     </section>
+    <script>
+        //Tabs del registro 3
+function openSemester(evt, semName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tab__links");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(semName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+    </script>
     <script src="./src/scripts/login.js" type="module"></script>
 </body>
