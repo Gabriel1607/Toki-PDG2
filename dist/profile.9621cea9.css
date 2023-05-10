@@ -35,16 +35,22 @@ h2 {
 h3 {
   color: #1a15ef;
   text-align: center;
+  padding: 1em;
   font-size: 1.266em;
   font-weight: 500;
 }
 
-.profile * {
-  margin-bottom: 1.5em;
+.profile__photo {
+  width: 30%;
+  margin: auto auto 1em;
+  padding-top: 1em;
+  display: flex;
+  position: relative;
 }
 
 .profile__title {
   color: #1a15ef;
+  margin-bottom: 1.5em;
   font-size: 1.125em;
   font-weight: 500;
 }
@@ -59,6 +65,7 @@ h3 {
 .profile__container {
   background-color: #d1d0fc;
   border-radius: 1em;
+  margin-bottom: 1.5em;
 }
 
 .profile__minicardList {
@@ -70,11 +77,14 @@ h3 {
   width: 100%;
   background-color: #a3a1f9;
   border-radius: 1em;
+  margin: 1em;
+  padding: .75em 1.975em;
 }
 
 .profile__subtitle {
   color: #1a15ef;
   text-align: center;
+  padding-bottom: .5em;
   font-size: 1.125em;
   font-weight: 500;
 }
@@ -91,7 +101,10 @@ h3 {
 }
 
 .profile__p {
+  color: #a3a1f9;
   text-align: center;
+  font-size: 1em;
+  font-weight: 400;
 }
 
 .link {

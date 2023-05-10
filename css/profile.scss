@@ -56,17 +56,24 @@ h3{
     font-size: $h3Size; 
     text-align: center;
     font-weight: 500;
-}
-
-.profile *{
-    margin-bottom: 1.5em;
+    padding: 1em;
 }
 
 .profile{
+    &__photo{
+        display: flex;
+        position: relative;
+        margin: auto;
+        width: 30%;
+        margin-bottom: 1em;
+        padding-top: 1em;
+    }
+
     &__title{
         color:$primary500;
         font-weight: 500;
         font-size: $subtitleSize;
+        margin-bottom: 1.5em;
     }
 
     &__psmall{
@@ -79,6 +86,7 @@ h3{
     &__container{
         background-color: $primary100;
         border-radius: 1em;
+        margin-bottom: 1.5em;
     }
 
     &__minicardList{
@@ -91,6 +99,8 @@ h3{
         background-color: $primary200;
         width: 100%;
         border-radius: 1em;
+        margin: 1em;
+        padding: 0.75em 1.975em;
     }
 
     &__subtitle{
@@ -98,6 +108,7 @@ h3{
         font-size: $subtitleSize; 
         text-align: center;
         font-weight: 500;
+        padding-bottom: 0.5em;
     }
 
     &__number{
@@ -113,6 +124,9 @@ h3{
     }
 
     &__p{
+        color: $primary200;
+        font-size: $bodySize;
+        font-weight: 400;
         text-align: center;
     }
 }
