@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"2vPw8":[function(require,module,exports) {
+})({"dZTSd":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "3ea124616bfbc717";
+module.bundle.HMR_BUNDLE_ID = "56d3a97a3f5519db";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -556,8 +556,19 @@ function hmrAccept(bundle, id) {
     });
 }
 
-},{}],"1H4vi":[function(require,module,exports) {
+},{}],"9fFO2":[function(require,module,exports) {
+// Obtener todas las imágenes de los avatares
+const avatars = document.querySelectorAll(".register__chooseavatar img"); //contendeor de los avatares
+const selectedAvatarLabel = document.getElementById("selected_avatar"); //foto actual
+// Agregar un controlador de eventos a cada imagen de avatar
+avatars.forEach((avatar)=>{
+    avatar.addEventListener("click", ()=>{
+        const avatarSrc = avatar.getAttribute("src"); //Creo la variable
+        selectedAvatarLabel.setAttribute("src", avatarSrc); //lo cambio por el avatar qe haya elegido
+        console.log("Click en la imagen"); //para ver si funcionaba 
+    });
+});
 
-},{}]},["2vPw8","1H4vi"], "1H4vi", "parcelRequire3705")
+},{}]},["dZTSd","9fFO2"], "9fFO2", "parcelRequire3705")
 
 //# sourceMappingURL=register4.js.map
