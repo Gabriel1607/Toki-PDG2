@@ -55,8 +55,14 @@ p {
   left: 5%;
 }
 
-.register__image, .register__label {
+.register__image, .register__imageplaceholder {
   margin: auto auto 2em;
+}
+
+.register__imageplaceholder {
+  width: 12.5em;
+  object-fit: contain;
+  margin-top: 2em;
 }
 
 .register__image {
@@ -86,6 +92,10 @@ p {
   width: 100%;
   justify-content: space-evenly;
   margin-bottom: .688em;
+}
+
+.register__chooseavatar * {
+  max-width: 20%;
 }
 
 .register__link {
