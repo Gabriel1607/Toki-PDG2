@@ -54,13 +54,21 @@ p{
     line-height: 1.269em;
 }
 .tabcontent{
+    display: none;
     flex-direction: row;
     flex-wrap: wrap;
     animation: fadeEffect 1s; /* Fading effect takes 1 second */
    &__image{
     padding: 3%;
    } 
+   &__image[data-state='active'] {
+display: none;
+   }
+   &#first_semester{
+    display: block;
 }
+}
+
 .tab {
     overflow: hidden;
     background-color: $primary100;

@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #f3f3f3;
+  font-family: Heebo, open sans-serif;
+}
+
+body {
+  padding: 5%;
+}
+
+.flex {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+.profile__title {
+  color: #1a15ef;
+  font-size: 1.125em;
+  font-weight: 500;
+}
+
+.profile__container {
+  background-color: #d1d0fc;
+  border-radius: 1em;
+}
+
+/*# sourceMappingURL=profile.css.map */

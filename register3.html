@@ -32,10 +32,10 @@
                 <p class="register__psmall">Usa las pestañas de abajo para navegar entre semestres y selecciona entre 2 y 5 materias para poder continuar.</p>
             </div>
             <div class="tab flex">
-                <button class="tab__links" onclick="openSemester(event, '1semester')">1°</button>
-                <button class="tab__links" onclick="openSemester(event, '2semester')">2°</button>
-                <button class="tab__links" onclick="openSemester(event, '3semester')">3°</button>
-                <button class="tab__links" onclick="openSemester(event, '4semester')">4°</button>
+                <button class="tab__links active" onclick="openSemester(event, 'first_semester')">1°</button>
+                <button class="tab__links" onclick="openSemester(event, 'second_semester')">2°</button>
+                <button class="tab__links" onclick="openSemester(event, 'third_semester')">3°</button>
+                <button class="tab__links" onclick="openSemester(event, 'fourth_semester')">4°</button>
                 <button class="tab__links">5°</button>
                 <button class="tab__links">6°</button>
                 <button class="tab__links">7°</button>
@@ -43,36 +43,41 @@
                 <button class="tab__links">9°</button>
                 <button class="tab__links">10°</button>
               </div>
-              <div id="1semester" class="tabcontent flex">
-                 <img src="img/subjects/coe1_false.png" class="tabcontent__image">
-                 <img src="img/subjects/logica_false.png" class="tabcontent__image">
-                 <img src="img/subjects/algebra_false.png" class="tabcontent__image">
-                 <img src="img/subjects/intro_false.png" class="tabcontent__image">
-                 <img src="img/subjects/bi_false.png" class="tabcontent__image">
+              <div id="first_semester" class="tabcontent flex">
+                 <img src="img/subjects/coe1_false.png" data-state="inactive" data-subject="coe1" class="tabcontent__image">
+                 <img src="img/subjects/coe1_true.png" data-state="active" data-subject="coe1" class="tabcontent__image">
+                 <img src="img/subjects/logica_false.png" data-state="inactive" data-subject="logica" class="tabcontent__image">
+                 <img src="img/subjects/logica_true.png" data-state="active" data-subject="logica" class="tabcontent__image">
+                 <img src="img/subjects/algebra_false.png" data-state="inactive" data-subject="algebra" class="tabcontent__image">
+                 <img src="img/subjects/algebra_true.png" data-state="active" data-subject="algebra" class="tabcontent__image">
+                 <img src="img/subjects/intro_false.png" data-state="inactive" data-subject="intro" class="tabcontent__image">
+                 <img src="img/subjects/intro_true.png" data-state="active" data-subject="intro" class="tabcontent__image">
+                 <img src="img/subjects/bi_false.png" data-state="inactive" data-subject="bi" class="tabcontent__image">
+                 <img src="img/subjects/bi_true.png" data-state="active" data-subject="bi" class="tabcontent__image">
               </div>
-              <div id="2semester" class="tabcontent flex">
-                <img src="img/subjects/coe2_false.png" class="tabcontent__image">
-                <img src="img/subjects/matem_false.png" class="tabcontent__image">
-                <img src="img/subjects/tri_false.png" class="tabcontent__image">
-                <img src="img/subjects/expre_false.png" class="tabcontent__image">
-                <img src="img/subjects/color_false.png" class="tabcontent__image">
-                <img src="img/subjects/orga_false.png" class="tabcontent__image">
+              <div id="second_semester" class="tabcontent flex">
+                <img src="img/subjects/coe2_false.png" data-state="inactive" data-subject="coe2" class="tabcontent__image">
+                <img src="img/subjects/matem_false.png" data-state="inactive" data-subject="matem" class="tabcontent__image">
+                <img src="img/subjects/tri_false.png" data-state="inactive" data-subject="tri" class="tabcontent__image">
+                <img src="img/subjects/expre_false.png" data-state="inactive" data-subject="expre" class="tabcontent__image">
+                <img src="img/subjects/color_false.png" data-state="inactive" data-subject="color" class="tabcontent__image">
+                <img src="img/subjects/orga_false.png" data-state="inactive" data-subject="orga" class="tabcontent__image">
              </div>
-             <div id="3semester" class="tabcontent flex">
-                <img src="img/subjects/fundaprogra_false.png" class="tabcontent__image">
-                <img src="img/subjects/sonido_false.png" class="tabcontent__image">
-                <img src="img/subjects/dyt_false.png" class="tabcontent__image">
-                <img src="img/subjects/fotografia_false.png" class="tabcontent__image">
-                <img src="img/subjects/dys_false.png" class="tabcontent__image">
-                <img src="img/subjects/ecn1_false.png" class="tabcontent__image">
+             <div id="third_semester" class="tabcontent flex">
+                <img src="img/subjects/fundaprogra_false.png" data-state="inactive" data-subject="fundaprogra" class="tabcontent__image">
+                <img src="img/subjects/sonido_false.png" data-state="inactive" data-subject="sonido" class="tabcontent__image">
+                <img src="img/subjects/dyt_false.png" data-state="inactive" data-subject="dyt" class="tabcontent__image">
+                <img src="img/subjects/fotografia_false.png" data-state="inactive" data-subject="fotografia" class="tabcontent__image">
+                <img src="img/subjects/dys_false.png" data-state="inactive" data-subject="dys" class="tabcontent__image">
+                <img src="img/subjects/ecn1_false.png" data-state="inactive" data-subject="ecn1" class="tabcontent__image">
              </div>
-             <div id="4semester" class="tabcontent flex">
-                <img src="img/subjects/dca_false.png" class="tabcontent__image">
-                <img src="img/subjects/4d_false.png" class="tabcontent__image">
-                <img src="img/subjects/historia_false.png" class="tabcontent__image">
-                <img src="img/subjects/narra_false.png" class="tabcontent__image">
-                <img src="img/subjects/pi1_false.png" class="tabcontent__image">
-                <img src="img/subjects/econo_false.png" class="tabcontent__image">
+             <div id="fourth_semester" class="tabcontent flex">
+                <img src="img/subjects/dca_false.png" data-state="inactive" data-subject="dca" class="tabcontent__image">
+                <img src="img/subjects/4d_false.png" data-state="inactive" data-subject="4d" class="tabcontent__image">
+                <img src="img/subjects/historia_false.png" data-state="inactive" data-subject="historia" class="tabcontent__image">
+                <img src="img/subjects/narra_false.png" data-state="inactive" data-subject="narra" class="tabcontent__image">
+                <img src="img/subjects/pi1_false.png" data-state="inactive" data-subject="pi1" class="tabcontent__image">
+                <img src="img/subjects/econo_false.png" data-state="inactive" data-subject="econo" class="tabcontent__image">
              </div>
              </div>
               

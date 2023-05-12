@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #f3f3f3;
+  font-family: Heebo, open sans-serif;
+}
+
+body {
+  padding: 5%;
+}
+
+.flex {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  color: #f3f3f3;
+  font-size: 1.425em;
+  font-weight: 500;
+  line-height: 1.2em;
+}
+
+.competencies {
+  margin-bottom: 5%;
+}
+
+.competencies__title {
+  color: #1a15ef;
+  font-size: 1.125em;
+  font-weight: 500;
+}
+
+.banner {
+  border-radius: 1em;
+  margin-bottom: 8%;
+  padding: .75em;
+}
+
+.banner#blue {
+  background-image: linear-gradient(#110ecb, #7573f5);
+}
+
+.banner#yellow {
+  background-image: linear-gradient(#f7a800, #ffd67e);
+}
+
+.banner#magenta {
+  background-image: linear-gradient(#e60036, #ff7393);
+}
+
+.banner__psmall {
+  color: #f3f3f3;
+  font-size: .888em;
+  font-weight: 300;
+  line-height: 1.128em;
+}
+
+.question__container {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4em;
+}
+
+.question__title {
+  color: #0a087a;
+  margin-bottom: .5em;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.269em;
+}
+
+.question__psmalll, .question__psmallr {
+  color: #0a087a;
+  font-size: .888em;
+  font-weight: 300;
+  line-height: 1.128em;
+}
+
+.question__psmallr {
+  text-align: right;
+}
+
+.slidercontainer {
+  width: 50%;
+  justify-content: center;
+}
+
+.slidercontainer__slider {
+  width: 100%;
+}
+
+.slidercontainer__values {
+  color: #0a087a;
+  justify-content: space-between;
+  font-size: .888em;
+  font-weight: 300;
+  line-height: 1.128em;
+  display: flex;
+}
+
+.link {
+  color: #f3f3f3;
+  width: 100%;
+  background-color: #1a15ef;
+  border-style: solid;
+  border-width: .063em;
+  border-radius: .625em;
+  justify-content: center;
+  padding: 16px 24px;
+  font-size: 1.125em;
+  font-weight: 500;
+  display: flex;
+}
+
+/*# sourceMappingURL=evacomp1.css.map */

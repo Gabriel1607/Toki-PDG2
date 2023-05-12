@@ -26,7 +26,29 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+// Get all the subject images
+const subjectImages = document.querySelectorAll('img[data-subject]');
 
+// Attach the event listener to each subject image
+subjectImages.forEach(image => {
+  image.addEventListener('click', () => toggleImage(image));
+});
+
+//Imagen cambia con click
+function toggleImage(image) {
+  const subject = image.getAttribute('data-subject');
+  const currentState = image.src.includes('_false');
+  if(currentState){
+    image.style.display = 'none';
+      image.nextElementSibling.style.display = 'inline-block';
+  }else if (!currentState) {
+    image.style.display = 'none';
+      image.previousElementSibling.style.display = 'inline-block';
+  }
+    
+  
+ 
+}
 //Quitar Nota si hace check a Aprobado
 notas_semestres.forEach(function(table) {
   table.addEventListener('click', function(event) {

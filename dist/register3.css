@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #f3f3f3;
+  font-family: Heebo, open sans-serif;
+}
+
+body {
+  padding: 0% 5%;
+}
+
+.flex {
+  align-items: center;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  color: #1a15ef;
+  font-size: 1.425em;
+  font-weight: 500;
+  line-height: 1.806em;
+}
+
+h3 {
+  color: #0a087a;
+  font-size: 1.269em;
+  font-weight: 500;
+}
+
+p {
+  color: #0a087a;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.269em;
+}
+
+.tabcontent {
+  flex-flow: wrap;
+  animation: 1s fadeEffect;
+  display: none;
+}
+
+.tabcontent__image {
+  padding: 3%;
+}
+
+.tabcontent__image[data-state="active"] {
+  display: none;
+}
+
+.tabcontent#first_semester {
+  display: block;
+}
+
+.tab {
+  background-color: #d1d0fc;
+  justify-content: space-evenly;
+  margin-top: 2%;
+  overflow: hidden;
+}
+
+.tab__links {
+  color: #0a087a;
+  background-color: inherit;
+  float: left;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 14px 10.5px;
+  font-size: .888em;
+  transition: all .3s;
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.active {
+  background-color: #a3a1f9;
+}
+
+.register__image {
+  margin: auto;
+  display: block;
+}
+
+.register__head * {
+  align-items: center;
+  display: flex;
+}
+
+.register__submit {
+  color: #f3f3f3;
+  width: 100%;
+  background-color: #1a15ef;
+  border-radius: .625em;
+  padding: 16px 24px;
+  font-size: 1.125em;
+  font-weight: 500;
+}
+
+.register__important {
+  background-color: #d1d0fc;
+  border-radius: .5em;
+  padding: 10px;
+}
+
+.register__psmall {
+  font-size: .888em;
+}
+
+/*# sourceMappingURL=register3.css.map */
