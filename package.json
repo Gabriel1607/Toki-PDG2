@@ -29,9 +29,7 @@
     "url": "https://github.com/Gabriel1607/Toki-PDG2/issues"
   },
   "homepage": "https://github.com/Gabriel1607/Toki-PDG2#readme",
-
   "parcel-namer-rewrite": {
-   
     "profiles": {
       "development": {
         "hashing": "never"
@@ -39,5 +37,3 @@
     }
   }
 }
-
-  
