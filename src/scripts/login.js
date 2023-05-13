@@ -2,11 +2,12 @@ import { db, auth } from "./app";
 import { loginUser, registerUser, addUserToDatabase, onAuthStateChanged } from "../functions/auth";
 import { updateUserData } from "./getUser";
 
+const selectedSubject = [];
 
 const registerUserForm1 = document.getElementById("registerUserForm");
 const registerUserForm2 = document.getElementById("registerUserForm2")
 const loginUserForm = document.getElementById("loginUserForm");
-
+const registerUserForm3 = document.getElementById("registerUserForm3")
 const semestre =document.getElementById('semester')
 const notas_semestres = document.querySelectorAll('table');
 
@@ -35,19 +36,46 @@ subjectImages.forEach(image => {
 });
 
 //Imagen cambia con click
+
 function toggleImage(image) {
+
   const subject = image.getAttribute('data-subject');
   const currentState = image.src.includes('_false');
-  if(currentState){
+  if(currentState){//EN EL MOMENTO DE HACER EL CLICK, ESTÁ DESACTIVADO
     image.style.display = 'none';
       image.nextElementSibling.style.display = 'inline-block';
-  }else if (!currentState) {
+      selectedSubject.push(subject);
+      console.log(selectedSubject);
+  }else if (!currentState) {//EN EL MOMENTO DE HACER EL CLICK, ESTÁ ACTIVADO
     image.style.display = 'none';
       image.previousElementSibling.style.display = 'inline-block';
+      const index = selectedSubject.indexOf(subject);
+    if (index !== -1) {
+      selectedSubject.splice(index, 1);
+      console.log(selectedSubject)
+    }
   }
-    
+}
+if (registerUserForm3) {
+  registerUserForm3.addEventListener('click',  function(ev){
+    ev.preventDefault();
+
+    const studentData = {
+      favoritas: selectedSubject
+    };
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        if (!isLogged) {
+          const uid = user.uid;
+       await updateUserData(db, uid, studentData);
+        isLogged=true;
+        }
+        location.href = "./register4.html";
+      }
+    });
   
- 
+  
+  });
 }
 //Quitar Nota si hace check a Aprobado
 notas_semestres.forEach(function(table) {
