@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #f3f3f3;
+  font-family: Heebo, open sans-serif;
+}
+
+body {
+  padding: 5%;
+}
+
+.flex {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.nav {
+  width: 100%;
+  background-color: #f3f3f3;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.nav__list {
+  justify-content: space-evenly;
+  padding-top: .75em;
+  display: flex;
+}
+
+/*# sourceMappingURL=competencies.css.map */
