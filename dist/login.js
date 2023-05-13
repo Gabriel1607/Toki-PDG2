@@ -560,9 +560,11 @@ function hmrAccept(bundle, id) {
 var _app = require("./app");
 var _auth = require("../functions/auth");
 var _getUser = require("./getUser");
+const selectedSubject = [];
 const registerUserForm1 = document.getElementById("registerUserForm");
 const registerUserForm2 = document.getElementById("registerUserForm2");
 const loginUserForm = document.getElementById("loginUserForm");
+const registerUserForm3 = document.getElementById("registerUserForm3");
 const semestre = document.getElementById("semester");
 const notas_semestres = document.querySelectorAll("table");
 let isLogged = false;
@@ -588,11 +590,34 @@ function toggleImage(image) {
     if (currentState) {
         image.style.display = "none";
         image.nextElementSibling.style.display = "inline-block";
+        selectedSubject.push(subject);
+        console.log(selectedSubject);
     } else if (!currentState) {
         image.style.display = "none";
         image.previousElementSibling.style.display = "inline-block";
+        const index = selectedSubject.indexOf(subject);
+        if (index !== -1) {
+            selectedSubject.splice(index, 1);
+            console.log(selectedSubject);
+        }
     }
 }
+if (registerUserForm3) registerUserForm3.addEventListener("click", function(ev) {
+    ev.preventDefault();
+    const studentData = {
+        favoritas: selectedSubject
+    };
+    (0, _auth.onAuthStateChanged)((0, _app.auth), async (user)=>{
+        if (user) {
+            if (!isLogged) {
+                const uid = user.uid;
+                await (0, _getUser.updateUserData)((0, _app.db), uid, studentData);
+                isLogged = true;
+            }
+            location.href = "./register4.html";
+        }
+    });
+});
 //Quitar Nota si hace check a Aprobado
 notas_semestres.forEach(function(table) {
     table.addEventListener("click", function(event) {
