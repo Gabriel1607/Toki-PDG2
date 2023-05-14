@@ -560,6 +560,7 @@ function hmrAccept(bundle, id) {
 var _app = require("./app");
 var _auth = require("../functions/auth");
 var _getUser = require("./getUser");
+var _auth1 = require("firebase/auth");
 const selectedSubject = [];
 const registerUserForm1 = document.getElementById("registerUserForm");
 const registerUserForm2 = document.getElementById("registerUserForm2");
@@ -567,6 +568,10 @@ const loginUserForm = document.getElementById("loginUserForm");
 const registerUserForm3 = document.getElementById("registerUserForm3");
 const semestre = document.getElementById("semester");
 const notas_semestres = document.querySelectorAll("table");
+const avatars = document.querySelectorAll(".register__chooseavatar img"); //contendeor de los avatares
+const selectedAvatarLabel = document.getElementById("selected_avatar"); //foto actual
+const okButton = document.getElementById("okButton"); //Boton para subir el avatar y pasar al home
+const logoutLink = document.getElementById("logoutLink");
 let isLogged = false;
 var coll = document.getElementsByClassName("collapsible");
 var i;
@@ -704,10 +709,16 @@ if (loginUserForm != null) loginUserForm.addEventListener("submit", (e)=>{
         if (user) location.href = "./home.html";
     });
 });
-//REGISTRO 4: AVATAR
-// Obtener todas las imágenes de los avatares
-const avatars = document.querySelectorAll(".register__chooseavatar img"); //contendeor de los avatares
-const selectedAvatarLabel = document.getElementById("selected_avatar"); //foto actual
+//LOGOUT
+logoutLink.addEventListener("click", (e)=>{
+    (0, _auth1.signOut)((0, _app.auth)).then(()=>{
+        location.href = "./index.html";
+        console.log("Salimos");
+    }).catch((error)=>{
+        console.log(error);
+    });
+});
+//----REGISTRO 4: AVATAR----//
 // Agregar un controlador de eventos a cada imagen de avatar
 avatars.forEach((avatar)=>{
     avatar.addEventListener("click", ()=>{
@@ -717,7 +728,6 @@ avatars.forEach((avatar)=>{
     });
 });
 //Boton listo
-const okButton = document.getElementById("okButton");
 if (okButton) okButton.addEventListener("click", ()=>{
     const selectedAvatarSrc = selectedAvatarLabel.getAttribute("src"); //Creo la variable o bueno constante
     const avatarData = {
@@ -732,7 +742,7 @@ if (okButton) okButton.addEventListener("click", ()=>{
     });
 });
 
-},{"./app":"bAabt","../functions/auth":"cEvP7","./getUser":"f6zaq"}],"bAabt":[function(require,module,exports) {
+},{"./app":"bAabt","../functions/auth":"cEvP7","./getUser":"f6zaq","firebase/auth":"79vzg"}],"bAabt":[function(require,module,exports) {
 // Import the functions you need from the SDKs you need
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -38288,7 +38298,7 @@ async function registerUser(auth, { email , password  }) {
 }
 async function loginUser(auth, email, password) {
     try {
-        const { user  } = await signInWithEmailAndPassword(auth, email, password);
+        const { user  } = await (0, _auth.signInWithEmailAndPassword)(auth, email, password);
         console.log(user);
     } catch (e) {
         alert("Usuario o contrase\xf1a inv\xe1lido");

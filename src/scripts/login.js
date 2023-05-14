@@ -1,6 +1,7 @@
 import { db, auth } from "./app";
 import { loginUser, registerUser, addUserToDatabase, onAuthStateChanged } from "../functions/auth";
 import { updateUserData } from "./getUser";
+import { signOut } from "firebase/auth";
 
 const selectedSubject = [];
 
@@ -10,6 +11,12 @@ const loginUserForm = document.getElementById("loginUserForm");
 const registerUserForm3 = document.getElementById("registerUserForm3")
 const semestre =document.getElementById('semester')
 const notas_semestres = document.querySelectorAll('table');
+
+const avatars = document.querySelectorAll('.register__chooseavatar img'); //contendeor de los avatares
+const selectedAvatarLabel = document.getElementById('selected_avatar'); //foto actual
+const okButton = document.getElementById('okButton');//Boton para subir el avatar y pasar al home
+
+const logoutLink = document.getElementById('logoutLink');
 
 let isLogged = false;
 
@@ -195,14 +202,18 @@ if(registerUserForm1 != null){
         });
       }
 
+      //LOGOUT
+      logoutLink.addEventListener("click", e =>{
+        signOut(auth).then(() => {
+          location.href = "./index.html"
+          console.log("Salimos");
+        }).catch((error) => {
+          console.log(error);
+        });
+      });
 
 
-
-//REGISTRO 4: AVATAR
-// Obtener todas las imágenes de los avatares
-const avatars = document.querySelectorAll('.register__chooseavatar img'); //contendeor de los avatares
-const selectedAvatarLabel = document.getElementById('selected_avatar'); //foto actual
-
+//----REGISTRO 4: AVATAR----//
 // Agregar un controlador de eventos a cada imagen de avatar
 avatars.forEach(avatar => {
   avatar.addEventListener('click', () => { //cuando hago click...
@@ -212,10 +223,7 @@ avatars.forEach(avatar => {
   });
 });
 
-
 //Boton listo
-const okButton = document.getElementById('okButton');
-
 if (okButton) { 
   okButton.addEventListener('click', () => {//cuando hago click...
     const selectedAvatarSrc = selectedAvatarLabel.getAttribute('src');//Creo la variable o bueno constante

@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth} from "firebase/auth";
+import { createUserWithEmailAndPassword,  signInWithEmailAndPassword, getAuth} from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
 
