@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject</title>
+
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!--Styles-->
+    <link rel="stylesheet" href="/subject.css">
+</head>
+
+<body>
+    <p class="subject__title">Materias</p>
+    <div class="subjectFav__container">
+        <p class="subjectFav__title">Mis favoritas</p>
+        <div class="subjectFav__list flex">
+            <img src="/4d_true.png">
+            <img src="/4d_true.png">
+            <img src="/4d_true.png">
+            <img src="/4d_true.png">
+        </div>
+    </div>
+
+
+    <div class="allSubject">
+        <div class="allSubject__head flex">
+            <p class="allSubject__title">Todas</p>
+            <select form="filterSubject" class="allSubject__select" id="filter"> 
+                <option value="all">Todas</option>
+                <option value="pending">Pendientes</option>
+                <option value="fav">Favoritas</option>
+            </select>
+        </div>
+
+        <div class="allSubject__container">
+            <div class="allSubject__card">
+                <p class="allSubject__psmall">Título materia</p>
+                <p class="allSubject__grade">Nota</p>
+                <!--aqui se llena automaticamente la info más adelante-->
+            </div>
+            <div class="allSubject__card">
+                <p class="allSubject__psmall">Título materia</p>
+                <p class="allSubject__grade">Nota</p>
+                <!--aqui se llena automaticamente la info más adelante-->
+            </div>
+        </div>
+    </div>
+
+     <!--menu abajo-->
+     <nav class="nav">    
+        <ul class="nav__list flex">
+            <li class="nav__item">
+                <a href="/home.html">
+                    <img src="/home.png" alt="bag" class="nav__icon">
+                </a>
+            </li>
+            <li class="nav__item">
+                <a href="/competencies.html">
+                    <img src="/competencies.png" alt="profile" class="nav__icon">
+                </a>
+            </li>
+            <li class="nav__item">
+                <a href="#">
+                    <img src="/asignatureSelect.png" alt="profile" class="nav__icon">
+                </a>
+            </li>
+            <li class="nav__item">
+                <a href="/profile.html">
+                    <img src="/profile.png" alt="profile" class="nav__icon">
+                </a>
+            </li>
+        </ul>
+    </nav>
+<script src="/subject.js"></script></body>
+</html>

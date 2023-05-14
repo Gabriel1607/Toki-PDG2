@@ -1,0 +1,140 @@
+$heeboFont: "Heebo", open sans-serif;
+$primary500: #1A15EF;
+$primary800: #0A087A;
+$tokiWhite: #F3F3F3;
+$shadow: #EAE8EA;
+$h2Size: 1.425em;
+$h3Size:1.269em;
+$subtitleSize: 1.125em;
+$bodySize: 1em;
+$captionSize: 0.888em;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: $tokiWhite;
+    font-family: $heeboFont;
+}
+
+body{
+    padding: 0% 5% 0% 5%;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.subject{
+    &__title{
+        color: $primary500;
+        font-size: $subtitleSize;
+        font-weight: 500;
+        margin-bottom: 1.5em;
+    }
+}
+
+.subjectFav{
+    &__container{
+        margin-bottom: 2.5em;
+    }
+
+    &__title{
+        color: $primary800;
+        font-size: $bodySize;
+        font-weight: 400;
+        line-height: 1.269em;
+        margin-bottom: 1em;
+    }
+
+    &__list{
+        overflow-x: auto;
+    }
+
+    &__list *{
+        margin-right: 1em;
+    }
+}
+
+.allSubject{
+    &__head{
+        justify-content: space-between;
+        margin-bottom: 1em;
+    }
+
+    &__title{
+        color: $primary800;
+        font-size: $bodySize;
+        font-weight: 400;
+        line-height: 1.269em;
+    }
+
+    &__select{
+        color: #1a15ef;
+        background-color: #f3f3f3;
+        border-width: 0.063em;
+        border-color: #1a15ef;
+        border-radius: 0.625em;
+        padding: 0.25em 0.75em;
+        font-size: .888em;
+    }
+    
+    &__container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__card{
+        width: 48%;
+        background-color: $tokiWhite;
+        border-radius: 0.5em;
+        box-shadow: 0em 0.25em 0.5em 0em $shadow; 
+        margin-bottom: 1em;
+        align-items: center;
+        height: 4.438em;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__psmall, &__grade{
+        text-align: center;
+        font-size: $captionSize;
+        font-weight: 300;
+        line-height: 1.128em;
+    }
+
+    &__psmall{
+        color: $primary800;
+        margin-bottom: 0.5em;
+    }
+}
+
+
+.nav{
+    background-color: $tokiWhite;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    &__list{
+        justify-content: center;
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 0.75em;
+    }
+}
