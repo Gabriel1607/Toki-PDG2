@@ -1,3 +1,4 @@
+
 // Obtener todas las imágenes de los avatares
 const avatars = document.querySelectorAll('.register__chooseavatar img'); //contendeor de los avatares
 const selectedAvatarLabel = document.getElementById('selected_avatar'); //foto actual
@@ -12,3 +13,5 @@ avatars.forEach(avatar => {
     console.log('Click en la imagen'); //para ver si funcionaba 
   });
 });
+
+

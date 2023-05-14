@@ -704,6 +704,33 @@ if (loginUserForm != null) loginUserForm.addEventListener("submit", (e)=>{
         if (user) location.href = "./home.html";
     });
 });
+//REGISTRO 4: AVATAR
+// Obtener todas las imágenes de los avatares
+const avatars = document.querySelectorAll(".register__chooseavatar img"); //contendeor de los avatares
+const selectedAvatarLabel = document.getElementById("selected_avatar"); //foto actual
+// Agregar un controlador de eventos a cada imagen de avatar
+avatars.forEach((avatar)=>{
+    avatar.addEventListener("click", ()=>{
+        const avatarSrc = avatar.getAttribute("src"); //Creo la variable
+        selectedAvatarLabel.setAttribute("src", avatarSrc); //lo cambio por el avatar qe haya elegido
+        console.log("Click en la imagen"); //para ver si funcionaba 
+    });
+});
+//Boton listo
+const okButton = document.getElementById("okButton");
+if (okButton) okButton.addEventListener("click", ()=>{
+    const selectedAvatarSrc = selectedAvatarLabel.getAttribute("src"); //Creo la variable o bueno constante
+    const avatarData = {
+        avatar: selectedAvatarSrc //el nombre del atributo que va a tener en firebase
+    };
+    (0, _auth.onAuthStateChanged)((0, _app.auth), async (user)=>{
+        if (user) {
+            const uid = user.uid;
+            await (0, _getUser.updateUserData)((0, _app.db), uid, avatarData); //actualiza info con el evatar
+            location.href = "./home.html"; // redirigir a Home
+        }
+    });
+});
 
 },{"./app":"bAabt","../functions/auth":"cEvP7","./getUser":"f6zaq"}],"bAabt":[function(require,module,exports) {
 // Import the functions you need from the SDKs you need

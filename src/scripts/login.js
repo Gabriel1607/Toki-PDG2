@@ -195,4 +195,42 @@ if(registerUserForm1 != null){
         });
       }
 
+
+
+
+//REGISTRO 4: AVATAR
+// Obtener todas las imágenes de los avatares
+const avatars = document.querySelectorAll('.register__chooseavatar img'); //contendeor de los avatares
+const selectedAvatarLabel = document.getElementById('selected_avatar'); //foto actual
+
+// Agregar un controlador de eventos a cada imagen de avatar
+avatars.forEach(avatar => {
+  avatar.addEventListener('click', () => { //cuando hago click...
+    const avatarSrc = avatar.getAttribute('src'); //Creo la variable
+    selectedAvatarLabel.setAttribute('src', avatarSrc); //lo cambio por el avatar qe haya elegido
+    console.log('Click en la imagen'); //para ver si funcionaba 
+  });
+});
+
+
+//Boton listo
+const okButton = document.getElementById('okButton');
+
+if (okButton) { 
+  okButton.addEventListener('click', () => {//cuando hago click...
+    const selectedAvatarSrc = selectedAvatarLabel.getAttribute('src');//Creo la variable o bueno constante
+    const avatarData = {
+      avatar: selectedAvatarSrc //el nombre del atributo que va a tener en firebase
+    };
+
+    onAuthStateChanged(auth, async (user) => { 
+      if (user) { //Obtiene la info del usuario si està autenticado
+        const uid = user.uid;
+        await updateUserData(db, uid, avatarData); //actualiza info con el evatar
+        location.href = "./home.html"; // redirigir a Home
+      }
+    });
+  });
+}
+
     
