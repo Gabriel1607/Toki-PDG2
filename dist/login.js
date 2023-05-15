@@ -561,6 +561,7 @@ var _app = require("./app");
 var _auth = require("../functions/auth");
 var _getUser = require("./getUser");
 var _auth1 = require("firebase/auth");
+var _storage = require("firebase/storage");
 const selectedSubject = [];
 const registerUserForm1 = document.getElementById("registerUserForm");
 const registerUserForm2 = document.getElementById("registerUserForm2");
@@ -569,8 +570,9 @@ const registerUserForm3 = document.getElementById("registerUserForm3");
 const semestre = document.getElementById("semester");
 const notas_semestres = document.querySelectorAll("table");
 const avatars = document.querySelectorAll(".register__chooseavatar img"); //contendeor de los avatares
-const selectedAvatarLabel = document.getElementById("selected_avatar"); //foto actual
+const selectedAvatar = document.getElementById("selected_avatar"); // Imagen "actual""
 const okButton = document.getElementById("okButton"); //Boton para subir el avatar y pasar al home
+const storage = (0, _storage.getStorage)((0, _app.app));
 const logoutLink = document.getElementById("logoutLink");
 let isLogged = false;
 var coll = document.getElementsByClassName("collapsible");
@@ -718,31 +720,54 @@ if (logoutLink) logoutLink.addEventListener("click", (e)=>{
         console.log(error);
     });
 });
-//----REGISTRO 4: AVATAR----//
+///AVATARES///
+const fileRef = (0, _storage.ref)(storage, "avatar1.png");
+// Obtén la URL de descarga de la imagen
+(0, _storage.getDownloadURL)(fileRef).then((url)=>{
+    console.log("URL de la imagen:", url);
+}).catch((error)=>{
+    console.log("Error al obtener la URL de la imagen:", error);
+});
+///AVATARES//
 // Agregar un controlador de eventos a cada imagen de avatar
 avatars.forEach((avatar)=>{
     avatar.addEventListener("click", ()=>{
-        const avatarSrc = avatar.getAttribute("src"); //Creo la variable
-        selectedAvatarLabel.setAttribute("src", avatarSrc); //lo cambio por el avatar qe haya elegido
-        console.log("Click en la imagen"); //para ver si funcionaba 
+        console.log("Click en la imagen");
+        // Obtener la URL de la imagen seleccionada
+        const avatarSrc = avatar.getAttribute("src");
+        // Actualizar la imagen seleccionada
+        selectedAvatar.setAttribute("src", avatarSrc);
     });
 });
-//Boton listo
+//Botón de listo (mandar esa info)
 if (okButton) okButton.addEventListener("click", ()=>{
-    const selectedAvatarSrc = selectedAvatarLabel.getAttribute("src"); //Creo la variable o bueno constante
-    const avatarData = {
-        avatar: selectedAvatarSrc //el nombre del atributo que va a tener en firebase
+    console.log("Click en Listo");
+    // Obtener la URL de la imagen seleccionada
+    const selectedAvatarURL = selectedAvatar.getAttribute("src");
+    console.log("URL obtenida");
+    // Guardar la URL en Firestore llamando a la función
+    saveImageURL(selectedAvatarURL);
+    console.log("URL enviadaaa");
+});
+//Función para la URL
+function saveImageURL(avatarURL) {
+    // Creando el objeto a partir de la URL de la imagen
+    const studentData = {
+        imageURL: avatarURL
     };
     (0, _auth.onAuthStateChanged)((0, _app.auth), async (user)=>{
         if (user) {
-            const uid = user.uid;
-            await (0, _getUser.updateUserData)((0, _app.db), uid, avatarData); //actualiza info con el evatar
-            location.href = "./home.html"; // redirigir a Home
+            if (!isLogged) {
+                const uid = user.uid;
+                await (0, _getUser.updateUserData)((0, _app.db), uid, studentData);
+                isLogged = true;
+            }
+            location.href = "./home.html";
         }
     });
-});
+}
 
-},{"./app":"bAabt","../functions/auth":"cEvP7","./getUser":"f6zaq","firebase/auth":"79vzg"}],"bAabt":[function(require,module,exports) {
+},{"./app":"bAabt","../functions/auth":"cEvP7","./getUser":"f6zaq","firebase/auth":"79vzg","firebase/storage":"8WX7E"}],"bAabt":[function(require,module,exports) {
 // Import the functions you need from the SDKs you need
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -2037,8 +2062,8 @@ parcelHelpers.export(exports, "validateCallback", ()=>validateCallback);
 parcelHelpers.export(exports, "validateContextObject", ()=>validateContextObject);
 parcelHelpers.export(exports, "validateIndexedDBOpenable", ()=>validateIndexedDBOpenable);
 parcelHelpers.export(exports, "validateNamespace", ()=>validateNamespace);
-var global = arguments[3];
 var process = require("3aef7a8b1b72cea6");
+var global = arguments[3];
 const CONSTANTS = {
     /**
      * @define {boolean} Whether this is the client Node.js SDK.

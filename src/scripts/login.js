@@ -1,7 +1,9 @@
-import { db, auth } from "./app";
+import { db, auth, app } from "./app";
 import { loginUser, registerUser, addUserToDatabase, onAuthStateChanged } from "../functions/auth";
 import { updateUserData } from "./getUser";
 import { signOut } from "firebase/auth";
+import { getStorage } from "firebase/storage";
+import { getDownloadURL, ref } from "firebase/storage";
 
 const selectedSubject = [];
 
@@ -13,8 +15,9 @@ const semestre =document.getElementById('semester')
 const notas_semestres = document.querySelectorAll('table');
 
 const avatars = document.querySelectorAll('.register__chooseavatar img'); //contendeor de los avatares
-const selectedAvatarLabel = document.getElementById('selected_avatar'); //foto actual
+const selectedAvatar = document.getElementById('selected_avatar'); // Imagen "actual""
 const okButton = document.getElementById('okButton');//Boton para subir el avatar y pasar al home
+const storage = getStorage(app);
 
 const logoutLink = document.getElementById('logoutLink');
 
@@ -215,32 +218,62 @@ if(registerUserForm1 != null){
       }
 
 
-//----REGISTRO 4: AVATAR----//
+
+
+      ///AVATARES///
+      const fileRef = ref(storage, "avatar1.png");
+
+      // Obtén la URL de descarga de la imagen
+      getDownloadURL(fileRef)
+      .then((url) => {
+        console.log("URL de la imagen:", url);
+      })
+      .catch((error) => {
+        console.log("Error al obtener la URL de la imagen:", error);
+      });
+
+///AVATARES//
 // Agregar un controlador de eventos a cada imagen de avatar
 avatars.forEach(avatar => {
-  avatar.addEventListener('click', () => { //cuando hago click...
-    const avatarSrc = avatar.getAttribute('src'); //Creo la variable
-    selectedAvatarLabel.setAttribute('src', avatarSrc); //lo cambio por el avatar qe haya elegido
-    console.log('Click en la imagen'); //para ver si funcionaba 
+  avatar.addEventListener('click', () => {
+    console.log('Click en la imagen');
+
+    // Obtener la URL de la imagen seleccionada
+    const avatarSrc = avatar.getAttribute('src');
+
+    // Actualizar la imagen seleccionada
+    selectedAvatar.setAttribute('src', avatarSrc);
   });
 });
 
-//Boton listo
-if (okButton) { 
-  okButton.addEventListener('click', () => {//cuando hago click...
-    const selectedAvatarSrc = selectedAvatarLabel.getAttribute('src');//Creo la variable o bueno constante
-    const avatarData = {
-      avatar: selectedAvatarSrc //el nombre del atributo que va a tener en firebase
-    };
-
-    onAuthStateChanged(auth, async (user) => { 
-      if (user) { //Obtiene la info del usuario si està autenticado
-        const uid = user.uid;
-        await updateUserData(db, uid, avatarData); //actualiza info con el evatar
-        location.href = "./home.html"; // redirigir a Home
-      }
-    });
+//Botón de listo (mandar esa info)
+if(okButton){
+  okButton.addEventListener('click', () => {
+    console.log('Click en Listo')
+    // Obtener la URL de la imagen seleccionada
+    const selectedAvatarURL = selectedAvatar.getAttribute('src');
+    console.log('URL obtenida')
+  
+    // Guardar la URL en Firestore llamando a la función
+    saveImageURL(selectedAvatarURL);
+    console.log('URL enviadaaa')
   });
 }
 
-    
+//Función para la URL
+function saveImageURL(avatarURL) {
+  // Creando el objeto a partir de la URL de la imagen
+  const studentData = {
+    imageURL: avatarURL
+  };
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      if (!isLogged) {
+        const uid = user.uid;
+     await updateUserData(db, uid, studentData);
+      isLogged=true;
+      }
+      location.href = "./home.html";
+    }
+  });
+}
