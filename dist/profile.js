@@ -559,19 +559,22 @@ function hmrAccept(bundle, id) {
 },{}],"3i8HN":[function(require,module,exports) {
 var _app = require("./app");
 var _auth = require("../functions/auth");
-var _firestore = require("firebase/firestore");
+var _getUser = require("./getUser");
 const profilePhoto = document.querySelector(".profile__photo");
+const username = document.querySelector(".profile__username");
 let isLogged = false;
 async function updateProfilePhoto() {
     (0, _auth.onAuthStateChanged)((0, _app.auth), async (user)=>{
         if (user) {
             if (!isLogged) {
                 const uid = user.uid;
-                const userDoc = await (0, _app.db).collection("users").doc(uid).get();
-                const userData = userDoc.data();
-                const profilePhotoURL = userData.imageURL;
+                const imgsrc = await (0, _getUser.getUser)(uid);
+                console.log(imgsrc.imageURL);
+                const profilePhotoURL = imgsrc.imageURL;
+                const userUsername = imgsrc.name;
                 // Establece la URL de la imagen como la imagen de perfil
                 profilePhoto.src = profilePhotoURL;
+                username.innerHTML = userUsername;
                 isLogged = true;
             }
         }
@@ -579,6 +582,6 @@ async function updateProfilePhoto() {
 }
 updateProfilePhoto();
 
-},{"./app":"bAabt","../functions/auth":"cEvP7","firebase/firestore":"8A4BC"}]},["iqcxc","3i8HN"], "3i8HN", "parcelRequire3705")
+},{"./app":"bAabt","../functions/auth":"cEvP7","./getUser":"f6zaq"}]},["iqcxc","3i8HN"], "3i8HN", "parcelRequire3705")
 
 //# sourceMappingURL=profile.js.map
