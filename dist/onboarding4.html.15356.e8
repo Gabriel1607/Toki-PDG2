@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onboarding</title>
+
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!--Styles-->
+    <link rel="stylesheet" href="/onboarding4.css">
+</head>
+
+<body>
+    <div>
+        <img src="/line3.png">
+    </div>
+    <main class="main">
+        <p class="main__psmall">Finalmente, tenemos la parte más importante, y es la parte donde estás</p>
+        <img src="/you.png">
+    </main>
+    <div class="info">
+        <p class="info__psmall">En <span class="info__highlight">Perfil </span>tendrás una sección personalizable, para poder
+        <br>expresarte y mostrar eso que te hace único :)</p>
+        
+        <!--List-->
+        <ul>
+            <li>
+                <p class="info__item">Edita tu avatar</p>
+            </li>
+            <li>
+                <p class="info__item">Mira tu progreso</p>
+            </li>
+            <li>
+                <p class="info__item">Accede a tus favoritos</p>
+            </li>
+        </ul>
+        <p class="info__psmall">¿Listo para comenzar?</p>
+    </div>
+    <a href="/home.html" class="main__link">¡De una!</a>
+<script src="/onboarding4.js"></script></body></html>

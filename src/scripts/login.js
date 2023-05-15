@@ -3,7 +3,6 @@ import { loginUser, registerUser, addUserToDatabase, onAuthStateChanged } from "
 import { updateUserData } from "./getUser";
 import { signOut } from "firebase/auth";
 import { getStorage } from "firebase/storage";
-import { getDownloadURL, ref } from "firebase/storage";
 
 const selectedSubject = [];
 
@@ -216,21 +215,6 @@ if(registerUserForm1 != null){
           });
         });
       }
-
-
-
-
-      ///AVATARES///
-      const fileRef = ref(storage, "avatar1.png");
-
-      // Obtén la URL de descarga de la imagen
-      getDownloadURL(fileRef)
-      .then((url) => {
-        console.log("URL de la imagen:", url);
-      })
-      .catch((error) => {
-        console.log("Error al obtener la URL de la imagen:", error);
-      });
 
 ///AVATARES//
 // Agregar un controlador de eventos a cada imagen de avatar

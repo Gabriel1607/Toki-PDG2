@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"iqcxc":[function(require,module,exports) {
+})({"gUl5V":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "3d2e1962c2ff8f2c";
+module.bundle.HMR_BUNDLE_ID = "9b8d73aeb5a31a87";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -556,29 +556,8 @@ function hmrAccept(bundle, id) {
     });
 }
 
-},{}],"3i8HN":[function(require,module,exports) {
-var _app = require("./app");
-var _auth = require("../functions/auth");
-var _firestore = require("firebase/firestore");
-const profilePhoto = document.querySelector(".profile__photo");
-let isLogged = false;
-async function updateProfilePhoto() {
-    (0, _auth.onAuthStateChanged)((0, _app.auth), async (user)=>{
-        if (user) {
-            if (!isLogged) {
-                const uid = user.uid;
-                const userDoc = await (0, _app.db).collection("users").doc(uid).get();
-                const userData = userDoc.data();
-                const profilePhotoURL = userData.imageURL;
-                // Establece la URL de la imagen como la imagen de perfil
-                profilePhoto.src = profilePhotoURL;
-                isLogged = true;
-            }
-        }
-    });
-}
-updateProfilePhoto();
+},{}],"kP2iG":[function(require,module,exports) {
 
-},{"./app":"bAabt","../functions/auth":"cEvP7","firebase/firestore":"8A4BC"}]},["iqcxc","3i8HN"], "3i8HN", "parcelRequire3705")
+},{}]},["gUl5V","kP2iG"], "kP2iG", "parcelRequire3705")
 
-//# sourceMappingURL=profile.js.map
+//# sourceMappingURL=home.js.map
