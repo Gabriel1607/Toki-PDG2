@@ -710,7 +710,7 @@ if (loginUserForm != null) loginUserForm.addEventListener("submit", (e)=>{
     });
 });
 //LOGOUT
-logoutLink.addEventListener("click", (e)=>{
+if (logoutLink) logoutLink.addEventListener("click", (e)=>{
     (0, _auth1.signOut)((0, _app.auth)).then(()=>{
         location.href = "./index.html";
         console.log("Salimos");

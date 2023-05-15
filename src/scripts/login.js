@@ -203,14 +203,16 @@ if(registerUserForm1 != null){
       }
 
       //LOGOUT
-      logoutLink.addEventListener("click", e =>{
-        signOut(auth).then(() => {
-          location.href = "./index.html"
-          console.log("Salimos");
-        }).catch((error) => {
-          console.log(error);
+      if(logoutLink){
+        logoutLink.addEventListener("click", e =>{
+          signOut(auth).then(() => {
+            location.href = "./index.html"
+            console.log("Salimos");
+          }).catch((error) => {
+            console.log(error);
+          });
         });
-      });
+      }
 
 
 //----REGISTRO 4: AVATAR----//
