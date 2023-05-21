@@ -614,7 +614,8 @@ if (registerUserForm3) registerUserForm3.addEventListener("click", function(ev) 
     const studentData = {
         favoritas: selectedSubject
     };
-    (0, _auth.onAuthStateChanged)((0, _app.auth), async (user)=>{
+    //Comprobar que si sean de 2 a 5 materias
+    if (2 <= studentData.favoritas.length && studentData.favoritas.length <= 5) (0, _auth.onAuthStateChanged)((0, _app.auth), async (user)=>{
         if (user) {
             if (!isLogged) {
                 const uid = user.uid;
@@ -624,6 +625,7 @@ if (registerUserForm3) registerUserForm3.addEventListener("click", function(ev) 
             location.href = "./register4.html";
         }
     });
+    else alert("Por favor, selecciona entre 2 y 5 materias para poder continuar");
 });
 //Quitar Nota si hace check a Aprobado
 notas_semestres.forEach(function(table) {

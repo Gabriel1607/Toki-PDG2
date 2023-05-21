@@ -72,16 +72,22 @@ if (registerUserForm3) {
     const studentData = {
       favoritas: selectedSubject
     };
-    onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        if (!isLogged) {
-          const uid = user.uid;
-       await updateUserData(db, uid, studentData);
-        isLogged=true;
+   //Comprobar que si sean de 2 a 5 materias
+    if (2<=studentData.favoritas.length&&studentData.favoritas.length<=5) {
+      onAuthStateChanged(auth, async (user) => {
+        if (user) {
+          if (!isLogged) {
+            const uid = user.uid;
+         await updateUserData(db, uid, studentData);
+          isLogged=true;
+          }
+          location.href = "./register4.html";
         }
-        location.href = "./register4.html";
-      }
-    });
+      });
+    } else {
+      alert('Por favor, selecciona entre 2 y 5 materias para poder continuar');
+    }
+    
   
   
   });
