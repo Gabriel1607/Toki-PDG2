@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #f3f3f3;
+  font-family: Heebo, open sans-serif;
+}
+
+body {
+  padding: 0% 5%;
+}
+
+.flex {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.individual {
+  padding-top: 5%;
+}
+
+.individual__head, .individual__container {
+  padding-bottom: 1.5em;
+}
+
+.individual__backIcon {
+  padding-right: 1em;
+}
+
+.individual__title {
+  color: #1a15ef;
+  font-size: 1.125em;
+  font-weight: 500;
+}
+
+.individual__image {
+  width: 100%;
+  padding-bottom: 1em;
+}
+
+.individual__p {
+  color: #0a087a;
+  font-size: .888em;
+  font-weight: 300;
+}
+
+.individual__button {
+  color: #f3f3f3;
+  background-color: #1a15ef;
+  border-radius: .625em;
+  justify-content: center;
+  padding: 16px 24px;
+  font-size: 1.125em;
+  font-weight: 500;
+}
+
+.nav {
+  width: 100%;
+  background-color: #f3f3f3;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.nav__list {
+  justify-content: space-evenly;
+  padding-top: .75em;
+  display: flex;
+}
+
+/*# sourceMappingURL=individual.css.map */
