@@ -57,6 +57,11 @@ ul {
   padding-bottom: 5%;
 }
 
+.recommended__card {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
 .recommended__title {
   color: #1a15ef;
   font-size: 1.125em;
@@ -69,8 +74,17 @@ ul {
   font-weight: 300;
 }
 
+.recommended__psmall {
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
 .recommended__image {
   width: 100%;
+  height: 14.375em;
+  object-fit: cover;
   border-radius: 1em;
 }
 

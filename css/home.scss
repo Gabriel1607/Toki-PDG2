@@ -64,6 +64,10 @@ ul{
 
 .recommended{
     padding-bottom: 5%;
+    &__card{
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
     &__title{
         color: $primary500;
         font-size: $subtitleSize;
@@ -74,11 +78,21 @@ ul{
         color: $primary800;
         font-size: $captionSize;
         font-weight: 300;
+        
     }
-
+    &__psmall{
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        
+    }
     &__image{
         width: 100%;
         border-radius: 1em;
+        height: 14.375em;
+        object-fit: cover;
+       
     }
 
     &__subtitle{
