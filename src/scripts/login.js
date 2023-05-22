@@ -515,3 +515,26 @@ function saveImageURL(avatarURL) {
     }
   });
 }
+
+
+//para pasar la info de los perfiles
+// Obtén todos los elementos con la clase "profile__card"
+const profileCards = document.querySelectorAll('.profile__card');
+
+// Agrega un controlador de eventos a cada elemento
+profileCards.forEach(function(card) {
+  card.addEventListener('click', function() {
+    // Obtén el título del perfil seleccionado y para la fotico
+    const profileTitle = this.querySelector('.profile__subtitle').textContent;
+    const profileImageSrc = this.querySelector('.profile__image').src;
+
+
+    // Redirecciona a profileInd.html y pasa el título como parámetro en la URL
+    const url = new URL('./profileInd.html', window.location.href);
+    url.searchParams.set('title', encodeURIComponent(profileTitle));
+    url.searchParams.set('image', encodeURIComponent(profileImageSrc));
+    window.location.href = url.toString();
+    //window.location.href = './profileInd.html?title=' + encodeURIComponent(profileTitle);
+    console.log("hola " + profileTitle);
+  });
+});

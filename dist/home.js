@@ -988,6 +988,24 @@ function saveImageURL(avatarURL) {
         }
     });
 }
+//para pasar la info de los perfiles
+// Obtén todos los elementos con la clase "profile__card"
+const profileCards = document.querySelectorAll(".profile__card");
+// Agrega un controlador de eventos a cada elemento
+profileCards.forEach(function(card) {
+    card.addEventListener("click", function() {
+        // Obtén el título del perfil seleccionado y para la fotico
+        const profileTitle = this.querySelector(".profile__subtitle").textContent;
+        const profileImageSrc = this.querySelector(".profile__image").src;
+        // Redirecciona a profileInd.html y pasa el título como parámetro en la URL
+        const url = new URL("./profileInd.html", window.location.href);
+        url.searchParams.set("title", encodeURIComponent(profileTitle));
+        url.searchParams.set("image", encodeURIComponent(profileImageSrc));
+        window.location.href = url.toString();
+        //window.location.href = './profileInd.html?title=' + encodeURIComponent(profileTitle);
+        console.log("hola " + profileTitle);
+    });
+});
 
 },{"./app":"bAabt","../functions/auth":"cEvP7","./getUser":"f6zaq","firebase/auth":"79vzg","firebase/storage":"8WX7E"}],"bAabt":[function(require,module,exports) {
 // Import the functions you need from the SDKs you need
@@ -2284,7 +2302,7 @@ parcelHelpers.export(exports, "validateCallback", ()=>validateCallback);
 parcelHelpers.export(exports, "validateContextObject", ()=>validateContextObject);
 parcelHelpers.export(exports, "validateIndexedDBOpenable", ()=>validateIndexedDBOpenable);
 parcelHelpers.export(exports, "validateNamespace", ()=>validateNamespace);
-var process = require("7c980b15fdb56214");
+var process = require("3aef7a8b1b72cea6");
 var global = arguments[3];
 const CONSTANTS = {
     /**
@@ -3982,7 +4000,7 @@ function indicator(i) {
     else return service;
 }
 
-},{"7c980b15fdb56214":"d5jf4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"d5jf4":[function(require,module,exports) {
+},{"3aef7a8b1b72cea6":"d5jf4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"d5jf4":[function(require,module,exports) {
 // shim for using process in browser
 var process = module.exports = {};
 // cached from whatever global is present so that test runners that stub it
@@ -14199,7 +14217,7 @@ var _component = require("@firebase/component");
 var _logger = require("@firebase/logger");
 var _util = require("@firebase/util");
 var _webchannelWrapper = require("@firebase/webchannel-wrapper");
-var process = require("e91855bca6eb5e18");
+var process = require("aa13e2a2a9b9f1a7");
 const v = "@firebase/firestore";
 /**
  * @license
@@ -33154,7 +33172,7 @@ function kf(t, e) {
     (0, _app.registerVersion)(v, "3.10.1", "esm2017");
 }();
 
-},{"e91855bca6eb5e18":"d5jf4","@firebase/app":"3AcPV","@firebase/component":"bi1VB","@firebase/logger":"fZmft","@firebase/util":"ePiK6","@firebase/webchannel-wrapper":"yQiQ1","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"yQiQ1":[function(require,module,exports) {
+},{"aa13e2a2a9b9f1a7":"d5jf4","@firebase/app":"3AcPV","@firebase/component":"bi1VB","@firebase/logger":"fZmft","@firebase/util":"ePiK6","@firebase/webchannel-wrapper":"yQiQ1","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"yQiQ1":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ErrorCode", ()=>ErrorCode);
