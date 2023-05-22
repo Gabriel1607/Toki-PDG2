@@ -31,12 +31,51 @@ Micromaster: Investigación de usuario;https://www.icesi.edu.co/educacion_contin
 The Ultimate Guide to Visual Perception and Design;https://www.interaction-design.org/courses/the-ultimate-guide-to-visual-perception-and-design;ux;https://upload.wikimedia.org/wikipedia/commons/c/c1/Ley-14-principio-de-semejanza.png;"Human vision is an amazing ability; we are capable of interpreting our surroundings so as to interact safely and accurately with little conscious effort.";;
 Maestría en Gestión de la Innovación;https://www.icesi.edu.co/facultad-ingenieria/maestria-en-gestion-de-la-innovacion;ux;https://www.icesi.edu.co/facultad-ingenieria/images/ingenierias/innovacion/ppal-maestria-gestion-innovacion-icesi-cali-posgrados-movil.jpg;Aprende a crear valor y competir mediante la diferenciación, a cómo innovar en la revolución de la información y digitalización y descubre las tendencias de las Metodologías Ágiles en procesos industriales, de innovación y de Gerencia de Proyectos.;;
 Gamification - How to Create Engaging User Experiences;https://www.interaction-design.org/courses/gamification-how-to-create-engaging-user-experiences;ux;https://public-media.interaction-design.org/images/uploads/user-content/1445/nUQP5YVVLJMgorNccSDBI2lQcEcMfL3MoXSMsWJL.jpeg;Gamification, the process of adding game-like elements to real-world or productive activities, is a growing market. By making a product or service fit into the lives of users, and doing so in an engaging manner, gamification promises to create unique, competition-beating experiences that deliver immense value. In fact, TechSci Research estimates that the global gamification industry will grow to reach $40 billion by 2024.;`;
-
+const subjectToArea = {
+coe1: "scrum",
+logica: "scrum",
+coe2: "scrum",
+pi1: "scrum",
+bi: "ui",
+dyt: "ui",
+color: "ui",
+arqui: "ui",
+intro: "ux",
+dys: "ux",
+percep: "ux",
+estad: "develop",
+fundaprogra: "develop",
+dca: "develop",
+eco: "develop",
+tri: "creative",
+fotografia: "creative",
+sonido: "creative",
+expre: "creative",
+narra: "creative",
+d4d: "creative",
+}
 import { db, auth } from "./app";
 import { onAuthStateChanged } from "../functions/auth";
 import { getUser } from "./getUser";
 let isLogged = false;
 
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      if (!isLogged) {
+        const uid = user.uid;
+        const userObj = await getUser(uid);
+        const faves = userObj.favoritas;
+      faves.forEach((sub,index,array) => {
+        if (subjectToArea.hasOwnProperty(sub)) {
+            array[index] = subjectToArea[sub];
+          }
+      });
+      console.log(faves);
+        isLogged=true;
+      }
+      
+    }
+  });
 // Split the CSV data into rows
 const rows = csvData.split(';;');
 
@@ -75,19 +114,3 @@ for (const row of rows) {
   // Add the card to the container
   container.appendChild(card);
 }
-onAuthStateChanged(auth, async (user) => {
-    if (user) {
-      if (!isLogged) {
-        const uid = user.uid;
-        const imgsrc= await getUser(uid);
-        console.log(imgsrc.imageURL);
-        const profilePhotoURL = imgsrc.imageURL;
-        const userUsername = imgsrc.name;
-        // Establece la URL de la imagen como la imagen de perfil
-       profilePhoto.src = profilePhotoURL;  
-       username.innerHTML =  userUsername;     
-        isLogged=true;
-      }
-      
-    }
-  });
