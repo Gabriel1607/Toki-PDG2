@@ -28,7 +28,8 @@ ul {
 
 .subject__title {
   color: #1a15ef;
-  margin-bottom: 1.5em;
+  padding-top: 5%;
+  padding-bottom: 1.5em;
   font-size: 1.125em;
   font-weight: 500;
 }

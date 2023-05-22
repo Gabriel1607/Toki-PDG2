@@ -1,0 +1,95 @@
+$heeboFont: "Heebo", open sans-serif;
+$primary500: #1A15EF;
+$primary800: #0A087A;
+$tokiWhite: #F3F3F3;
+$h2Size: 1.425em;
+$h3Size:1.269em;
+$subtitleSize: 1.125em;
+$bodySize: 1em;
+$captionSize: 0.888em;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: $tokiWhite;
+    font-family: $heeboFont;
+}
+
+body{
+    padding: 0% 5% 0% 5%;
+}
+
+.flex {
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.profileInd{
+    padding-top: 5%;
+
+    &__head, &__container{
+        padding-bottom: 1.5em;
+    }
+    
+    &__backIcon{
+        padding-right: 1em;
+    }
+
+    &__title{
+        color: $primary500;
+        font-size: $subtitleSize;
+        font-weight: 500;
+    }
+
+    &__image{
+        width: 100%;
+        padding-bottom: 1em;
+    }
+
+    &__p{
+        color: $primary800;
+        font-size: $captionSize;
+        font-weight: 300;
+    }
+
+    &__body{
+        color: $primary800;
+        font-size: $bodySize;
+        font-weight: 400;
+        line-height: 1.269em;
+    }
+
+    &__linkedin{
+        color: $primary500;
+        font-size: $bodySize;
+        font-weight: 400;
+        line-height: 1.269em;
+        text-decoration: underline;
+    }
+}
+
+.nav{
+    background-color: $tokiWhite;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    &__list{
+        justify-content: center;
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 0.75em;
+    }
+}
