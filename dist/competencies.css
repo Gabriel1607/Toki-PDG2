@@ -1,11 +1,83 @@
-body:before {
-  white-space: pre;
-  content: "Error: Undefined variable.\a    ╷\a 76 │         color:$secondary500;\d \a    │               ^^^^^^^^^^^^^\a    ╵\a   css\\competencies.scss 76:15  root stylesheet";
-  border-bottom: 2px solid #000;
-  margin-bottom: 1em;
-  padding: 1em;
-  font-family: Source Code Pro, SF Mono, Monaco, Inconsolata, Fira Mono, Droid Sans Mono, monospace;
-  display: block;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #f3f3f3;
+  font-family: Heebo, open sans-serif;
+}
+
+body {
+  padding: 5%;
+}
+
+.flex {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.competencies__important {
+  background-color: #d1d0fc;
+  border-radius: .5em;
+  padding: 10px;
+}
+
+.competencies__title {
+  color: #1a15ef;
+  margin-bottom: 1.5em;
+  font-size: 1.125em;
+  font-weight: 500;
+}
+
+.competencies__psmal {
+  color: #0a087a;
+  font-size: .889em;
+  font-weight: 300;
+  line-height: 1.125em;
+}
+
+.competencies__body {
+  color: #0a087a;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.269em;
+}
+
+.competencies__highlight {
+  color: #1a15ef;
+}
+
+.competencies__CTA {
+  color: #f3f3f3;
+  background-color: #1a15ef;
+  border-radius: .625em;
+  justify-content: center;
+  padding: 16px 24px;
+  font-size: 1.125em;
+  font-weight: 500;
+}
+
+.nav {
+  width: 100%;
+  background-color: #f3f3f3;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.nav__list {
+  justify-content: space-evenly;
+  padding-top: .75em;
+  display: flex;
 }
 
 /*# sourceMappingURL=competencies.css.map */
