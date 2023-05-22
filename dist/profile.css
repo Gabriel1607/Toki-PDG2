@@ -40,6 +40,10 @@ h3 {
   font-weight: 500;
 }
 
+p:empty:not(:focus):before {
+  content: attr(data-placeholder);
+}
+
 .profile__photo {
   width: 30%;
   margin: auto auto 1em;
@@ -58,8 +62,15 @@ h3 {
 .profile__psmall {
   color: #1a15ef;
   text-align: center;
+  cursor: text;
+  border: 1px solid #ccc;
+  padding: 5px;
   font-size: .889em;
   font-weight: 300;
+}
+
+.profile__psmall:focus {
+  outline: solid #7573f5;
 }
 
 .profile__container {

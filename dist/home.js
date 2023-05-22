@@ -649,12 +649,65 @@ const avatars = document.querySelectorAll(".register__chooseavatar img"); //cont
 const selectedAvatar = document.getElementById("selected_avatar"); // Imagen "actual""
 const okButton = document.getElementById("okButton"); //Boton para subir el avatar y pasar al home
 const storage = (0, _storage.getStorage)((0, _app.app));
+const helloMsg = document.getElementById("hello");
 const logoutLink = document.getElementById("logoutLink");
 let isLogged = false;
 var coll = document.getElementsByClassName("collapsible");
 var i;
 var path = window.location.pathname;
 console.log(path);
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//JS DE MATERIAS
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+if (path === "/subject.html") {
+    async function loadNotes() {
+        (0, _auth.onAuthStateChanged)((0, _app.auth), async (user)=>{
+            if (user) {
+                if (!isLogged) {
+                    const uid = user.uid;
+                    const userO = await (0, _getUser.getUser)(uid);
+                    const favs = userO.favoritas;
+                    const subjectImages = document.querySelectorAll("img[data-subject]");
+                    // Attach the event listener to each subject image
+                    subjectImages.forEach((image)=>{
+                        const ele = image.getAttribute("data-subject");
+                        if (favs.includes(ele)) image.classList.remove("hidden");
+                        else image.classList.add("hidden");
+                    });
+                    const notas = userO.notas;
+                    console.log(notas);
+                    const aprov = userO.aprobado;
+                    console.log(aprov);
+                    const notaFuse = Object.assign({}, notas, aprov);
+                    const container = document.querySelector(".allSubject__container");
+                    for(const subject in notaFuse){
+                        const card = document.createElement("div");
+                        card.classList.add("allSubject__card");
+                        const title = document.createElement("p");
+                        title.classList.add("allSubject__psmall");
+                        title.textContent = subject;
+                        card.appendChild(title);
+                        const grade = notaFuse[subject];
+                        const gradeElement = document.createElement("p");
+                        gradeElement.classList.add("allSubject__grade");
+                        if (typeof grade === "boolean") gradeElement.textContent = "Aprobado";
+                        else gradeElement.textContent = grade.toString();
+                        card.appendChild(gradeElement);
+                        container.appendChild(card);
+                    }
+                    isLogged = true;
+                }
+            }
+        });
+    }
+    loadNotes();
+}
 //-0-0-0-0-0-0-0-0-0-0
 //-0-0-0-0-0-0-0-0-0-0
 //-0-0-0-0-0-0-0-0-0-0
@@ -671,6 +724,7 @@ if (path === "/home.html") {
                 if (!isLogged) {
                     const uid = user.uid;
                     const userObj = await (0, _getUser.getUser)(uid);
+                    helloMsg.innerHTML = "\xa1Hola, " + userObj.name + "!";
                     const faves = userObj.favoritas;
                     faves.forEach((sub, index, array)=>{
                         if (subjectToArea.hasOwnProperty(sub)) array[index] = subjectToArea[sub];
@@ -680,8 +734,21 @@ if (path === "/home.html") {
                     const rows = csvData.split(";;");
                     // Remove the header row if present
                     if (rows.length > 0) rows.shift();
+                    const cardsToShow = 3; // Number of cards to show initially
+                    const profiles = document.getElementsByClassName("profile__card");
+                    for (const card of profiles){
+                        // Get the education area ID from the card's ID
+                        const areaId = card.id;
+                        // Check if the card's education area matches the selected area
+                        if (faves.includes(areaId)) // If it matches, remove the "hidden" class to make the card visible
+                        card.classList.remove("hidden");
+                        else // If it doesn't match, add the "hidden" class to hide the card
+                        card.classList.add("hidden");
+                    }
                     // Get the container element where the HTML structures will be inserted
                     const container = document.querySelector(".recommended__cardlist");
+                    const seeMoreBtn = document.querySelector("#seeMoreBtn");
+                    const cards = []; // Array to store all the cards
                     // Shuffle the rows array
                     for(let i = rows.length - 1; i > 0; i--){
                         const j = Math.floor(Math.random() * (i + 1));
@@ -695,7 +762,7 @@ if (path === "/home.html") {
                         // Split the row into individual values
                         const [title, url, type, image, desc] = row.split(";");
                         if (faves.includes(type)) {
-                            console.log(type);
+                            // console.log(type);
                             // Create the HTML structure based on the template
                             const card = document.createElement("div");
                             card.classList.add("recommended__card");
@@ -713,8 +780,22 @@ if (path === "/home.html") {
                             card.appendChild(cardDesc);
                             // Add the card to the container
                             container.appendChild(card);
+                            // Add the card to the array
+                            cards.push(card);
                         }
                     }
+                    // Hide the remaining cards
+                    cards.slice(cardsToShow).forEach((card)=>{
+                        card.style.display = "none";
+                    });
+                    // Toggle visibility of hidden cards when "See More" button is clicked
+                    seeMoreBtn.addEventListener("click", ()=>{
+                        cards.slice(cardsToShow).forEach((card)=>{
+                            card.style.display = card.style.display === "none" ? "block" : "none";
+                        });
+                        console.log(seeMoreBtn.textContent);
+                        seeMoreBtn.textContent = seeMoreBtn.textContent === "Ver m\xe1s" ? "Ver menos" : "Ver m\xe1s";
+                    });
                     isLogged = true;
                 }
             }
@@ -737,20 +818,22 @@ subjectImages.forEach((image)=>{
 });
 //Imagen cambia con click
 function toggleImage(image) {
-    const subject = image.getAttribute("data-subject");
-    const currentState = image.src.includes("_false");
-    if (currentState) {
-        image.style.display = "none";
-        image.nextElementSibling.style.display = "inline-block";
-        selectedSubject.push(subject);
-        console.log(selectedSubject);
-    } else if (!currentState) {
-        image.style.display = "none";
-        image.previousElementSibling.style.display = "inline-block";
-        const index = selectedSubject.indexOf(subject);
-        if (index !== -1) {
-            selectedSubject.splice(index, 1);
+    if (path != "/subject.html") {
+        const subject = image.getAttribute("data-subject");
+        const currentState = image.src.includes("_false");
+        if (currentState) {
+            image.style.display = "none";
+            image.nextElementSibling.style.display = "inline-block";
+            selectedSubject.push(subject);
             console.log(selectedSubject);
+        } else if (!currentState) {
+            image.style.display = "none";
+            image.previousElementSibling.style.display = "inline-block";
+            const index = selectedSubject.indexOf(subject);
+            if (index !== -1) {
+                selectedSubject.splice(index, 1);
+                console.log(selectedSubject);
+            }
         }
     }
 }

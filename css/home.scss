@@ -19,8 +19,30 @@ html, body {
     font-family: $heeboFont;
 }
 
+.hidden {
+    display: none;
+  }
+  
 body{
     padding: 0% 5% 5% 5%;
+}
+.see-more{
+    width: 100%;
+    padding: 6px 8px 8px 32px;
+    text-align: left;
+    color:$primary500;
+    font-weight: bold;
+    font-size: 1.3em;
+    line-height: 1.269em;
+    background: $tokiWhite url("../img/chevronRight.png");
+    background-position: 8px 6px;
+    background-repeat: no-repeat;
+    border-style: none;
+}
+.see-more.active{
+    background: $tokiWhite url("../img/chevronDown.png");
+    background-position: 8px 6px;
+    background-repeat: no-repeat;
 }
 
 .flex {
