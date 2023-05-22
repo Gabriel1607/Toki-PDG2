@@ -44,10 +44,48 @@ ul{
     list-style: none;
 }
 
+.competencies{
+    &__important{
+        background-color: $primary100;
+        padding: 10px;
+        border-radius: 0.5em;
+    }
 
+    &__title{
+        color:$primary500;
+        font-weight: 500;
+        font-size: $subtitleSize;
+        margin-bottom: 1.5em;
+    }
 
+    &__psmal{
+        color:$primary800;
+        font-weight: 300;
+        font-size: $captionSize;
+        line-height: 1.125em;
+    }
 
+    &__body{
+        color:$primary800;
+        font-weight: 500;
+        font-size: $bodySize;
+        line-height: 1.269em;
+    }
 
+    &__highlight{
+        color:$secondary500;
+    }
+
+    &__CTA{
+        color: $tokiWhite;
+        background-color: $primary500;
+        border-radius: 0.625em;
+        padding: 16px 24px;
+        font-size: $subtitleSize;
+        font-weight: 500;
+        justify-content: center;
+    }
+}
 
 .nav{
     background-color: $tokiWhite;
