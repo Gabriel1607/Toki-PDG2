@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"fVIJ0":[function(require,module,exports) {
+})({"bKXf4":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "81cde60cd3cf1640";
+module.bundle.HMR_BUNDLE_ID = "94f1b39d0a3c6c8e";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -556,8 +556,21 @@ function hmrAccept(bundle, id) {
     });
 }
 
-},{}],"lhdc2":[function(require,module,exports) {
+},{}],"b4ZpD":[function(require,module,exports) {
+// Obtén el elemento con la clase "profileInd__title"
+const profileTitleElement = document.querySelector(".profileInd__title");
+// Obtén el elemento con la clase "profileInd__image"
+const profileImageElement = document.querySelector(".profileInd__image");
+// Obtén el título del perfil y la imagen de la URL
+const urlParams = new URLSearchParams(window.location.search);
+const encodedProfileTitle = urlParams.get("title");
+const profileTitle = decodeURIComponent(encodedProfileTitle);
+const profileImageSrc = urlParams.get("image");
+// Asigna el título del perfil al elemento
+profileTitleElement.textContent = profileTitle;
+// Asigna la imagen del perfil al elemento
+profileImageElement.src = decodeURIComponent(profileImageSrc);
 
-},{}]},["fVIJ0","lhdc2"], "lhdc2", "parcelRequire3705")
+},{}]},["bKXf4","b4ZpD"], "b4ZpD", "parcelRequire3705")
 
 //# sourceMappingURL=profileInd.js.map

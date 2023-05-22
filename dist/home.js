@@ -142,13 +142,21 @@
       this[globalName] = mainExports;
     }
   }
+<<<<<<< HEAD
+})({"bKXf4":[function(require,module,exports) {
+=======
 })({"fcnVC":[function(require,module,exports) {
+>>>>>>> 6b7ca631c8d858a7469f4157964927f4e8ea7743
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
+<<<<<<< HEAD
+module.bundle.HMR_BUNDLE_ID = "94f1b39d0a3c6c8e";
+=======
 module.bundle.HMR_BUNDLE_ID = "ea59ea70b6efe323";
+>>>>>>> 6b7ca631c8d858a7469f4157964927f4e8ea7743
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -556,6 +564,24 @@ function hmrAccept(bundle, id) {
     });
 }
 
+<<<<<<< HEAD
+},{}],"b4ZpD":[function(require,module,exports) {
+// Obtén el elemento con la clase "profileInd__title"
+const profileTitleElement = document.querySelector(".profileInd__title");
+// Obtén el elemento con la clase "profileInd__image"
+const profileImageElement = document.querySelector(".profileInd__image");
+// Obtén el título del perfil y la imagen de la URL
+const urlParams = new URLSearchParams(window.location.search);
+const encodedProfileTitle = urlParams.get("title");
+const profileTitle = decodeURIComponent(encodedProfileTitle);
+const profileImageSrc = urlParams.get("image");
+// Asigna el título del perfil al elemento
+profileTitleElement.textContent = profileTitle;
+// Asigna la imagen del perfil al elemento
+profileImageElement.src = decodeURIComponent(profileImageSrc);
+
+},{}]},["bKXf4","b4ZpD"], "b4ZpD", "parcelRequire3705")
+=======
 },{}],"cvZoU":[function(require,module,exports) {
 var _app = require("./app");
 var _auth = require("../functions/auth");
@@ -38545,5 +38571,6 @@ const db = (0, _firestore.getFirestore)(app); //To get info from my collections
 const storage = (0, _storage.getStorage)(app);
 
 },{"firebase/app":"aM3Fo","firebase/auth":"79vzg","firebase/firestore":"8A4BC","firebase/storage":"8WX7E","../utils/firebase":"bYU7u","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["fcnVC","cvZoU"], "cvZoU", "parcelRequire3705")
+>>>>>>> 6b7ca631c8d858a7469f4157964927f4e8ea7743
 
 //# sourceMappingURL=home.js.map
