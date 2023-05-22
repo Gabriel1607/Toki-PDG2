@@ -54,7 +54,10 @@ ul{
 
     &__image{
         width: 100%;
+        height: 14.375em;
+        object-fit: cover;
         padding-bottom: 1em;
+        border-radius: 1em;
     }
 
     &__p{
