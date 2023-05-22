@@ -1,4 +1,4 @@
-import { db } from "./app";
+import { db } from "./appFB";
 import { doc, getDoc,setDoc } from "firebase/firestore";
 
 async function getUser(id){
