@@ -1,42 +1,11 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  background-color: #f3f3f3;
-  font-family: Heebo, open sans-serif;
-}
-
-body {
-  padding: 5%;
-}
-
-.flex {
-  display: flex;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul {
-  list-style: none;
-}
-
-.nav {
-  width: 100%;
-  background-color: #f3f3f3;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-}
-
-.nav__list {
-  justify-content: space-evenly;
-  padding-top: .75em;
-  display: flex;
+body:before {
+  white-space: pre;
+  content: "Error: Undefined variable.\a    ╷\a 76 │         color:$secondary500;\d \a    │               ^^^^^^^^^^^^^\a    ╵\a   css\\competencies.scss 76:15  root stylesheet";
+  border-bottom: 2px solid #000;
+  margin-bottom: 1em;
+  padding: 1em;
+  font-family: Source Code Pro, SF Mono, Monaco, Inconsolata, Fira Mono, Droid Sans Mono, monospace;
+  display: block;
 }
 
 /*# sourceMappingURL=competencies.css.map */
