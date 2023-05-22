@@ -106,6 +106,71 @@ console.log(path);
 //-0-0-0-0-0-0-0-0-0-0
 //-0-0-0-0-0-0-0-0-0-0
 //-0-0-0-0-0-0-0-0-0-0
+//JS DE MATERIAS
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+if (path==='/subject.html') {
+  async function loadNotes() {
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        if (!isLogged) {
+          const uid = user.uid;
+          const userO= await getUser(uid);
+          const favs = userO.favoritas;
+          const subjectImages = document.querySelectorAll('img[data-subject]');
+
+// Attach the event listener to each subject image
+subjectImages.forEach(image => {
+  const ele = image.getAttribute('data-subject');
+  if(favs.includes(ele)){
+    image.classList.remove('hidden');
+  }else{
+    image.classList.add('hidden');
+  }
+});
+          const notas = userO.notas;
+          console.log(notas); 
+          const aprov = userO.aprobado;
+          console.log(aprov); 
+          const notaFuse = Object.assign({}, notas, aprov);
+          const container = document.querySelector('.allSubject__container'); 
+          for (const subject in notaFuse) {
+            const card = document.createElement('div');
+            card.classList.add('allSubject__card');
+          
+            const title = document.createElement('p');
+            title.classList.add('allSubject__psmall');
+            title.textContent = subject;
+            card.appendChild(title);
+          
+            const grade = notaFuse[subject];
+            const gradeElement = document.createElement('p');
+            gradeElement.classList.add('allSubject__grade');
+            
+            if (typeof grade === 'boolean') {
+              gradeElement.textContent = 'Aprobado';
+            } else {
+              gradeElement.textContent = grade.toString();
+            }
+            
+            card.appendChild(gradeElement);
+          
+            container.appendChild(card);
+          }
+          isLogged=true;
+        }
+        
+      }
+    });
+}
+loadNotes();
+}
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
 //JS DEL HOME
 //-0-0-0-0-0-0-0-0-0-0
 //-0-0-0-0-0-0-0-0-0-0
@@ -133,6 +198,20 @@ if (rows.length > 0) {
   rows.shift();
 }
 const cardsToShow = 3; // Number of cards to show initially
+const profiles = document.getElementsByClassName('profile__card');
+for (const card of profiles) {
+  // Get the education area ID from the card's ID
+  const areaId = card.id;
+
+  // Check if the card's education area matches the selected area
+  if (faves.includes(areaId)) {
+    // If it matches, remove the "hidden" class to make the card visible
+    card.classList.remove('hidden');
+  } else {
+    // If it doesn't match, add the "hidden" class to hide the card
+    card.classList.add('hidden');
+  }
+}
 // Get the container element where the HTML structures will be inserted
 const container = document.querySelector('.recommended__cardlist');
 const seeMoreBtn = document.querySelector('#seeMoreBtn');
@@ -215,7 +294,7 @@ subjectImages.forEach(image => {
 //Imagen cambia con click
 
 function toggleImage(image) {
-
+  if (path!='/subject.html') {
   const subject = image.getAttribute('data-subject');
   const currentState = image.src.includes('_false');
   if(currentState){//EN EL MOMENTO DE HACER EL CLICK, ESTÁ DESACTIVADO
@@ -232,6 +311,7 @@ function toggleImage(image) {
       console.log(selectedSubject)
     }
   }
+}
 }
 if (registerUserForm3) {
   registerUserForm3.addEventListener('click',  function(ev){

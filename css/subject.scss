@@ -14,7 +14,9 @@ $captionSize: 0.888em;
     padding: 0;
     box-sizing: border-box;
 }
-
+.hidden {
+    display: none;
+  }
 html, body {
     background-color: $tokiWhite;
     font-family: $heeboFont;

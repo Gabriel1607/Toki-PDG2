@@ -9,6 +9,10 @@ html, body {
   font-family: Heebo, open sans-serif;
 }
 
+.hidden {
+  display: none;
+}
+
 body {
   padding: 0% 5% 5%;
 }

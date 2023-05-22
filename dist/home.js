@@ -142,21 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-<<<<<<< HEAD
-})({"bKXf4":[function(require,module,exports) {
-=======
 })({"fcnVC":[function(require,module,exports) {
->>>>>>> 6b7ca631c8d858a7469f4157964927f4e8ea7743
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-<<<<<<< HEAD
-module.bundle.HMR_BUNDLE_ID = "94f1b39d0a3c6c8e";
-=======
 module.bundle.HMR_BUNDLE_ID = "ea59ea70b6efe323";
->>>>>>> 6b7ca631c8d858a7469f4157964927f4e8ea7743
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -564,24 +556,6 @@ function hmrAccept(bundle, id) {
     });
 }
 
-<<<<<<< HEAD
-},{}],"b4ZpD":[function(require,module,exports) {
-// Obtén el elemento con la clase "profileInd__title"
-const profileTitleElement = document.querySelector(".profileInd__title");
-// Obtén el elemento con la clase "profileInd__image"
-const profileImageElement = document.querySelector(".profileInd__image");
-// Obtén el título del perfil y la imagen de la URL
-const urlParams = new URLSearchParams(window.location.search);
-const encodedProfileTitle = urlParams.get("title");
-const profileTitle = decodeURIComponent(encodedProfileTitle);
-const profileImageSrc = urlParams.get("image");
-// Asigna el título del perfil al elemento
-profileTitleElement.textContent = profileTitle;
-// Asigna la imagen del perfil al elemento
-profileImageElement.src = decodeURIComponent(profileImageSrc);
-
-},{}]},["bKXf4","b4ZpD"], "b4ZpD", "parcelRequire3705")
-=======
 },{}],"cvZoU":[function(require,module,exports) {
 var _app = require("./app");
 var _auth = require("../functions/auth");
@@ -687,6 +661,58 @@ console.log(path);
 //-0-0-0-0-0-0-0-0-0-0
 //-0-0-0-0-0-0-0-0-0-0
 //-0-0-0-0-0-0-0-0-0-0
+//JS DE MATERIAS
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+if (path === "/subject.html") {
+    async function loadNotes() {
+        (0, _auth.onAuthStateChanged)((0, _app.auth), async (user)=>{
+            if (user) {
+                if (!isLogged) {
+                    const uid = user.uid;
+                    const userO = await (0, _getUser.getUser)(uid);
+                    const favs = userO.favoritas;
+                    const subjectImages = document.querySelectorAll("img[data-subject]");
+                    // Attach the event listener to each subject image
+                    subjectImages.forEach((image)=>{
+                        const ele = image.getAttribute("data-subject");
+                        if (favs.includes(ele)) image.classList.remove("hidden");
+                        else image.classList.add("hidden");
+                    });
+                    const notas = userO.notas;
+                    console.log(notas);
+                    const aprov = userO.aprobado;
+                    console.log(aprov);
+                    const notaFuse = Object.assign({}, notas, aprov);
+                    const container = document.querySelector(".allSubject__container");
+                    for(const subject in notaFuse){
+                        const card = document.createElement("div");
+                        card.classList.add("allSubject__card");
+                        const title = document.createElement("p");
+                        title.classList.add("allSubject__psmall");
+                        title.textContent = subject;
+                        card.appendChild(title);
+                        const grade = notaFuse[subject];
+                        const gradeElement = document.createElement("p");
+                        gradeElement.classList.add("allSubject__grade");
+                        if (typeof grade === "boolean") gradeElement.textContent = "Aprobado";
+                        else gradeElement.textContent = grade.toString();
+                        card.appendChild(gradeElement);
+                        container.appendChild(card);
+                    }
+                    isLogged = true;
+                }
+            }
+        });
+    }
+    loadNotes();
+}
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
 //JS DEL HOME
 //-0-0-0-0-0-0-0-0-0-0
 //-0-0-0-0-0-0-0-0-0-0
@@ -709,6 +735,16 @@ if (path === "/home.html") {
                     // Remove the header row if present
                     if (rows.length > 0) rows.shift();
                     const cardsToShow = 3; // Number of cards to show initially
+                    const profiles = document.getElementsByClassName("profile__card");
+                    for (const card of profiles){
+                        // Get the education area ID from the card's ID
+                        const areaId = card.id;
+                        // Check if the card's education area matches the selected area
+                        if (faves.includes(areaId)) // If it matches, remove the "hidden" class to make the card visible
+                        card.classList.remove("hidden");
+                        else // If it doesn't match, add the "hidden" class to hide the card
+                        card.classList.add("hidden");
+                    }
                     // Get the container element where the HTML structures will be inserted
                     const container = document.querySelector(".recommended__cardlist");
                     const seeMoreBtn = document.querySelector("#seeMoreBtn");
@@ -782,20 +818,22 @@ subjectImages.forEach((image)=>{
 });
 //Imagen cambia con click
 function toggleImage(image) {
-    const subject = image.getAttribute("data-subject");
-    const currentState = image.src.includes("_false");
-    if (currentState) {
-        image.style.display = "none";
-        image.nextElementSibling.style.display = "inline-block";
-        selectedSubject.push(subject);
-        console.log(selectedSubject);
-    } else if (!currentState) {
-        image.style.display = "none";
-        image.previousElementSibling.style.display = "inline-block";
-        const index = selectedSubject.indexOf(subject);
-        if (index !== -1) {
-            selectedSubject.splice(index, 1);
+    if (path != "/subject.html") {
+        const subject = image.getAttribute("data-subject");
+        const currentState = image.src.includes("_false");
+        if (currentState) {
+            image.style.display = "none";
+            image.nextElementSibling.style.display = "inline-block";
+            selectedSubject.push(subject);
             console.log(selectedSubject);
+        } else if (!currentState) {
+            image.style.display = "none";
+            image.previousElementSibling.style.display = "inline-block";
+            const index = selectedSubject.indexOf(subject);
+            if (index !== -1) {
+                selectedSubject.splice(index, 1);
+                console.log(selectedSubject);
+            }
         }
     }
 }
@@ -2246,8 +2284,8 @@ parcelHelpers.export(exports, "validateCallback", ()=>validateCallback);
 parcelHelpers.export(exports, "validateContextObject", ()=>validateContextObject);
 parcelHelpers.export(exports, "validateIndexedDBOpenable", ()=>validateIndexedDBOpenable);
 parcelHelpers.export(exports, "validateNamespace", ()=>validateNamespace);
-var global = arguments[3];
 var process = require("7c980b15fdb56214");
+var global = arguments[3];
 const CONSTANTS = {
     /**
      * @define {boolean} Whether this is the client Node.js SDK.
@@ -38571,6 +38609,5 @@ const db = (0, _firestore.getFirestore)(app); //To get info from my collections
 const storage = (0, _storage.getStorage)(app);
 
 },{"firebase/app":"aM3Fo","firebase/auth":"79vzg","firebase/firestore":"8A4BC","firebase/storage":"8WX7E","../utils/firebase":"bYU7u","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["fcnVC","cvZoU"], "cvZoU", "parcelRequire3705")
->>>>>>> 6b7ca631c8d858a7469f4157964927f4e8ea7743
 
 //# sourceMappingURL=home.js.map
