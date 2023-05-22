@@ -13,6 +13,22 @@ body {
   padding: 0% 5% 5%;
 }
 
+.see-more {
+  width: 100%;
+  text-align: left;
+  color: #1a15ef;
+  background: #f3f3f3 url("chevronRight.png") 8px 6px no-repeat;
+  border-style: none;
+  padding: 6px 8px 8px 32px;
+  font-size: 1.3em;
+  font-weight: bold;
+  line-height: 1.269em;
+}
+
+.see-more.active {
+  background: #f3f3f3 url("chevronDown.png") 8px 6px no-repeat;
+}
+
 .flex {
   align-items: center;
   display: flex;

@@ -649,6 +649,7 @@ const avatars = document.querySelectorAll(".register__chooseavatar img"); //cont
 const selectedAvatar = document.getElementById("selected_avatar"); // Imagen "actual""
 const okButton = document.getElementById("okButton"); //Boton para subir el avatar y pasar al home
 const storage = (0, _storage.getStorage)((0, _app.app));
+const helloMsg = document.getElementById("hello");
 const logoutLink = document.getElementById("logoutLink");
 let isLogged = false;
 var coll = document.getElementsByClassName("collapsible");
@@ -671,6 +672,7 @@ if (path === "/home.html") {
                 if (!isLogged) {
                     const uid = user.uid;
                     const userObj = await (0, _getUser.getUser)(uid);
+                    helloMsg.innerHTML = "\xa1Hola, " + userObj.name + "!";
                     const faves = userObj.favoritas;
                     faves.forEach((sub, index, array)=>{
                         if (subjectToArea.hasOwnProperty(sub)) array[index] = subjectToArea[sub];
@@ -680,8 +682,11 @@ if (path === "/home.html") {
                     const rows = csvData.split(";;");
                     // Remove the header row if present
                     if (rows.length > 0) rows.shift();
+                    const cardsToShow = 3; // Number of cards to show initially
                     // Get the container element where the HTML structures will be inserted
                     const container = document.querySelector(".recommended__cardlist");
+                    const seeMoreBtn = document.querySelector("#seeMoreBtn");
+                    const cards = []; // Array to store all the cards
                     // Shuffle the rows array
                     for(let i = rows.length - 1; i > 0; i--){
                         const j = Math.floor(Math.random() * (i + 1));
@@ -695,7 +700,7 @@ if (path === "/home.html") {
                         // Split the row into individual values
                         const [title, url, type, image, desc] = row.split(";");
                         if (faves.includes(type)) {
-                            console.log(type);
+                            // console.log(type);
                             // Create the HTML structure based on the template
                             const card = document.createElement("div");
                             card.classList.add("recommended__card");
@@ -713,8 +718,22 @@ if (path === "/home.html") {
                             card.appendChild(cardDesc);
                             // Add the card to the container
                             container.appendChild(card);
+                            // Add the card to the array
+                            cards.push(card);
                         }
                     }
+                    // Hide the remaining cards
+                    cards.slice(cardsToShow).forEach((card)=>{
+                        card.style.display = "none";
+                    });
+                    // Toggle visibility of hidden cards when "See More" button is clicked
+                    seeMoreBtn.addEventListener("click", ()=>{
+                        cards.slice(cardsToShow).forEach((card)=>{
+                            card.style.display = card.style.display === "none" ? "block" : "none";
+                        });
+                        console.log(seeMoreBtn.textContent);
+                        seeMoreBtn.textContent = seeMoreBtn.textContent === "Ver m\xe1s" ? "Ver menos" : "Ver m\xe1s";
+                    });
                     isLogged = true;
                 }
             }
