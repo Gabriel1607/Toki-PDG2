@@ -6,6 +6,11 @@ const profilePhoto = document.querySelector('.profile__photo');
 const username = document.querySelector('.profile__username');
 let isLogged = false;
 
+const editableElement = document.getElementById('editable');
+
+editableElement.addEventListener('touchstart', function() {
+  editableElement.focus();
+});
 
 async function updateProfilePhoto() {
   onAuthStateChanged(auth, async (user) => {

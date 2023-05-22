@@ -563,6 +563,10 @@ var _getUser = require("./getUser");
 const profilePhoto = document.querySelector(".profile__photo");
 const username = document.querySelector(".profile__username");
 let isLogged = false;
+const editableElement = document.getElementById("editable");
+editableElement.addEventListener("touchstart", function() {
+    editableElement.focus();
+});
 async function updateProfilePhoto() {
     (0, _auth.onAuthStateChanged)((0, _app.auth), async (user)=>{
         if (user) {

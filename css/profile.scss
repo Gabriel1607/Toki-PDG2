@@ -58,7 +58,9 @@ h3{
     font-weight: 500;
     padding: 1em;
 }
-
+p:empty:not(:focus)::before {
+    content: attr(data-placeholder);
+  }
 .profile{
     &__photo{
         display: flex;
@@ -81,6 +83,12 @@ h3{
         font-size: $captionSize;
         font-weight: 300;
         text-align: center;
+        border: 1px solid #ccc;
+        padding: 5px;
+        cursor: text;
+       &:focus{
+        outline: solid #7573F5;
+       }
     }
 
     &__container{
