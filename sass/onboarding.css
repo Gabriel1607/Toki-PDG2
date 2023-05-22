@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Heebo", open sans-serif;
+}
+
+body {
+  background-image: url("../img/abouttoki1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15% 5%;
+}
+
+h2 {
+  color: #F3F3F3;
+  font-weight: 500;
+  font-size: 1.425em;
+  line-height: 1.806em;
+  margin-bottom: -0.625em;
+}
+
+.main {
+  margin-bottom: 100%;
+}
+.main__logo {
+  margin-bottom: -0.625em;
+  margin-top: 0.625em;
+}
+
+.info__subtitle {
+  color: #F3F3F3;
+  font-weight: 500;
+  font-size: 1.125em;
+}
+
+/*# sourceMappingURL=onboarding.css.map */

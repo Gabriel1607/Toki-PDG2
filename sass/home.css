@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #F3F3F3;
+  font-family: "Heebo", open sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  padding: 0% 5% 5% 5%;
+}
+
+.see-more {
+  width: 100%;
+  padding: 6px 8px 8px 32px;
+  text-align: left;
+  color: #1A15EF;
+  font-weight: bold;
+  font-size: 1.3em;
+  line-height: 1.269em;
+  background: #F3F3F3 url("../img/chevronRight.png");
+  background-position: 8px 6px;
+  background-repeat: no-repeat;
+  border-style: none;
+}
+
+.see-more.active {
+  background: #F3F3F3 url("../img/chevronDown.png");
+  background-position: 8px 6px;
+  background-repeat: no-repeat;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.header {
+  padding-top: 5%;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 10%;
+}
+.header__logo {
+  width: 30%;
+}
+
+.hello {
+  padding-bottom: 5%;
+}
+.hello__user {
+  color: #1A15EF;
+  font-size: 1.125em;
+  font-weight: 500;
+}
+.hello__psmall {
+  color: #0A087A;
+  font-size: 0.888em;
+  font-weight: 300;
+}
+
+.recommended {
+  padding-bottom: 5%;
+}
+.recommended__card {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.recommended__title {
+  color: #1A15EF;
+  font-size: 1.125em;
+  font-weight: 500;
+}
+.recommended__body, .recommended__psmall {
+  color: #0A087A;
+  font-size: 0.888em;
+  font-weight: 300;
+}
+.recommended__psmall {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.recommended__image {
+  width: 100%;
+  border-radius: 1em;
+  height: 14.375em;
+  object-fit: cover;
+}
+.recommended__subtitle {
+  color: #0A087A;
+  font-size: 1.125em;
+  font-weight: 500;
+}
+
+.profile {
+  padding-bottom: 5%;
+}
+.profile__title {
+  color: #1A15EF;
+  font-size: 1.125em;
+  font-weight: 500;
+  padding-bottom: 0.5em;
+}
+.profile__body {
+  color: #0A087A;
+  font-size: 0.888em;
+  font-weight: 300;
+  padding-bottom: 1em;
+}
+.profile__card {
+  padding-bottom: 2.5em;
+}
+.profile__image {
+  width: 100%;
+  border-radius: 1em;
+  height: 14.375em;
+  object-fit: cover;
+  padding-bottom: 0.5em;
+}
+.profile__subtitle {
+  color: #0A087A;
+  font-size: 1.125em;
+  font-weight: 500;
+}
+
+.nav {
+  background-color: #F3F3F3;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.nav__list {
+  justify-content: center;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 0.75em;
+}
+
+/*# sourceMappingURL=home.css.map */

@@ -1,0 +1,72 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Heebo", open sans-serif;
+}
+
+body {
+  background-image: url("../img/abouttoki3.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10% 5%;
+}
+
+img {
+  margin-bottom: 0.625em;
+}
+
+h3 {
+  color: #F3F3F3;
+  font-weight: 500;
+  font-size: 1.269em;
+  margin-bottom: -0.313em;
+}
+
+.main {
+  margin-bottom: 110%;
+}
+.main__psmall {
+  color: #F3F3F3;
+  font-weight: 300;
+  font-size: 0.888em;
+}
+.main__highlight {
+  color: #FFBB29;
+}
+
+ul {
+  margin-bottom: 0.313em;
+  margin-top: 0.313em;
+  list-style: none;
+}
+ul li {
+  position: relative;
+  padding-left: 20px;
+}
+ul li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #FFBB29;
+}
+
+.info__psmall {
+  color: #F3F3F3;
+  font-weight: 300;
+  font-size: 0.888em;
+}
+.info__highlight {
+  color: #FFBB29;
+}
+.info__item {
+  color: #F3F3F3;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+/*# sourceMappingURL=onboarding3.css.map */

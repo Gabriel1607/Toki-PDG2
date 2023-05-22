@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #F3F3F3;
+  font-family: "Heebo", open sans-serif;
+}
+
+body {
+  padding: 0% 5% 0% 5%;
+}
+
+.flex {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.individual {
+  padding-top: 5%;
+}
+.individual__head, .individual__container {
+  padding-bottom: 1.5em;
+}
+.individual__backIcon {
+  padding-right: 1em;
+}
+.individual__title {
+  color: #1A15EF;
+  font-size: 1.125em;
+  font-weight: 500;
+}
+.individual__image {
+  width: 100%;
+  padding-bottom: 1em;
+}
+.individual__p {
+  color: #0A087A;
+  font-size: 0.888em;
+  font-weight: 300;
+}
+.individual__button {
+  color: #F3F3F3;
+  background-color: #1A15EF;
+  border-radius: 0.625em;
+  padding: 16px 24px;
+  font-size: 1.125em;
+  font-weight: 500;
+  justify-content: center;
+}
+
+.nav {
+  background-color: #F3F3F3;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.nav__list {
+  justify-content: center;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 0.75em;
+}
+
+/*# sourceMappingURL=individual.css.map */

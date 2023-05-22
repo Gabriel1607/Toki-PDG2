@@ -1,11 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html, body {
   background-color: #F3F3F3;
   font-family: "Heebo", open sans-serif;
 }
 
 .flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -36,27 +40,23 @@ img {
 }
 
 .option {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .option__linklogin, .option__linkregister {
   font-weight: 500;
   font-size: 1.125em;
   border-radius: 0.625em;
   padding: 16px 33px;
 }
-
 .option__linklogin {
   background-color: #F3F3F3;
   color: #1A15EF;
   border-style: solid;
   border-width: 0.063em;
 }
-
 .option__linkregister {
   background-color: #1A15EF;
   color: #F3F3F3;
 }
+
 /*# sourceMappingURL=index.css.map */

@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #F3F3F3;
+  font-family: "Heebo", open sans-serif;
+}
+
+body {
+  padding: 5%;
+}
+
+.flex {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  color: #F3F3F3;
+  font-weight: 500;
+  font-size: 1.425em;
+  line-height: 1.2em;
+}
+
+.competencies {
+  margin-bottom: 5%;
+}
+.competencies__title {
+  color: #1A15EF;
+  font-weight: 500;
+  font-size: 1.125em;
+}
+
+.banner {
+  border-radius: 1em;
+  padding: 0.75em;
+  margin-bottom: 8%;
+}
+.banner#blue {
+  background-image: linear-gradient(#110ECB, #7573F5);
+}
+.banner#yellow {
+  background-image: linear-gradient(#F7A800, #FFD67E);
+}
+.banner#magenta {
+  background-image: linear-gradient(#E60036, #FF7393);
+}
+.banner__psmall {
+  color: #F3F3F3;
+  font-weight: 300;
+  font-size: 0.888em;
+  line-height: 1.128em;
+}
+
+.question__container {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4em;
+}
+.question__title {
+  color: #0A087A;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.269em;
+  margin-bottom: 0.5em;
+}
+.question__psmalll, .question__psmallr {
+  color: #0A087A;
+  font-weight: 300;
+  font-size: 0.888em;
+  line-height: 1.128em;
+}
+.question__psmallr {
+  text-align: right;
+}
+
+.slidercontainer {
+  width: 50%;
+  justify-content: center;
+}
+.slidercontainer__slider {
+  width: 100%;
+}
+.slidercontainer__values {
+  display: flex;
+  justify-content: space-between;
+  color: #0A087A;
+  font-weight: 300;
+  font-size: 0.888em;
+  line-height: 1.128em;
+}
+
+.progress__number {
+  color: #1A15EF;
+  font-weight: 400;
+  font-size: 1em;
+  text-align: center;
+}
+
+.progressContainer {
+  width: 100%;
+  height: 1.125em;
+  background-color: #D1D0FC;
+  border-radius: 0.5em;
+  overflow: hidden;
+  margin-bottom: 2em;
+}
+.progressContainer .progressBar {
+  height: 100%;
+  background-color: #1A15EF;
+  transition: width 0.3s ease-in-out;
+}
+.progressContainer #progress1 {
+  width: 11.1%;
+}
+.progressContainer #progress2 {
+  width: 22.2%;
+}
+.progressContainer #progress3 {
+  width: 33.3%;
+}
+.progressContainer #progress4 {
+  width: 44.4%;
+}
+.progressContainer #progress5 {
+  width: 55.5%;
+}
+.progressContainer #progress6 {
+  width: 66.6%;
+}
+.progressContainer #progress7 {
+  width: 77.7%;
+}
+.progressContainer #progress8 {
+  width: 88.8%;
+}
+.progressContainer #progress9 {
+  width: 100%;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  background-color: #1A15EF;
+  color: #F3F3F3;
+  font-size: 1.125em;
+  font-weight: 500;
+  border-style: solid;
+  border-width: 0.063em;
+  border-radius: 0.625em;
+  padding: 16px 24px;
+  width: 100%;
+}
+
+/*# sourceMappingURL=competenciesTest.css.map */

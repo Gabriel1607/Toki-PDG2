@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #F3F3F3;
+  font-family: "Heebo", open sans-serif;
+}
+
+body {
+  padding: 5%;
+}
+
+.flex {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h2 {
+  color: #1A15EF;
+  font-size: 1.425em;
+  text-align: center;
+  font-weight: 500;
+}
+
+h3 {
+  color: #1A15EF;
+  font-size: 1.266em;
+  text-align: center;
+  font-weight: 500;
+  padding: 1em;
+}
+
+p:empty:not(:focus)::before {
+  content: attr(data-placeholder);
+}
+
+.profile__photo {
+  display: flex;
+  position: relative;
+  margin: auto;
+  width: 30%;
+  margin-bottom: 1em;
+  padding-top: 1em;
+}
+.profile__title {
+  color: #1A15EF;
+  font-weight: 500;
+  font-size: 1.125em;
+  margin-bottom: 1.5em;
+}
+.profile__psmall {
+  color: #1A15EF;
+  font-size: 0.889em;
+  font-weight: 300;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 5px;
+  cursor: text;
+}
+.profile__psmall:focus {
+  outline: solid #7573F5;
+}
+.profile__container {
+  background-color: #D1D0FC;
+  border-radius: 1em;
+  margin-bottom: 1.5em;
+}
+.profile__minicardList {
+  width: 100%;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+.profile__minicard {
+  background-color: #A3A1F9;
+  width: 100%;
+  border-radius: 1em;
+  margin: 1em;
+  padding: 0.75em 1.975em;
+}
+.profile__subtitle {
+  color: #1A15EF;
+  font-size: 1.125em;
+  text-align: center;
+  font-weight: 500;
+  padding-bottom: 0.5em;
+}
+.profile__number {
+  color: #F3F3F3;
+  font-size: 2em;
+  font-weight: 600;
+  text-align: center;
+}
+.profile__insigniaList {
+  justify-content: center;
+  justify-content: space-evenly;
+}
+.profile__p {
+  color: #A3A1F9;
+  font-size: 1em;
+  font-weight: 400;
+  text-align: center;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  background-color: #F3F3F3;
+  color: #1A15EF;
+  font-size: 1.125em;
+  font-weight: 500;
+  border-style: solid;
+  border-width: 0.063em;
+  border-radius: 0.625em;
+  padding: 16px 24px;
+  width: 100%;
+}
+
+.nav {
+  background-color: #F3F3F3;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.nav__list {
+  justify-content: center;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 0.75em;
+}
+
+/*# sourceMappingURL=profile.css.map */

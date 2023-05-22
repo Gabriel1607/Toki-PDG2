@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #F3F3F3;
+  font-family: "Heebo", open sans-serif;
+}
+
+body {
+  padding: 0% 5% 0% 5%;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  color: #1A15EF;
+  font-weight: 500;
+  font-size: 1.425em;
+  line-height: 1.806em;
+}
+
+h3 {
+  color: #0A087A;
+  font-weight: 500;
+  font-size: 1.269em;
+}
+
+p {
+  color: #0A087A;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.269em;
+}
+
+.tabcontent {
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+.tabcontent__image {
+  padding: 3%;
+}
+.tabcontent__image[data-state=active] {
+  display: none;
+}
+.tabcontent#first_semester {
+  display: block;
+}
+
+.tab {
+  overflow: hidden;
+  background-color: #D1D0FC;
+  justify-content: space-evenly;
+  margin-top: 2%;
+}
+.tab__links {
+  font-size: 0.888em;
+  color: #0A087A;
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 10.5px;
+  transition: 0.3s;
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.active {
+  background-color: #A3A1F9;
+}
+
+.register__image {
+  display: block;
+  margin: auto;
+}
+.register__head * {
+  display: flex;
+  align-items: center;
+}
+.register__submit {
+  background-color: #1A15EF;
+  color: #F3F3F3;
+  font-size: 1.125em;
+  font-weight: 500;
+  border-radius: 0.625em;
+  padding: 16px 24px;
+  width: 100%;
+}
+.register__important {
+  background-color: #D1D0FC;
+  padding: 10px;
+  border-radius: 0.5em;
+}
+.register__psmall {
+  font-size: 0.888em;
+}
+
+/*# sourceMappingURL=register3.css.map */

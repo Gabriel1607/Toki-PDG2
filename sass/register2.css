@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #F3F3F3;
+  font-family: "Heebo", open sans-serif;
+}
+
+body {
+  padding: 0% 5% 0% 5%;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+table {
+  table-layout: auto;
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+td {
+  font-size: 0.888em;
+  color: #7B7B7B;
+}
+
+h2 {
+  color: #1A15EF;
+  font-weight: 500;
+  font-size: 1.425em;
+  line-height: 1.806em;
+}
+
+h3 {
+  color: #0A087A;
+  font-weight: 500;
+  font-size: 1.269em;
+}
+
+p, th {
+  color: #0A087A;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.269em;
+}
+
+.column {
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.collapsible {
+  width: 100%;
+  padding: 8px 8px 8px 32px;
+  text-align: left;
+  color: #1A15EF;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.269em;
+  background: #F3F3F3 url("../img/chevronRight.png");
+  background-position: 8px 6px;
+  background-repeat: no-repeat;
+  border-style: none;
+}
+
+.collapsible.active {
+  background: #F3F3F3 url("../img/chevronDown.png");
+  background-position: 8px 6px;
+  background-repeat: no-repeat;
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.register__image {
+  display: block;
+  margin: auto;
+}
+.register__submit {
+  background-color: #1A15EF;
+  color: #F3F3F3;
+  font-size: 1.125em;
+  font-weight: 500;
+  border-radius: 0.625em;
+  padding: 16px 24px;
+  width: 100%;
+}
+.register__select {
+  background-color: #F3F3F3;
+  color: #1A15EF;
+  font-size: 0.888em;
+  border-color: #1A15EF;
+  border-width: 0.063em;
+  border-radius: 0.625em;
+  padding: 16px 24px;
+  width: 100%;
+}
+.register__important {
+  background-color: #D1D0FC;
+  padding: 10px;
+  border-radius: 0.5em;
+}
+.register__psmall {
+  font-size: 0.888em;
+}
+.register__linkAccount {
+  font-size: 1em;
+}
+.register__p {
+  justify-content: center;
+}
+
+/*# sourceMappingURL=register2.css.map */
