@@ -25,10 +25,15 @@ ul {
   list-style: none;
 }
 
+.competencies__image {
+  width: 100%;
+  padding-bottom: 1em;
+}
 .competencies__important {
   background-color: #D1D0FC;
   padding: 10px;
   border-radius: 0.5em;
+  margin-bottom: 1.5em;
 }
 .competencies__title {
   color: #1A15EF;
@@ -36,7 +41,7 @@ ul {
   font-size: 1.125em;
   margin-bottom: 1.5em;
 }
-.competencies__psmal {
+.competencies__psmall {
   color: #0A087A;
   font-weight: 300;
   font-size: 0.889em;
@@ -47,11 +52,21 @@ ul {
   font-weight: 500;
   font-size: 1em;
   line-height: 1.269em;
+  margin-bottom: 1.5em;
 }
 .competencies__highlight {
   color: #1A15EF;
 }
-.competencies__CTA {
+.competencies__body2 {
+  color: #0A087A;
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 1.269em;
+  padding-bottom: 1em;
+}
+.competencies__button {
+  display: flex;
+  width: 100%;
   color: #F3F3F3;
   background-color: #1A15EF;
   border-radius: 0.625em;

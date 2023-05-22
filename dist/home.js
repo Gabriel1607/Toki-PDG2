@@ -988,6 +988,7 @@ function saveImageURL(avatarURL) {
         }
     });
 }
+///////////////////////////////////////////////////////////
 //para pasar la info de los perfiles
 // Obtén todos los elementos con la clase "profile__card"
 const profileCards = document.querySelectorAll(".profile__card");
