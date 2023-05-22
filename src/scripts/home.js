@@ -32,6 +32,11 @@ The Ultimate Guide to Visual Perception and Design;https://www.interaction-desig
 Maestría en Gestión de la Innovación;https://www.icesi.edu.co/facultad-ingenieria/maestria-en-gestion-de-la-innovacion;ux;https://www.icesi.edu.co/facultad-ingenieria/images/ingenierias/innovacion/ppal-maestria-gestion-innovacion-icesi-cali-posgrados-movil.jpg;Aprende a crear valor y competir mediante la diferenciación, a cómo innovar en la revolución de la información y digitalización y descubre las tendencias de las Metodologías Ágiles en procesos industriales, de innovación y de Gerencia de Proyectos.;;
 Gamification - How to Create Engaging User Experiences;https://www.interaction-design.org/courses/gamification-how-to-create-engaging-user-experiences;ux;https://public-media.interaction-design.org/images/uploads/user-content/1445/nUQP5YVVLJMgorNccSDBI2lQcEcMfL3MoXSMsWJL.jpeg;Gamification, the process of adding game-like elements to real-world or productive activities, is a growing market. By making a product or service fit into the lives of users, and doing so in an engaging manner, gamification promises to create unique, competition-beating experiences that deliver immense value. In fact, TechSci Research estimates that the global gamification industry will grow to reach $40 billion by 2024.;`;
 
+import { db, auth } from "./app";
+import { onAuthStateChanged } from "../functions/auth";
+import { getUser } from "./getUser";
+let isLogged = false;
+
 // Split the CSV data into rows
 const rows = csvData.split(';;');
 
@@ -70,3 +75,19 @@ for (const row of rows) {
   // Add the card to the container
   container.appendChild(card);
 }
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      if (!isLogged) {
+        const uid = user.uid;
+        const imgsrc= await getUser(uid);
+        console.log(imgsrc.imageURL);
+        const profilePhotoURL = imgsrc.imageURL;
+        const userUsername = imgsrc.name;
+        // Establece la URL de la imagen como la imagen de perfil
+       profilePhoto.src = profilePhotoURL;  
+       username.innerHTML =  userUsername;     
+        isLogged=true;
+      }
+      
+    }
+  });
