@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-  padding: 5%;
+  padding: 5% 5% 20%;
 }
 
 .flex {
@@ -58,7 +58,7 @@ p:empty:not(:focus)::before {
   font-size: 1.125em;
   margin-bottom: 1.5em;
 }
-.profile__psmall {
+.profile__psmall, .profile__pimportant {
   color: #1A15EF;
   font-size: 0.889em;
   font-weight: 300;
@@ -67,13 +67,14 @@ p:empty:not(:focus)::before {
   padding: 5px;
   cursor: text;
 }
-.profile__psmall:focus {
+.profile__psmall:focus, .profile__pimportant:focus {
   outline: solid #7573F5;
 }
 .profile__container {
   background-color: #D1D0FC;
   border-radius: 1em;
   margin-bottom: 1.5em;
+  padding-bottom: 1em;
 }
 .profile__minicardList {
   width: 100%;
@@ -109,6 +110,16 @@ p:empty:not(:focus)::before {
   font-size: 1em;
   font-weight: 400;
   text-align: center;
+}
+.profile__important {
+  display: flex;
+  margin: auto;
+  width: 95%;
+  background-color: #A3A1F9;
+  border-radius: 0.5em;
+}
+.profile__pimportant {
+  text-align: left;
 }
 
 .link {

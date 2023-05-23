@@ -12,31 +12,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!--Styles-->
-    <link rel="stylesheet" type="text/css" href="/profile.css">
+    <link rel="stylesheet" type="text/css" href="/competenciesResult.css">
 </head>
 
 <body>
-    <p class="profile__title">Mi perfil</p>
-    <div class="profile">
-        <div class="profile__container">
-            <img src="/uploadimage.png" class="profile__photo"> <!--cambia dependiendo de lo que elija el usuario-->
-            <h2 class="profile__username">Username</h2>
-            <p id="editable" contenteditable="true" class="profile__psmall" data-placeholder="¡Toca aquí para añadir una descripción!"></p>
-            <div class="profile__minicardList flex">
-                <div class="profile__minicard">
-                    <p class="profile__subtitle">Progreso</p>
-                    <p class="profile__number">50%</p>
-                </div>
-                <div class="profile__minicard">
-                    <p class="profile__subtitle">Materia</p>
-                    <p class="profile__number">X</p>
-                </div>
-            </div>
-        </div>
+    <div class="result flex">
+        <a href="/competencies.html">
+            <img src="/backicon.png" alt="back" class="back__icon">
+        </a>
+        <p class="result__title">Mi resultados</p>
+    </div>
 
-
-        <div class="profile__container">
-            <h3>Tu top de competencias</h3>
+    <div class="result__container">
+        <h1>¡Genial!</h1>
+        <p class="result__body">¡Has completado la evaluación de competencias! Aquí te mostramos tus resultados:</p>
+        
+        <div class="result__top">
+            <p class="result__subtitle">Tu top de mejores competencias es:</p>
             <div class="profile__firstPosition flex">
                 <img src="/backicon.png">
                 <p class="profile__body">Primer puesto</p>
@@ -52,14 +44,25 @@
                 <p class="profile__body">Tercer puesto</p>
             </div>
             <img src="/clarificador.png">
-            
-            <div class="profile__important">
-                <p class="profile__pimportant">Recuerda que puedes ver tus resultados completos en la sección de competencias</p>
+        </div>
+
+        <div class="result__top">
+            <p class="result__subtitle">Tu competencias a mejorar son:</p>
+            <div class="profile__firstPosition">
+                <p class="profile__body">Primer puesto</p>
+                <img src="/clarificador.png">
+            </div>
+            <div class="profile__secondPosition">
+                <p class="profile__body">Segundo puesto</p>
+                <img src="/clarificador.png">
+            </div>
+            <div class="profile__thirdPosition">
+                <p class="profile__body">Tercer puesto</p>
+                <img src="/clarificador.png">
             </div>
         </div>
-    </div>
 
-    <a href="#" class="link" id="logoutLink">Cerrar sesión</a>
+    </div>
 
      <!--menu abajo-->
      <nav class="nav">    
@@ -71,7 +74,7 @@
             </li>
             <li class="nav__item">
                 <a href="/competencies.html">
-                    <img src="/competencies.png" alt="profile" class="nav__icon">
+                    <img src="/competenciesSelect.png" alt="profile" class="nav__icon">
                 </a>
             </li>
             <li class="nav__item">
@@ -81,15 +84,12 @@
             </li>
             <li class="nav__item">
                 <a href="/profile.html">
-                    <img src="/profileSelect.png" alt="profile" class="nav__icon">
+                    <img src="/profile.png" alt="profile" class="nav__icon">
                 </a>
             </li>
         </ul>
     </nav>
 
-    <script src="/home.js" defer=""></script>
-    <script src="/profile.js" defer=""></script>
 
-
-</body>
+<script src="/competenciesResult.js"></script></body>
 </html>
