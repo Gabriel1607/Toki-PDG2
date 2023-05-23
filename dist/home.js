@@ -1010,8 +1010,7 @@ profileCards.forEach(function(card) {
         url.searchParams.set("linkedin", encodeURIComponent(profileLinkedIn));
         window.location.href = url.toString();
     });
-}); // HEAD
- //-0-0-0-0-0-0-0-0-0-0
+}); //-0-0-0-0-0-0-0-0-0-0
  //-0-0-0-0-0-0-0-0-0-0
  //-0-0-0-0-0-0-0-0-0-0
  //-0-0-0-0-0-0-0-0-0-0
@@ -1021,8 +1020,6 @@ profileCards.forEach(function(card) {
  //-0-0-0-0-0-0-0-0-0-0
  //-0-0-0-0-0-0-0-0-0-0
  //EVACOMP1
- //
- //c2b7597c38547820fa6d071f69e5094f905d5242
 
 },{"./app":"bAabt","../functions/auth":"cEvP7","./getUser":"f6zaq","firebase/auth":"79vzg","firebase/storage":"8WX7E"}],"bAabt":[function(require,module,exports) {
 // Import the functions you need from the SDKs you need
