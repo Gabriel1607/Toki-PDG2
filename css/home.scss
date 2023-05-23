@@ -1,4 +1,5 @@
 $heeboFont: "Heebo", open sans-serif;
+$primary100: #D1D0FC;
 $primary500: #1A15EF;
 $primary800: #0A087A;
 $tokiWhite: #F3F3F3;
@@ -149,7 +150,19 @@ ul{
         border-radius: 1em;
         height: 14.375em;
         object-fit: cover;
-        padding-bottom: 0.5em;
+    }
+
+    &__text{
+        background-color: $primary100;
+        padding: 10px;
+        border-radius: 0.5em;
+    }
+
+    &__quote{
+        color: $primary800;
+        font-size: $captionSize;
+        font-weight: 300;
+        line-height: 1.125em;
     }
 
     &__subtitle{
@@ -157,6 +170,10 @@ ul{
         font-size: $subtitleSize;
         font-weight: 500;
     }
+
+    .hidden-description {
+        display: none;
+      }
 }
 
 .nav{

@@ -988,24 +988,30 @@ function saveImageURL(avatarURL) {
         }
     });
 }
+///////////////////////////////////////////////////////////
 //para pasar la info de los perfiles
 // Obtén todos los elementos con la clase "profile__card"
 const profileCards = document.querySelectorAll(".profile__card");
 // Agrega un controlador de eventos a cada elemento
 profileCards.forEach(function(card) {
     card.addEventListener("click", function() {
-        // Obtén el título del perfil seleccionado y para la fotico
+        // Obtén el título, imagen y descripción del perfil seleccionado
         const profileTitle = this.querySelector(".profile__subtitle").textContent;
         const profileImageSrc = this.querySelector(".profile__image").src;
-        // Redirecciona a profileInd.html y pasa el título como parámetro en la URL
+        const profileQuote = this.querySelector(".profile__quote").textContent;
+        const profileDescription = this.querySelector(".profile__description").textContent;
+        const profileLinkedIn = this.querySelector(".profileInd__linkedin").getAttribute("href");
+        // Redirecciona a profileInd.html y pasa los parámetros en la URL
         const url = new URL("./profileInd.html", window.location.href);
         url.searchParams.set("title", encodeURIComponent(profileTitle));
         url.searchParams.set("image", encodeURIComponent(profileImageSrc));
+        url.searchParams.set("quote", encodeURIComponent(profileQuote));
+        url.searchParams.set("description", encodeURIComponent(profileDescription));
+        url.searchParams.set("linkedin", encodeURIComponent(profileLinkedIn));
         window.location.href = url.toString();
-        //window.location.href = './profileInd.html?title=' + encodeURIComponent(profileTitle);
-        console.log("hola " + profileTitle);
     });
-}); //-0-0-0-0-0-0-0-0-0-0
+}); // HEAD
+ //-0-0-0-0-0-0-0-0-0-0
  //-0-0-0-0-0-0-0-0-0-0
  //-0-0-0-0-0-0-0-0-0-0
  //-0-0-0-0-0-0-0-0-0-0
@@ -1015,6 +1021,8 @@ profileCards.forEach(function(card) {
  //-0-0-0-0-0-0-0-0-0-0
  //-0-0-0-0-0-0-0-0-0-0
  //EVACOMP1
+ //
+ //c2b7597c38547820fa6d071f69e5094f905d5242
 
 },{"./app":"bAabt","../functions/auth":"cEvP7","./getUser":"f6zaq","firebase/auth":"79vzg","firebase/storage":"8WX7E"}],"bAabt":[function(require,module,exports) {
 // Import the functions you need from the SDKs you need
@@ -2311,8 +2319,8 @@ parcelHelpers.export(exports, "validateCallback", ()=>validateCallback);
 parcelHelpers.export(exports, "validateContextObject", ()=>validateContextObject);
 parcelHelpers.export(exports, "validateIndexedDBOpenable", ()=>validateIndexedDBOpenable);
 parcelHelpers.export(exports, "validateNamespace", ()=>validateNamespace);
-var process = require("7c980b15fdb56214");
 var global = arguments[3];
+var process = require("7c980b15fdb56214");
 const CONSTANTS = {
     /**
      * @define {boolean} Whether this is the client Node.js SDK.

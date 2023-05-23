@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!--Styles-->
+    <link rel="stylesheet" href="/register4.css">
+</head>
+
+<body>    
+    <section class="register">
+            <a href="/register3.html">
+                <img src="/backicon.png" alt="back" class="register__backicon">
+            </a>
+            <img src="/logo.png" class="register__image">
+            
+            <h2 class="register__tittle">Elige una foto de perfil</h2>
+            <p>¡Elige uno de los avatares de Toki!</p>
+            
+            <img src="/uploadimage.png" id="selected_avatar" class="register__imageplaceholder">
+
+           
+            <div class="register__chooseavatar flex">
+                <img src="https://firebasestorage.googleapis.com/v0/b/toki-623a5.appspot.com/o/avatar1.png?alt=media&token=cd0cea86-7b9c-4d39-9c26-bad908b499f4" id="avatar1">
+                <img src="https://firebasestorage.googleapis.com/v0/b/toki-623a5.appspot.com/o/avatar2.png?alt=media&token=4f4d7cac-e130-47ec-925a-00cc1d136564" id="avatar2">
+                <img src="https://firebasestorage.googleapis.com/v0/b/toki-623a5.appspot.com/o/avatar3.png?alt=media&token=2347364a-5dfb-4e76-a76b-2665c2e861d8" id="avatar3">
+            </div>
+            <div class="register__chooseavatar flex">
+                <img src="https://firebasestorage.googleapis.com/v0/b/toki-623a5.appspot.com/o/avatar4.png?alt=media&token=490361b8-e25b-49cf-a898-07fb71214f2d" id="avatar4">
+                <img src="https://firebasestorage.googleapis.com/v0/b/toki-623a5.appspot.com/o/avatar5.png?alt=media&token=7341b804-9d65-43c4-a304-791ab170cbb4" id="avatar5">
+                <img src="https://firebasestorage.googleapis.com/v0/b/toki-623a5.appspot.com/o/avatar6.png?alt=media&token=8461d400-89f2-4725-bf24-02cc63a8050c" id="avatar6">
+            </div>
+            
+            <input type="submit" value="Listo" class="register__submit" id="okButton">
+            <br>
+            <a href="/home.html" class="register__link">Omitir</a>
+    </section>
+    
+
+    <script src="/home.js" defer=""></script>
+
+</body>
+</html>

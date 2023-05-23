@@ -132,12 +132,25 @@ ul {
   border-radius: 1em;
   height: 14.375em;
   object-fit: cover;
-  padding-bottom: 0.5em;
+}
+.profile__text {
+  background-color: #D1D0FC;
+  padding: 10px;
+  border-radius: 0.5em;
+}
+.profile__quote {
+  color: #0A087A;
+  font-size: 0.888em;
+  font-weight: 300;
+  line-height: 1.125em;
 }
 .profile__subtitle {
   color: #0A087A;
   font-size: 1.125em;
   font-weight: 500;
+}
+.profile .hidden-description {
+  display: none;
 }
 
 .nav {

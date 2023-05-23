@@ -1,4 +1,5 @@
 $heeboFont: "Heebo", open sans-serif;
+$primary100: #D1D0FC;
 $primary500: #1A15EF;
 $primary800: #0A087A;
 $tokiWhite: #F3F3F3;
@@ -56,8 +57,22 @@ ul{
         width: 100%;
         height: 14.375em;
         object-fit: cover;
-        padding-bottom: 1em;
+        margin-bottom: 1em;
         border-radius: 1em;
+    }
+
+    &__quoteContainer{
+        background-color: $primary100;
+        padding: 10px 10px;
+        border-radius: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    &__quote{
+        color: $primary800;
+        font-size: $captionSize;
+        font-weight: 300;
+        line-height: 1.125em;
     }
 
     &__p{
@@ -71,14 +86,18 @@ ul{
         font-size: $bodySize;
         font-weight: 400;
         line-height: 1.269em;
+        margin-bottom: 0.5em;
     }
 
     &__linkedin{
-        color: $primary500;
-        font-size: $bodySize;
-        font-weight: 400;
-        line-height: 1.269em;
-        text-decoration: underline;
+        display: flex;
+        color: $tokiWhite;
+        background-color: $primary500;
+        border-radius: 0.625em;
+        padding: 16px 24px;
+        font-size: $subtitleSize;
+        font-weight: 500;
+        justify-content: center;
     }
 }
 
