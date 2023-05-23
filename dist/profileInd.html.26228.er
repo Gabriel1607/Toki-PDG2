@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil recomendado</title>
+
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!--Styles-->
+    <link rel="stylesheet" href="/profileInd.css">
+</head>
+
+<body>    
+    <section class="profileInd">
+        <div class="profileInd__head flex">
+            <a href="/home.html">
+                <img src="/backicon.png" alt="back" class="profileInd__backIcon">
+            </a>
+            <p class="profileInd__title" id="profile_title"></p>
+        </div>
+
+        <div class="profileInd__container">
+            <img src="/4d_true.png" class="profileInd__image"> 
+            <div class="profileInd__quoteContainer">
+                <p class="profileInd__quote">.</p> <!--frasesita bonita-->
+            </div>
+            <p class="profileInd__p">.</p> <!--descripcion-->
+        </div>
+
+        <!--Styles
+        <div>
+            <p class="profileInd__body">Estos son algunos DMIs que la están rompiendo en la industria</p>
+            <a href="" class="profileInd__linkedin">Nombresito</a>
+            <br>
+            <a href="" class="profileInd__linkedin">Nombresito</a>
+        </div>
+         -->
+    </section>
+
+
+     <!--menu abajo-->
+     <nav class="nav">    
+        <ul class="nav__list flex">
+            <li class="nav__item">
+                <a href="/home.html">
+                    <img src="/homeSelect.png" alt="home" class="nav__icon">
+                </a>
+            </li>
+            <li class="nav__item">
+                <a href="/competencies.html">
+                    <img src="/competencies.png" alt="competencies" class="nav__icon">
+                </a>
+            </li>
+            <li class="nav__item">
+                <a href="/subject.html">
+                    <img src="/asignature.png" alt="asignature" class="nav__icon">
+                </a>
+            </li>
+            <li class="nav__item">
+                <a href="/profile.html">
+                    <img src="/profile.png" alt="profile" class="nav__icon">
+                </a>
+            </li>
+        </ul>
+    </nav>
+    
+    <script src="/profileInd.js" defer=""></script>
+</body>
+</html>

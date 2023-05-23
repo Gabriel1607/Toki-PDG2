@@ -995,16 +995,20 @@ const profileCards = document.querySelectorAll(".profile__card");
 // Agrega un controlador de eventos a cada elemento
 profileCards.forEach(function(card) {
     card.addEventListener("click", function() {
-        // Obtén el título del perfil seleccionado y para la fotico
+        // Obtén el título, imagen y descripción del perfil seleccionado
         const profileTitle = this.querySelector(".profile__subtitle").textContent;
         const profileImageSrc = this.querySelector(".profile__image").src;
-        // Redirecciona a profileInd.html y pasa el título como parámetro en la URL
+        const profileQuote = this.querySelector(".profile__quote").textContent;
+        const profileDescription = this.querySelector(".profile__description").textContent;
+        const profileLinkedIn = this.querySelector(".profileInd__linkedin").getAttribute("href");
+        // Redirecciona a profileInd.html y pasa los parámetros en la URL
         const url = new URL("./profileInd.html", window.location.href);
         url.searchParams.set("title", encodeURIComponent(profileTitle));
         url.searchParams.set("image", encodeURIComponent(profileImageSrc));
+        url.searchParams.set("quote", encodeURIComponent(profileQuote));
+        url.searchParams.set("description", encodeURIComponent(profileDescription));
+        url.searchParams.set("linkedin", encodeURIComponent(profileLinkedIn));
         window.location.href = url.toString();
-        //window.location.href = './profileInd.html?title=' + encodeURIComponent(profileTitle);
-        console.log("hola " + profileTitle);
     });
 });
 
@@ -2304,7 +2308,7 @@ parcelHelpers.export(exports, "validateContextObject", ()=>validateContextObject
 parcelHelpers.export(exports, "validateIndexedDBOpenable", ()=>validateIndexedDBOpenable);
 parcelHelpers.export(exports, "validateNamespace", ()=>validateNamespace);
 var global = arguments[3];
-var process = require("7c980b15fdb56214");
+var process = require("3aef7a8b1b72cea6");
 const CONSTANTS = {
     /**
      * @define {boolean} Whether this is the client Node.js SDK.
@@ -4001,7 +4005,7 @@ function indicator(i) {
     else return service;
 }
 
-},{"7c980b15fdb56214":"d5jf4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"d5jf4":[function(require,module,exports) {
+},{"3aef7a8b1b72cea6":"d5jf4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"d5jf4":[function(require,module,exports) {
 // shim for using process in browser
 var process = module.exports = {};
 // cached from whatever global is present so that test runners that stub it
@@ -14218,7 +14222,7 @@ var _component = require("@firebase/component");
 var _logger = require("@firebase/logger");
 var _util = require("@firebase/util");
 var _webchannelWrapper = require("@firebase/webchannel-wrapper");
-var process = require("e91855bca6eb5e18");
+var process = require("aa13e2a2a9b9f1a7");
 const v = "@firebase/firestore";
 /**
  * @license
@@ -33173,7 +33177,7 @@ function kf(t, e) {
     (0, _app.registerVersion)(v, "3.10.1", "esm2017");
 }();
 
-},{"e91855bca6eb5e18":"d5jf4","@firebase/app":"3AcPV","@firebase/component":"bi1VB","@firebase/logger":"fZmft","@firebase/util":"ePiK6","@firebase/webchannel-wrapper":"yQiQ1","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"yQiQ1":[function(require,module,exports) {
+},{"aa13e2a2a9b9f1a7":"d5jf4","@firebase/app":"3AcPV","@firebase/component":"bi1VB","@firebase/logger":"fZmft","@firebase/util":"ePiK6","@firebase/webchannel-wrapper":"yQiQ1","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"yQiQ1":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ErrorCode", ()=>ErrorCode);

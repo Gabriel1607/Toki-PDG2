@@ -48,7 +48,21 @@ ul {
   height: 14.375em;
   object-fit: cover;
   border-radius: 1em;
-  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+
+.profileInd__quoteContainer {
+  background-color: #d1d0fc;
+  border-radius: .5em;
+  margin-bottom: .5em;
+  padding: 10px;
+}
+
+.profileInd__quote {
+  color: #0a087a;
+  font-size: .888em;
+  font-weight: 300;
+  line-height: 1.125em;
 }
 
 .profileInd__p {
@@ -59,17 +73,21 @@ ul {
 
 .profileInd__body {
   color: #0a087a;
+  margin-bottom: .5em;
   font-size: 1em;
   font-weight: 400;
   line-height: 1.269em;
 }
 
 .profileInd__linkedin {
-  color: #1a15ef;
-  font-size: 1em;
-  font-weight: 400;
-  line-height: 1.269em;
-  text-decoration: underline;
+  color: #f3f3f3;
+  background-color: #1a15ef;
+  border-radius: .625em;
+  justify-content: center;
+  padding: 16px 24px;
+  font-size: 1.125em;
+  font-weight: 500;
+  display: flex;
 }
 
 .nav {
