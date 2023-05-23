@@ -552,3 +552,69 @@ profileCards.forEach(function(card) {
 //-0-0-0-0-0-0-0-0-0-0
 
 //EVACOMP1
+if (path.includes('evacomp')) {
+  const submitButton = document.querySelector('#submit-button');
+// Add a click event listener to the submit button
+submitButton.addEventListener('click', () => {
+  // Start the recursive traversal from the top-level question element
+  const questions = document.querySelectorAll('.question');
+  const compTitle = document.getElementById('compTitle');
+ 
+  const values = {};
+const titleComp = compTitle.innerHTML;
+  questions.forEach((question) => {
+    const title = question.querySelector('.question__title').id;
+    const sliderValue = question.querySelector('.slidercontainer__slider').value;
+
+    values[title] = sliderValue;
+  });
+
+  const valueAveraged = ((values.Autopercepción*0.5)+(values.Interés*0.3)+(values.Disfrute*0.2))
+  console.log(valueAveraged);
+  const studentData = {
+    testResults:{
+      [titleComp] : valueAveraged
+    }
+  };
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      if (!isLogged) {
+        const uid = user.uid;
+     await updateUserData(db, uid, studentData);
+      isLogged=true;
+      }
+      switch (path) {
+        case "/evacomp1.html":
+         location.href = "./evacomp2.html";
+          break;
+          case "/evacomp2.html":
+           location.href = "./evacomp3.html";
+            break;
+            case "/evacomp3.html":
+              location.href = "./evacomp4.html";
+               break;
+               case "/evacomp4.html":
+                location.href = "./evacomp5.html";
+                 break;
+                 case "/evacomp5.html":
+                  location.href = "./evacomp6.html";
+                   break;
+                   case "/evacomp6.html":
+                    location.href = "./evacomp7.html";
+                     break;
+                     case "/evacomp7.html":
+                      location.href = "./evacomp8.html";
+                       break;
+                       case "/evacomp8.html":
+                        location.href = "./evacomp9.html";
+                         break;
+                         case "/evacomp9.html":
+                          location.href = "./competenciesResult.html";
+                           break;
+        
+      }
+    }
+  });
+  // You can perform further processing or send the values to a server here
+});
+}

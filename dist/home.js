@@ -1010,16 +1010,18 @@ profileCards.forEach(function(card) {
         url.searchParams.set("linkedin", encodeURIComponent(profileLinkedIn));
         window.location.href = url.toString();
     });
-}); //-0-0-0-0-0-0-0-0-0-0
- //-0-0-0-0-0-0-0-0-0-0
- //-0-0-0-0-0-0-0-0-0-0
- //-0-0-0-0-0-0-0-0-0-0
- //-0-0-0-0-0-0-0-0-0-0
- //JS DEL TEST DE COMPETENCIAS
- //-0-0-0-0-0-0-0-0-0-0
- //-0-0-0-0-0-0-0-0-0-0
- //-0-0-0-0-0-0-0-0-0-0
- //EVACOMP1
+});
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//JS DEL TEST DE COMPETENCIAS
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//EVACOMP1
+path.includes("evacomp");
 
 },{"./app":"bAabt","../functions/auth":"cEvP7","./getUser":"f6zaq","firebase/auth":"79vzg","firebase/storage":"8WX7E"}],"bAabt":[function(require,module,exports) {
 // Import the functions you need from the SDKs you need
