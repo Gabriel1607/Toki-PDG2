@@ -171,7 +171,7 @@ loadNotes();
 //-0-0-0-0-0-0-0-0-0-0
 //-0-0-0-0-0-0-0-0-0-0
 //-0-0-0-0-0-0-0-0-0-0
-//JS DEL HOME
+//JS DEL HOME~
 //-0-0-0-0-0-0-0-0-0-0
 //-0-0-0-0-0-0-0-0-0-0
 //-0-0-0-0-0-0-0-0-0-0
@@ -246,6 +246,10 @@ if (faves.includes(type)) {
   cardDesc.textContent = desc;
   card.appendChild(cardDesc);
 
+card.addEventListener("click", function() {
+  // Open the external link in a new window
+  window.open(url, '_blank');
+});
   // Add the card to the container
   container.appendChild(card);
   // Add the card to the array

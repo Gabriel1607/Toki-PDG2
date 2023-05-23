@@ -94,4 +94,20 @@ h1 {
   display: flex;
 }
 
+.link {
+  color: #f3f3f3;
+  width: 100%;
+  background-color: #1a15ef;
+  border-style: solid;
+  border-width: .063em;
+  border-radius: .625em;
+  outline: none;
+  justify-content: center;
+  margin-top: 1.5em;
+  padding: 16px 24px;
+  font-size: 1.125em;
+  font-weight: 500;
+  display: flex;
+}
+
 /*# sourceMappingURL=competenciesResult.css.map */
