@@ -550,8 +550,6 @@ profileCards.forEach(function(card) {
 //-0-0-0-0-0-0-0-0-0-0
 //-0-0-0-0-0-0-0-0-0-0
 //-0-0-0-0-0-0-0-0-0-0
-
-//EVACOMP1
 if (path.includes('evacomp')) {
   const submitButton = document.querySelector('#submit-button');
 // Add a click event listener to the submit button
@@ -617,4 +615,59 @@ const titleComp = compTitle.innerHTML;
   });
   // You can perform further processing or send the values to a server here
 });
+}
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//JS DE LOS RESULTADOS DEL TEST DE COMPETENCIAS
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+if (path==='/competenciesResult.html') {
+  async function loadTestResults() {
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        if (!isLogged) {
+          const uid = user.uid;
+          const userO= await getUser(uid);
+          const testRest = userO.testResults;
+          const compImages = document.querySelectorAll('img[data-comp]');
+          const orderedRest = getOrderedResults(testRest);
+          //console.log(orderedRest);
+// Attach the event listener to each subject image
+compImages.forEach(image => {
+  const imgComp = image.getAttribute('data-comp');
+  const Firstposition = Object.values(orderedRest).findIndex(obj => obj.key === imgComp);
+  const imgPos = image.getAttribute('data-position');
+  //console.log("ARRAY"+position);
+  //console.log("IMAGE"+imgPos);
+  if(imgPos==0&&imgComp==orderedRest[0].key||imgPos==1&&imgComp==orderedRest[1].key||imgPos==2&&imgComp==orderedRest[2].key
+    ||imgPos==8&&imgComp==orderedRest[8].key||imgPos==7&&imgComp==orderedRest[7].key||imgPos==6&&imgComp==orderedRest[6].key){
+  
+    image.classList.remove('hidden');
+  }else{
+    image.classList.add('hidden');
+  }
+});
+          isLogged=true;
+        } 
+      }
+    });
+}
+function getOrderedResults(testResults) {
+  const orderedResults = [];
+
+  for (const key in testResults) {
+    if (testResults.hasOwnProperty(key)) {
+      orderedResults.push({ key, value: testResults[key] });
+    }
+  }
+
+  orderedResults.sort((a, b) => b.value - a.value);
+
+  return orderedResults;
+}
+loadTestResults();
 }
