@@ -70,11 +70,19 @@ h1{
         font-weight: 500;
         font-size: $bodySize;
         line-height: 1.269em;
-        padding-bottom: 1em;
     }
 
     &__top{
         padding-bottom: 1.5em;
+    }
+
+    &__medal{
+        padding-right: 0.5em;
+    }
+
+    &__image{
+        padding-top: 0.5em;
+        padding-bottom: 1em;
     }
 
     &__subtitle{
