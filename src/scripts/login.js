@@ -671,3 +671,34 @@ function getOrderedResults(testResults) {
 }
 loadTestResults();
 }
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//JS DE COMPETENCIAS
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+if (path==='/competencies.html') {
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      if (!isLogged) {
+        const uid = user.uid;
+        const userOO= await getUser(uid);
+        const testRezz = userOO.testResults;
+        const seeRes = document.getElementById('check');
+        const doTest = document.getElementById('nocheck')
+if (testRezz) {
+  doTest.classList.add('hidden');
+  seeRes.classList.remove('hidden');
+} else {
+  seeRes.classList.add('hidden');
+  doTest.classList.remove('hidden');
+}
+      isLogged=true;
+      }
+     
+    }
+  });
+}

@@ -21,6 +21,10 @@ a {
   text-decoration: none;
 }
 
+.hidden {
+  display: none;
+}
+
 ul {
   list-style: none;
 }
@@ -59,7 +63,7 @@ p:empty:not(:focus):before {
   font-weight: 500;
 }
 
-.profile__container {
+.profile__container, .profile__containerx {
   background-color: #d1d0fc;
   border-radius: 1em;
   margin-bottom: 1.5em;
@@ -87,7 +91,7 @@ p:empty:not(:focus):before {
   font-weight: 500;
 }
 
-.profile__number {
+.profile__number, .profile__numbers {
   color: #f3f3f3;
   text-align: center;
   font-size: 2em;
@@ -128,7 +132,7 @@ p:empty:not(:focus):before {
   width: 95%;
   background-color: #a3a1f9;
   border-radius: .5em;
-  margin: auto;
+  margin: auto auto 10px;
   display: flex;
 }
 

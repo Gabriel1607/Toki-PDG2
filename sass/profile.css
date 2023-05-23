@@ -21,6 +21,10 @@ a {
   text-decoration: none;
 }
 
+.hidden {
+  display: none;
+}
+
 ul {
   list-style: none;
 }
@@ -58,7 +62,7 @@ p:empty:not(:focus)::before {
   font-size: 1.125em;
   margin-bottom: 1.5em;
 }
-.profile__container {
+.profile__container, .profile__containerx {
   background-color: #D1D0FC;
   border-radius: 1em;
   margin-bottom: 1.5em;
@@ -83,7 +87,7 @@ p:empty:not(:focus)::before {
   font-weight: 500;
   padding-bottom: 0.5em;
 }
-.profile__number {
+.profile__number, .profile__numbers {
   color: #F3F3F3;
   font-size: 2em;
   font-weight: 600;
@@ -120,6 +124,7 @@ p:empty:not(:focus)::before {
   width: 95%;
   background-color: #A3A1F9;
   border-radius: 0.5em;
+  margin-bottom: 10px;
 }
 .profile__pimportant {
   text-align: left;

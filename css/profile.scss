@@ -40,6 +40,9 @@ a{
     text-decoration: none;
 }
 
+.hidden {
+    display: none;
+  }
 ul{
     list-style: none;
 }
@@ -79,7 +82,7 @@ p:empty:not(:focus)::before {
     }
 
     
-    &__container{
+    &__container,&__containerx{
         background-color: $primary100;
         border-radius: 1em;
         margin-bottom: 1.5em;
@@ -108,7 +111,7 @@ p:empty:not(:focus)::before {
         padding-bottom: 0.5em;
     }
     
-    &__number{
+    &__number,&__numbers{
         color: $tokiWhite;
         font-size: 2em;
         font-weight: 600;
@@ -150,11 +153,12 @@ p:empty:not(:focus)::before {
         width: 95%;
         background-color: $primary200;
         border-radius: 0.5em;
-
+        margin-bottom: 10px;
     }
 
     &__pimportant{
        text-align: left;
+       
     }
 }
 

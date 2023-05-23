@@ -24,7 +24,10 @@ html, body {
 body{
     padding: 5%;
 }
-
+.hidden {
+    display: none;
+  }
+  
 .flex {
     display: flex;
 }
