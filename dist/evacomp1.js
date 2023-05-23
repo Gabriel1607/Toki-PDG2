@@ -1020,7 +1020,6 @@ profileCards.forEach(function(card) {
 //-0-0-0-0-0-0-0-0-0-0
 //-0-0-0-0-0-0-0-0-0-0
 //-0-0-0-0-0-0-0-0-0-0
-//EVACOMP1
 if (path.includes("evacomp")) {
     const submitButton = document.querySelector("#submit-button");
     // Add a click event listener to the submit button
@@ -1082,6 +1081,39 @@ if (path.includes("evacomp")) {
         });
     // You can perform further processing or send the values to a server here
     });
+}
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//JS DE LOS RESULTADOS DEL TEST DE COMPETENCIAS
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+if (path === "/competenciesResult.html") {
+    console.log("sapapapapspaspaspaspaspasp");
+    async function loadTestResults() {
+        (0, _auth.onAuthStateChanged)((0, _app.auth), async (user)=>{
+            if (user) {
+                if (!isLogged) {
+                    const uid = user.uid;
+                    const userO = await (0, _getUser.getUser)(uid);
+                    const testRest = userO.testResults;
+                    console.log(testRest);
+                    const compImages = document.querySelectorAll("img[data-comp]");
+                    // Attach the event listener to each subject image
+                    compImages.forEach((image)=>{
+                        const ele = image.getAttribute("data-comp");
+                        if (testRest.includes(ele)) image.classList.remove("hidden");
+                        else image.classList.add("hidden");
+                    });
+                    isLogged = true;
+                }
+            }
+        });
+    }
+    loadTestResults();
 }
 
 },{"./app":"bAabt","../functions/auth":"cEvP7","./getUser":"f6zaq","firebase/auth":"79vzg","firebase/storage":"8WX7E"}],"bAabt":[function(require,module,exports) {
@@ -2379,8 +2411,8 @@ parcelHelpers.export(exports, "validateCallback", ()=>validateCallback);
 parcelHelpers.export(exports, "validateContextObject", ()=>validateContextObject);
 parcelHelpers.export(exports, "validateIndexedDBOpenable", ()=>validateIndexedDBOpenable);
 parcelHelpers.export(exports, "validateNamespace", ()=>validateNamespace);
-var process = require("7c980b15fdb56214");
 var global = arguments[3];
+var process = require("7c980b15fdb56214");
 const CONSTANTS = {
     /**
      * @define {boolean} Whether this is the client Node.js SDK.
