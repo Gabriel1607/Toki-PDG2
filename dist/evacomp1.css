@@ -172,6 +172,7 @@ h2 {
   border-style: solid;
   border-width: .063em;
   border-radius: .625em;
+  outline: none;
   justify-content: center;
   padding: 16px 24px;
   font-size: 1.125em;

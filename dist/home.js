@@ -1005,7 +1005,16 @@ profileCards.forEach(function(card) {
         //window.location.href = './profileInd.html?title=' + encodeURIComponent(profileTitle);
         console.log("hola " + profileTitle);
     });
-});
+}); //-0-0-0-0-0-0-0-0-0-0
+ //-0-0-0-0-0-0-0-0-0-0
+ //-0-0-0-0-0-0-0-0-0-0
+ //-0-0-0-0-0-0-0-0-0-0
+ //-0-0-0-0-0-0-0-0-0-0
+ //JS DEL TEST DE COMPETENCIAS
+ //-0-0-0-0-0-0-0-0-0-0
+ //-0-0-0-0-0-0-0-0-0-0
+ //-0-0-0-0-0-0-0-0-0-0
+ //EVACOMP1
 
 },{"./app":"bAabt","../functions/auth":"cEvP7","./getUser":"f6zaq","firebase/auth":"79vzg","firebase/storage":"8WX7E"}],"bAabt":[function(require,module,exports) {
 // Import the functions you need from the SDKs you need
@@ -2302,8 +2311,8 @@ parcelHelpers.export(exports, "validateCallback", ()=>validateCallback);
 parcelHelpers.export(exports, "validateContextObject", ()=>validateContextObject);
 parcelHelpers.export(exports, "validateIndexedDBOpenable", ()=>validateIndexedDBOpenable);
 parcelHelpers.export(exports, "validateNamespace", ()=>validateNamespace);
-var global = arguments[3];
 var process = require("7c980b15fdb56214");
+var global = arguments[3];
 const CONSTANTS = {
     /**
      * @define {boolean} Whether this is the client Node.js SDK.
