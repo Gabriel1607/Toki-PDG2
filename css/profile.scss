@@ -78,32 +78,20 @@ p:empty:not(:focus)::before {
         margin-bottom: 1.5em;
     }
 
-    &__psmall, &__pimportant{
-        color: $primary500;
-        font-size: $captionSize;
-        font-weight: 300;
-        text-align: center;
-        border: 1px solid #ccc;
-        padding: 5px;
-        cursor: text;
-       &:focus{
-        outline: solid #7573F5;
-       }
-    }
-
+    
     &__container{
         background-color: $primary100;
         border-radius: 1em;
         margin-bottom: 1.5em;
-        padding-bottom: 1em;
+        padding: 1em;
     }
-
+    
     &__minicardList{
         width: 100%;
         justify-content: center;
         justify-content: space-evenly;
     }
-
+    
     &__minicard{
         background-color: $primary200;
         width: 100%;
@@ -119,7 +107,7 @@ p:empty:not(:focus)::before {
         font-weight: 500;
         padding-bottom: 0.5em;
     }
-
+    
     &__number{
         color: $tokiWhite;
         font-size: 2em;
@@ -127,16 +115,33 @@ p:empty:not(:focus)::before {
         text-align: center;
     }
 
-    &__insigniaList{
-        justify-content: center;
-        justify-content: space-evenly;
+    &__psmall, &__pimportant{
+        color: $primary500;
+        font-size: $captionSize;
+        font-weight: 300;
+        text-align: center;
+        border: 1px solid #ccc;
+        padding: 5px;
+        cursor: text;
+       &:focus{
+        outline: solid #7573F5;
+       }
     }
 
-    &__p{
-        color: $primary200;
+    &__body{
+        color:$primary800;
+        font-weight: 500;
         font-size: $bodySize;
-        font-weight: 400;
-        text-align: center;
+        line-height: 1.269em;
+    }
+
+    &__medal{
+        padding-right: 0.5em;
+    }
+
+    &__image{
+        padding-top: 0.5em;
+        padding-bottom: 1em;
     }
 
     &__important{

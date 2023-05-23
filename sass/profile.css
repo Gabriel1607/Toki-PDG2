@@ -58,23 +58,11 @@ p:empty:not(:focus)::before {
   font-size: 1.125em;
   margin-bottom: 1.5em;
 }
-.profile__psmall, .profile__pimportant {
-  color: #1A15EF;
-  font-size: 0.889em;
-  font-weight: 300;
-  text-align: center;
-  border: 1px solid #ccc;
-  padding: 5px;
-  cursor: text;
-}
-.profile__psmall:focus, .profile__pimportant:focus {
-  outline: solid #7573F5;
-}
 .profile__container {
   background-color: #D1D0FC;
   border-radius: 1em;
   margin-bottom: 1.5em;
-  padding-bottom: 1em;
+  padding: 1em;
 }
 .profile__minicardList {
   width: 100%;
@@ -101,15 +89,30 @@ p:empty:not(:focus)::before {
   font-weight: 600;
   text-align: center;
 }
-.profile__insigniaList {
-  justify-content: center;
-  justify-content: space-evenly;
-}
-.profile__p {
-  color: #A3A1F9;
-  font-size: 1em;
-  font-weight: 400;
+.profile__psmall, .profile__pimportant {
+  color: #1A15EF;
+  font-size: 0.889em;
+  font-weight: 300;
   text-align: center;
+  border: 1px solid #ccc;
+  padding: 5px;
+  cursor: text;
+}
+.profile__psmall:focus, .profile__pimportant:focus {
+  outline: solid #7573F5;
+}
+.profile__body {
+  color: #0A087A;
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 1.269em;
+}
+.profile__medal {
+  padding-right: 0.5em;
+}
+.profile__image {
+  padding-top: 0.5em;
+  padding-bottom: 1em;
 }
 .profile__important {
   display: flex;

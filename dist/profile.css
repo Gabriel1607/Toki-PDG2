@@ -59,25 +59,11 @@ p:empty:not(:focus):before {
   font-weight: 500;
 }
 
-.profile__psmall, .profile__pimportant {
-  color: #1a15ef;
-  text-align: center;
-  cursor: text;
-  border: 1px solid #ccc;
-  padding: 5px;
-  font-size: .889em;
-  font-weight: 300;
-}
-
-.profile__psmall:focus, .profile__pimportant:focus {
-  outline: solid #7573f5;
-}
-
 .profile__container {
   background-color: #d1d0fc;
   border-radius: 1em;
   margin-bottom: 1.5em;
-  padding-bottom: 1em;
+  padding: 1em;
 }
 
 .profile__minicardList {
@@ -108,15 +94,34 @@ p:empty:not(:focus):before {
   font-weight: 600;
 }
 
-.profile__insigniaList {
-  justify-content: space-evenly;
+.profile__psmall, .profile__pimportant {
+  color: #1a15ef;
+  text-align: center;
+  cursor: text;
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: .889em;
+  font-weight: 300;
 }
 
-.profile__p {
-  color: #a3a1f9;
-  text-align: center;
+.profile__psmall:focus, .profile__pimportant:focus {
+  outline: solid #7573f5;
+}
+
+.profile__body {
+  color: #0a087a;
   font-size: 1em;
-  font-weight: 400;
+  font-weight: 500;
+  line-height: 1.269em;
+}
+
+.profile__medal {
+  padding-right: .5em;
+}
+
+.profile__image {
+  padding-top: .5em;
+  padding-bottom: 1em;
 }
 
 .profile__important {
