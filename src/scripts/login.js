@@ -515,7 +515,7 @@ function saveImageURL(avatarURL) {
      await updateUserData(db, uid, studentData);
       isLogged=true;
       }
-      location.href = "./home.html";
+      location.href = "./onboarding.html";
     }
   });
 }
@@ -545,6 +545,60 @@ profileCards.forEach(function(card) {
     window.location.href = url.toString();
   });
 });
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//JS DEL ONBOARDING
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+if(path.includes('onboarding')){
+  const leftArea = document.getElementById('leftArea');
+const rightArea = document.getElementById('rightArea');
+
+leftArea.addEventListener('click', goBack);
+rightArea.addEventListener('click', goForward);
+
+function goBack() {
+console.log('Left!');
+switch (path) {
+  case "/onboarding.html":
+    location.href = "./register4.html";
+    break;
+    case "/onboarding2.html":
+      location.href = "./onboarding.html";
+      break;
+      case "/onboarding3.html":
+        location.href = "./onboarding2.html";
+        break;
+        case "/onboarding4.html":
+          location.href = "./onboarding3.html";
+          break;
+          
+}
+}
+
+function goForward() {
+    console.log('Right!');
+    switch (path) {
+      case "/onboarding.html":
+        location.href = "./onboarding2.html";
+        break;
+        case "/onboarding2.html":
+          location.href = "./onboarding3.html";
+          break;
+          case "/onboarding3.html":
+            location.href = "./onboarding4.html";
+            break;
+            case "/onboarding4.html":
+              location.href = "./home.html";
+              break;
+              
+    }
+}
+}
 //-0-0-0-0-0-0-0-0-0-0
 //-0-0-0-0-0-0-0-0-0-0
 //-0-0-0-0-0-0-0-0-0-0

@@ -16,7 +16,7 @@ html, body {
 body{
     background-image: url('../img/abouttoki1.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
     padding: 15% 5%;
 }
 
@@ -27,7 +27,24 @@ h2{
     line-height: 1.806em;
     margin-bottom: -0.625em;
 }
-
+.interactableArea {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 50%;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 9999; /* Ensure the areas are on top of other elements */
+  }
+  
+  #leftArea {
+    left: 0;
+  }
+  
+  #rightArea {
+    right: 0;
+  }
+  
 .main{
     margin-bottom: 100%;
     

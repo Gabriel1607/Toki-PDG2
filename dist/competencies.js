@@ -988,7 +988,7 @@ function saveImageURL(avatarURL) {
                 await (0, _getUser.updateUserData)((0, _app.db), uid, studentData);
                 isLogged = true;
             }
-            location.href = "./home.html";
+            location.href = "./onboarding.html";
         }
     });
 }
@@ -1015,6 +1015,55 @@ profileCards.forEach(function(card) {
         window.location.href = url.toString();
     });
 });
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//JS DEL ONBOARDING
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+//-0-0-0-0-0-0-0-0-0-0
+if (path.includes("onboarding")) {
+    const leftArea = document.getElementById("leftArea");
+    const rightArea = document.getElementById("rightArea");
+    leftArea.addEventListener("click", goBack);
+    rightArea.addEventListener("click", goForward);
+    function goBack() {
+        console.log("Left!");
+        switch(path){
+            case "/onboarding.html":
+                location.href = "./register4.html";
+                break;
+            case "/onboarding2.html":
+                location.href = "./onboarding.html";
+                break;
+            case "/onboarding3.html":
+                location.href = "./onboarding2.html";
+                break;
+            case "/onboarding4.html":
+                location.href = "./onboarding3.html";
+                break;
+        }
+    }
+    function goForward() {
+        console.log("Right!");
+        switch(path){
+            case "/onboarding.html":
+                location.href = "./onboarding2.html";
+                break;
+            case "/onboarding2.html":
+                location.href = "./onboarding3.html";
+                break;
+            case "/onboarding3.html":
+                location.href = "./onboarding4.html";
+                break;
+            case "/onboarding4.html":
+                location.href = "./home.html";
+                break;
+        }
+    }
+}
 //-0-0-0-0-0-0-0-0-0-0
 //-0-0-0-0-0-0-0-0-0-0
 //-0-0-0-0-0-0-0-0-0-0
@@ -2456,8 +2505,8 @@ parcelHelpers.export(exports, "validateCallback", ()=>validateCallback);
 parcelHelpers.export(exports, "validateContextObject", ()=>validateContextObject);
 parcelHelpers.export(exports, "validateIndexedDBOpenable", ()=>validateIndexedDBOpenable);
 parcelHelpers.export(exports, "validateNamespace", ()=>validateNamespace);
-var process = require("7c980b15fdb56214");
 var global = arguments[3];
+var process = require("7c980b15fdb56214");
 const CONSTANTS = {
     /**
      * @define {boolean} Whether this is the client Node.js SDK.
